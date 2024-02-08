@@ -1,0 +1,18 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace HarrisDesktopApp.Models
+{
+    internal class Course
+    {
+        public int courseID { get; set; }
+        public int courseCode { get; set; }
+        
+        public DateTime startDate { get; set; }
+        public DateTime endDate { get; set; }
+
+    }
+}

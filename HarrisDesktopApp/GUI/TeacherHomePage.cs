@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace HarrisDesktopApp
 {
-    public partial class AdminPage : Form
+    public partial class TeacherHomePage : Form
     {
-        public AdminPage()
+        public TeacherHomePage()
         {
             InitializeComponent();
+        }
+
+        private void TeacherHomePage_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

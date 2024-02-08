@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace HarrisDesktopApp
+namespace HarrisDesktopApp.GUI
 {
-    public partial class Form1 : Form
+    public partial class StudentHomePage : Form
     {
-        public Form1()
+        public StudentHomePage()
         {
             InitializeComponent();
-        }
-
-        private void labelPassword_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

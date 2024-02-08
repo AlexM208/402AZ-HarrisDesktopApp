@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace HarrisDesktopApp
 {
-    public partial class Homepage : Form
+    public partial class LoginPage : Form
     {
-        public Homepage()
+        public LoginPage()
         {
             InitializeComponent();
+        }
+
+        private void labelPassword_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
