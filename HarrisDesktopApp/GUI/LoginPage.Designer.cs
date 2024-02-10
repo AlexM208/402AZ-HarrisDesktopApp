@@ -33,6 +33,7 @@
             this.textBoxUsername = new System.Windows.Forms.TextBox();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.buttonLogin = new System.Windows.Forms.Button();
+            this.lblPasswordInvalid = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labeUsername
@@ -54,7 +55,6 @@
             this.labelPassword.Size = new System.Drawing.Size(93, 26);
             this.labelPassword.TabIndex = 1;
             this.labelPassword.Text = "Password";
-            this.labelPassword.Click += new System.EventHandler(this.labelPassword_Click);
             // 
             // textBoxUsername
             // 
@@ -80,19 +80,34 @@
             this.buttonLogin.TabIndex = 4;
             this.buttonLogin.Text = "Login";
             this.buttonLogin.UseVisualStyleBackColor = true;
+            this.buttonLogin.Click += new System.EventHandler(this.buttonLoginClick);
             // 
-            // Form1
+            // lblPasswordInvalid
+            // 
+            this.lblPasswordInvalid.AutoSize = true;
+            this.lblPasswordInvalid.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPasswordInvalid.ForeColor = System.Drawing.Color.Red;
+            this.lblPasswordInvalid.Location = new System.Drawing.Point(376, 262);
+            this.lblPasswordInvalid.Name = "lblPasswordInvalid";
+            this.lblPasswordInvalid.Size = new System.Drawing.Size(249, 23);
+            this.lblPasswordInvalid.TabIndex = 5;
+            this.lblPasswordInvalid.Text = "Invalid Password or Username";
+            this.lblPasswordInvalid.Visible = false;
+            // 
+            // LoginPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(906, 545);
+            this.Controls.Add(this.lblPasswordInvalid);
             this.Controls.Add(this.buttonLogin);
             this.Controls.Add(this.textBoxPassword);
             this.Controls.Add(this.textBoxUsername);
             this.Controls.Add(this.labelPassword);
             this.Controls.Add(this.labeUsername);
-            this.Name = "Form1";
+            this.Name = "LoginPage";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.LoginPage_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -105,6 +120,7 @@
         private System.Windows.Forms.TextBox textBoxUsername;
         private System.Windows.Forms.TextBox textBoxPassword;
         private System.Windows.Forms.Button buttonLogin;
+        private System.Windows.Forms.Label lblPasswordInvalid;
     }
 }
 

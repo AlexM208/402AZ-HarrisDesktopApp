@@ -118,11 +118,71 @@
     <Compile Include="GUI\AdminHomePage.Designer.cs">
       <DependentUpon>AdminHomePage.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\EditClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\EditClass.Designer.cs">
+      <DependentUpon>EditClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\EditCourse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\EditCourse.Designer.cs">
+      <DependentUpon>EditCourse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\EditEnrolment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\EditEnrolment.Designer.cs">
+      <DependentUpon>EditEnrolment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\EditMaterials.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\EditMaterials.Designer.cs">
+      <DependentUpon>EditMaterials.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\EditModule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\EditModule.Designer.cs">
+      <DependentUpon>EditModule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\EditStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\EditStudent.Designer.cs">
+      <DependentUpon>EditStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\EditTeacher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\EditTeacher.Designer.cs">
+      <DependentUpon>EditTeacher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\EditTimetable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\EditTimetable.Designer.cs">
+      <DependentUpon>EditTimetable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\EditWorksheet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\EditWorksheet.Designer.cs">
+      <DependentUpon>EditWorksheet.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\LoginPage.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\LoginPage.Designer.cs">
       <DependentUpon>LoginPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\StudentHomeP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\StudentHomeP.Designer.cs">
+      <DependentUpon>StudentHomeP.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\TeacherHomePage.cs">
       <SubType>Form</SubType>
@@ -146,8 +206,38 @@
     <EmbeddedResource Include="GUI\AdminHomePage.resx">
       <DependentUpon>AdminHomePage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\EditClass.resx">
+      <DependentUpon>EditClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\EditCourse.resx">
+      <DependentUpon>EditCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\EditEnrolment.resx">
+      <DependentUpon>EditEnrolment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\EditMaterials.resx">
+      <DependentUpon>EditMaterials.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\EditModule.resx">
+      <DependentUpon>EditModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\EditStudent.resx">
+      <DependentUpon>EditStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\EditTeacher.resx">
+      <DependentUpon>EditTeacher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\EditTimetable.resx">
+      <DependentUpon>EditTimetable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\EditWorksheet.resx">
+      <DependentUpon>EditWorksheet.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\LoginPage.resx">
       <DependentUpon>LoginPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\StudentHomeP.resx">
+      <DependentUpon>StudentHomeP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\TeacherHomePage.resx">
       <DependentUpon>TeacherHomePage.cs</DependentUpon>

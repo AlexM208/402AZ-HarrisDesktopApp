@@ -29,11 +29,17 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.buttonClassDets = new System.Windows.Forms.Button();
+            this.buttonModuleDets = new System.Windows.Forms.Button();
+            this.buttonCourseDets = new System.Windows.Forms.Button();
+            this.buttonStudentDets = new System.Windows.Forms.Button();
+            this.buttonBackAdmin = new System.Windows.Forms.Button();
+            this.buttonTeacherDets = new System.Windows.Forms.Button();
+            this.buttonTimetableDets = new System.Windows.Forms.Button();
+            this.buttonEnrolmentDets = new System.Windows.Forms.Button();
+            this.buttonMaterialsDets = new System.Windows.Forms.Button();
+            this.buttonWorksheetsDets = new System.Windows.Forms.Button();
+            this.buttonLogout = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -46,69 +52,147 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Welcome Admin";
             // 
-            // button1
+            // buttonClassDets
             // 
-            this.button1.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(98, 152);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(129, 34);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Class";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonClassDets.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonClassDets.Location = new System.Drawing.Point(535, 112);
+            this.buttonClassDets.Name = "buttonClassDets";
+            this.buttonClassDets.Size = new System.Drawing.Size(129, 34);
+            this.buttonClassDets.TabIndex = 1;
+            this.buttonClassDets.Text = "Class";
+            this.buttonClassDets.UseVisualStyleBackColor = true;
+            this.buttonClassDets.Click += new System.EventHandler(this.btnClickClassDets);
             // 
-            // button2
+            // buttonModuleDets
             // 
-            this.button2.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(266, 152);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(129, 34);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Module";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonModuleDets.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonModuleDets.Location = new System.Drawing.Point(670, 112);
+            this.buttonModuleDets.Name = "buttonModuleDets";
+            this.buttonModuleDets.Size = new System.Drawing.Size(129, 34);
+            this.buttonModuleDets.TabIndex = 2;
+            this.buttonModuleDets.Text = "Module";
+            this.buttonModuleDets.UseVisualStyleBackColor = true;
+            this.buttonModuleDets.Click += new System.EventHandler(this.btnClickModuleDets);
             // 
-            // button3
+            // buttonCourseDets
             // 
-            this.button3.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(433, 152);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(129, 34);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Course List";
-            this.button3.UseVisualStyleBackColor = true;
+            this.buttonCourseDets.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCourseDets.Location = new System.Drawing.Point(535, 152);
+            this.buttonCourseDets.Name = "buttonCourseDets";
+            this.buttonCourseDets.Size = new System.Drawing.Size(129, 34);
+            this.buttonCourseDets.TabIndex = 3;
+            this.buttonCourseDets.Text = "Course List";
+            this.buttonCourseDets.UseVisualStyleBackColor = true;
+            this.buttonCourseDets.Click += new System.EventHandler(this.buttonClickCourseList);
             // 
-            // button4
+            // buttonStudentDets
             // 
-            this.button4.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(601, 152);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(129, 34);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "Student";
-            this.button4.UseVisualStyleBackColor = true;
+            this.buttonStudentDets.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonStudentDets.Location = new System.Drawing.Point(265, 112);
+            this.buttonStudentDets.Name = "buttonStudentDets";
+            this.buttonStudentDets.Size = new System.Drawing.Size(129, 34);
+            this.buttonStudentDets.TabIndex = 4;
+            this.buttonStudentDets.Text = "Student";
+            this.buttonStudentDets.UseVisualStyleBackColor = true;
+            this.buttonStudentDets.Click += new System.EventHandler(this.btnClickStudentDets);
             // 
-            // button5
+            // buttonBackAdmin
             // 
-            this.button5.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(773, 152);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(116, 34);
-            this.button5.TabIndex = 6;
-            this.button5.Text = "Back";
-            this.button5.UseVisualStyleBackColor = true;
+            this.buttonBackAdmin.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBackAdmin.Location = new System.Drawing.Point(670, 152);
+            this.buttonBackAdmin.Name = "buttonBackAdmin";
+            this.buttonBackAdmin.Size = new System.Drawing.Size(129, 34);
+            this.buttonBackAdmin.TabIndex = 6;
+            this.buttonBackAdmin.Text = "Back";
+            this.buttonBackAdmin.UseVisualStyleBackColor = true;
+            this.buttonBackAdmin.Click += new System.EventHandler(this.buttonClickBackAdminP);
+            // 
+            // buttonTeacherDets
+            // 
+            this.buttonTeacherDets.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonTeacherDets.Location = new System.Drawing.Point(130, 112);
+            this.buttonTeacherDets.Name = "buttonTeacherDets";
+            this.buttonTeacherDets.Size = new System.Drawing.Size(129, 34);
+            this.buttonTeacherDets.TabIndex = 7;
+            this.buttonTeacherDets.Text = "Teacher";
+            this.buttonTeacherDets.UseVisualStyleBackColor = true;
+            this.buttonTeacherDets.Click += new System.EventHandler(this.buttonClickTeacherDets);
+            // 
+            // buttonTimetableDets
+            // 
+            this.buttonTimetableDets.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonTimetableDets.Location = new System.Drawing.Point(400, 152);
+            this.buttonTimetableDets.Name = "buttonTimetableDets";
+            this.buttonTimetableDets.Size = new System.Drawing.Size(129, 34);
+            this.buttonTimetableDets.TabIndex = 8;
+            this.buttonTimetableDets.Text = "Timetable";
+            this.buttonTimetableDets.UseVisualStyleBackColor = true;
+            this.buttonTimetableDets.Click += new System.EventHandler(this.btnClickTimetableDets);
+            // 
+            // buttonEnrolmentDets
+            // 
+            this.buttonEnrolmentDets.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonEnrolmentDets.Location = new System.Drawing.Point(265, 152);
+            this.buttonEnrolmentDets.Name = "buttonEnrolmentDets";
+            this.buttonEnrolmentDets.Size = new System.Drawing.Size(129, 34);
+            this.buttonEnrolmentDets.TabIndex = 9;
+            this.buttonEnrolmentDets.Text = "Enrolement";
+            this.buttonEnrolmentDets.UseVisualStyleBackColor = true;
+            this.buttonEnrolmentDets.Click += new System.EventHandler(this.btnClickEnrolmentDets);
+            // 
+            // buttonMaterialsDets
+            // 
+            this.buttonMaterialsDets.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonMaterialsDets.Location = new System.Drawing.Point(130, 152);
+            this.buttonMaterialsDets.Name = "buttonMaterialsDets";
+            this.buttonMaterialsDets.Size = new System.Drawing.Size(129, 34);
+            this.buttonMaterialsDets.TabIndex = 10;
+            this.buttonMaterialsDets.Text = "Materials";
+            this.buttonMaterialsDets.UseVisualStyleBackColor = true;
+            this.buttonMaterialsDets.Click += new System.EventHandler(this.btnClickMaterialsDets);
+            // 
+            // buttonWorksheetsDets
+            // 
+            this.buttonWorksheetsDets.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonWorksheetsDets.Location = new System.Drawing.Point(400, 112);
+            this.buttonWorksheetsDets.Name = "buttonWorksheetsDets";
+            this.buttonWorksheetsDets.Size = new System.Drawing.Size(129, 34);
+            this.buttonWorksheetsDets.TabIndex = 11;
+            this.buttonWorksheetsDets.Text = "Worksheets";
+            this.buttonWorksheetsDets.UseVisualStyleBackColor = true;
+            this.buttonWorksheetsDets.Click += new System.EventHandler(this.btnClickWorksheetsDets);
+            // 
+            // buttonLogout
+            // 
+            this.buttonLogout.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonLogout.Location = new System.Drawing.Point(265, 51);
+            this.buttonLogout.Name = "buttonLogout";
+            this.buttonLogout.Size = new System.Drawing.Size(129, 34);
+            this.buttonLogout.TabIndex = 12;
+            this.buttonLogout.Text = "Logout";
+            this.buttonLogout.UseVisualStyleBackColor = true;
+            this.buttonLogout.Click += new System.EventHandler(this.buttonClickLogout);
             // 
             // AdminHomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(995, 755);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(1008, 761);
+            this.Controls.Add(this.buttonLogout);
+            this.Controls.Add(this.buttonWorksheetsDets);
+            this.Controls.Add(this.buttonMaterialsDets);
+            this.Controls.Add(this.buttonEnrolmentDets);
+            this.Controls.Add(this.buttonTimetableDets);
+            this.Controls.Add(this.buttonTeacherDets);
+            this.Controls.Add(this.buttonBackAdmin);
+            this.Controls.Add(this.buttonStudentDets);
+            this.Controls.Add(this.buttonCourseDets);
+            this.Controls.Add(this.buttonModuleDets);
+            this.Controls.Add(this.buttonClassDets);
             this.Controls.Add(this.label1);
             this.Name = "AdminHomePage";
             this.Text = "AdminPage";
+            this.Load += new System.EventHandler(this.AdminHomePage_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -117,10 +201,16 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button buttonClassDets;
+        private System.Windows.Forms.Button buttonModuleDets;
+        private System.Windows.Forms.Button buttonCourseDets;
+        private System.Windows.Forms.Button buttonStudentDets;
+        private System.Windows.Forms.Button buttonBackAdmin;
+        private System.Windows.Forms.Button buttonTeacherDets;
+        private System.Windows.Forms.Button buttonTimetableDets;
+        private System.Windows.Forms.Button buttonEnrolmentDets;
+        private System.Windows.Forms.Button buttonMaterialsDets;
+        private System.Windows.Forms.Button buttonWorksheetsDets;
+        private System.Windows.Forms.Button buttonLogout;
     }
 }

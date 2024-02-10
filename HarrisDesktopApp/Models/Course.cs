@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HarrisDesktopApp.Models
 {
-    internal class Course
+    public class Course
     {
         public int courseID { get; set; }
         public int courseCode { get; set; }
