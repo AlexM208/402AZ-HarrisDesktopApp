@@ -29,26 +29,26 @@
         private void InitializeComponent()
         {
             this.labelAdminCourse = new System.Windows.Forms.Label();
-            this.buttonDeleteCourse = new System.Windows.Forms.Button();
-            this.buttonUpdateCourse = new System.Windows.Forms.Button();
-            this.buttonRefreshCourse = new System.Windows.Forms.Button();
-            this.buttonAddCourse = new System.Windows.Forms.Button();
-            this.courseBtnToAdminHP = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textTeacherTimetable = new System.Windows.Forms.TextBox();
-            this.textTeacherDept = new System.Windows.Forms.TextBox();
-            this.textTeacherPosition = new System.Windows.Forms.TextBox();
-            this.textTeacherEmail = new System.Windows.Forms.TextBox();
-            this.textTeacherFname = new System.Windows.Forms.TextBox();
-            this.textTeacherLname = new System.Windows.Forms.TextBox();
-            this.textTeacherId = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.btnDeleteClass = new System.Windows.Forms.Button();
+            this.btnUpdateClass = new System.Windows.Forms.Button();
+            this.btnRefreshClass = new System.Windows.Forms.Button();
+            this.btnAddClass = new System.Windows.Forms.Button();
+            this.btbBackAdminHP = new System.Windows.Forms.Button();
+            this.lblPostcode = new System.Windows.Forms.Label();
+            this.lblAddress = new System.Windows.Forms.Label();
+            this.txtAddress = new System.Windows.Forms.TextBox();
+            this.txtFloor = new System.Windows.Forms.TextBox();
+            this.txtBuilding = new System.Windows.Forms.TextBox();
+            this.txtRoom = new System.Windows.Forms.TextBox();
+            this.lblBuilding = new System.Windows.Forms.Label();
+            this.lblFloor = new System.Windows.Forms.Label();
+            this.lblRoom = new System.Windows.Forms.Label();
             this.dataGridViewClass = new System.Windows.Forms.DataGridView();
+            this.lblDets = new System.Windows.Forms.Label();
+            this.txtPostcode = new System.Windows.Forms.TextBox();
+            this.lblAddClass = new System.Windows.Forms.Label();
+            this.lblDeleteClass = new System.Windows.Forms.Label();
+            this.lblUpdateClass = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClass)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,177 +62,139 @@
             this.labelAdminCourse.TabIndex = 3;
             this.labelAdminCourse.Text = "Welcome Admin";
             // 
-            // buttonDeleteCourse
+            // btnDeleteClass
             // 
-            this.buttonDeleteCourse.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDeleteCourse.Location = new System.Drawing.Point(304, 239);
-            this.buttonDeleteCourse.Name = "buttonDeleteCourse";
-            this.buttonDeleteCourse.Size = new System.Drawing.Size(105, 35);
-            this.buttonDeleteCourse.TabIndex = 38;
-            this.buttonDeleteCourse.Text = "Delete";
-            this.buttonDeleteCourse.UseVisualStyleBackColor = true;
+            this.btnDeleteClass.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteClass.Location = new System.Drawing.Point(304, 239);
+            this.btnDeleteClass.Name = "btnDeleteClass";
+            this.btnDeleteClass.Size = new System.Drawing.Size(105, 35);
+            this.btnDeleteClass.TabIndex = 38;
+            this.btnDeleteClass.Text = "Delete";
+            this.btnDeleteClass.UseVisualStyleBackColor = true;
+            this.btnDeleteClass.Click += new System.EventHandler(this.btnClickDeleteClass);
             // 
-            // buttonUpdateCourse
+            // btnUpdateClass
             // 
-            this.buttonUpdateCourse.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonUpdateCourse.Location = new System.Drawing.Point(193, 239);
-            this.buttonUpdateCourse.Name = "buttonUpdateCourse";
-            this.buttonUpdateCourse.Size = new System.Drawing.Size(105, 35);
-            this.buttonUpdateCourse.TabIndex = 37;
-            this.buttonUpdateCourse.Text = "Update";
-            this.buttonUpdateCourse.UseVisualStyleBackColor = true;
+            this.btnUpdateClass.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdateClass.Location = new System.Drawing.Point(193, 239);
+            this.btnUpdateClass.Name = "btnUpdateClass";
+            this.btnUpdateClass.Size = new System.Drawing.Size(105, 35);
+            this.btnUpdateClass.TabIndex = 37;
+            this.btnUpdateClass.Text = "Update";
+            this.btnUpdateClass.UseVisualStyleBackColor = true;
+            this.btnUpdateClass.Click += new System.EventHandler(this.btnClickUpdateClass);
             // 
-            // buttonRefreshCourse
+            // btnRefreshClass
             // 
-            this.buttonRefreshCourse.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonRefreshCourse.Location = new System.Drawing.Point(415, 239);
-            this.buttonRefreshCourse.Name = "buttonRefreshCourse";
-            this.buttonRefreshCourse.Size = new System.Drawing.Size(105, 35);
-            this.buttonRefreshCourse.TabIndex = 36;
-            this.buttonRefreshCourse.Text = "Refresh";
-            this.buttonRefreshCourse.UseVisualStyleBackColor = true;
-            this.buttonRefreshCourse.Click += new System.EventHandler(this.btnClickRefresh);
+            this.btnRefreshClass.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefreshClass.Location = new System.Drawing.Point(415, 239);
+            this.btnRefreshClass.Name = "btnRefreshClass";
+            this.btnRefreshClass.Size = new System.Drawing.Size(105, 35);
+            this.btnRefreshClass.TabIndex = 36;
+            this.btnRefreshClass.Text = "Refresh";
+            this.btnRefreshClass.UseVisualStyleBackColor = true;
+            this.btnRefreshClass.Click += new System.EventHandler(this.btnClickRefresh);
             // 
-            // buttonAddCourse
+            // btnAddClass
             // 
-            this.buttonAddCourse.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAddCourse.Location = new System.Drawing.Point(82, 239);
-            this.buttonAddCourse.Name = "buttonAddCourse";
-            this.buttonAddCourse.Size = new System.Drawing.Size(105, 35);
-            this.buttonAddCourse.TabIndex = 35;
-            this.buttonAddCourse.Text = "Add";
-            this.buttonAddCourse.UseVisualStyleBackColor = true;
+            this.btnAddClass.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddClass.Location = new System.Drawing.Point(82, 239);
+            this.btnAddClass.Name = "btnAddClass";
+            this.btnAddClass.Size = new System.Drawing.Size(105, 35);
+            this.btnAddClass.TabIndex = 35;
+            this.btnAddClass.Text = "Add";
+            this.btnAddClass.UseVisualStyleBackColor = true;
+            this.btnAddClass.Click += new System.EventHandler(this.btnClickAddClass);
             // 
-            // courseBtnToAdminHP
+            // btbBackAdminHP
             // 
-            this.courseBtnToAdminHP.BackColor = System.Drawing.SystemColors.Control;
-            this.courseBtnToAdminHP.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.courseBtnToAdminHP.Location = new System.Drawing.Point(526, 239);
-            this.courseBtnToAdminHP.Name = "courseBtnToAdminHP";
-            this.courseBtnToAdminHP.Size = new System.Drawing.Size(105, 35);
-            this.courseBtnToAdminHP.TabIndex = 34;
-            this.courseBtnToAdminHP.Text = "Back";
-            this.courseBtnToAdminHP.UseVisualStyleBackColor = true;
-            this.courseBtnToAdminHP.Click += new System.EventHandler(this.btnClickBack);
+            this.btbBackAdminHP.BackColor = System.Drawing.SystemColors.Control;
+            this.btbBackAdminHP.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btbBackAdminHP.Location = new System.Drawing.Point(526, 239);
+            this.btbBackAdminHP.Name = "btbBackAdminHP";
+            this.btbBackAdminHP.Size = new System.Drawing.Size(105, 35);
+            this.btbBackAdminHP.TabIndex = 34;
+            this.btbBackAdminHP.Text = "Back";
+            this.btbBackAdminHP.UseVisualStyleBackColor = true;
+            this.btbBackAdminHP.Click += new System.EventHandler(this.btnClickBack);
             // 
-            // label8
+            // lblPostcode
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(340, 172);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(94, 19);
-            this.label8.TabIndex = 52;
-            this.label8.Text = "Timetable id:";
+            this.lblPostcode.AutoSize = true;
+            this.lblPostcode.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPostcode.Location = new System.Drawing.Point(343, 145);
+            this.lblPostcode.Name = "lblPostcode";
+            this.lblPostcode.Size = new System.Drawing.Size(72, 19);
+            this.lblPostcode.TabIndex = 50;
+            this.lblPostcode.Text = "Postcode:";
             // 
-            // label7
+            // lblAddress
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(340, 146);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(90, 19);
-            this.label7.TabIndex = 51;
-            this.label7.Text = "Department:";
+            this.lblAddress.AutoSize = true;
+            this.lblAddress.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddress.Location = new System.Drawing.Point(343, 119);
+            this.lblAddress.Name = "lblAddress";
+            this.lblAddress.Size = new System.Drawing.Size(65, 19);
+            this.lblAddress.TabIndex = 49;
+            this.lblAddress.Text = "Address:";
             // 
-            // label6
+            // txtAddress
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(340, 118);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(65, 19);
-            this.label6.TabIndex = 50;
-            this.label6.Text = "Position:";
+            this.txtAddress.Location = new System.Drawing.Point(443, 119);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(147, 20);
+            this.txtAddress.TabIndex = 46;
             // 
-            // label5
+            // txtFloor
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(86, 172);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 19);
-            this.label5.TabIndex = 49;
-            this.label5.Text = "Email:";
+            this.txtFloor.Location = new System.Drawing.Point(177, 171);
+            this.txtFloor.Name = "txtFloor";
+            this.txtFloor.Size = new System.Drawing.Size(136, 20);
+            this.txtFloor.TabIndex = 45;
             // 
-            // textTeacherTimetable
+            // txtBuilding
             // 
-            this.textTeacherTimetable.Location = new System.Drawing.Point(440, 171);
-            this.textTeacherTimetable.Name = "textTeacherTimetable";
-            this.textTeacherTimetable.Size = new System.Drawing.Size(147, 20);
-            this.textTeacherTimetable.TabIndex = 48;
+            this.txtBuilding.Location = new System.Drawing.Point(177, 145);
+            this.txtBuilding.Name = "txtBuilding";
+            this.txtBuilding.Size = new System.Drawing.Size(136, 20);
+            this.txtBuilding.TabIndex = 44;
             // 
-            // textTeacherDept
+            // txtRoom
             // 
-            this.textTeacherDept.Location = new System.Drawing.Point(440, 145);
-            this.textTeacherDept.Name = "textTeacherDept";
-            this.textTeacherDept.Size = new System.Drawing.Size(147, 20);
-            this.textTeacherDept.TabIndex = 47;
+            this.txtRoom.Location = new System.Drawing.Point(177, 119);
+            this.txtRoom.Name = "txtRoom";
+            this.txtRoom.Size = new System.Drawing.Size(136, 20);
+            this.txtRoom.TabIndex = 43;
             // 
-            // textTeacherPosition
+            // lblBuilding
             // 
-            this.textTeacherPosition.Location = new System.Drawing.Point(440, 119);
-            this.textTeacherPosition.Name = "textTeacherPosition";
-            this.textTeacherPosition.Size = new System.Drawing.Size(147, 20);
-            this.textTeacherPosition.TabIndex = 46;
+            this.lblBuilding.AutoSize = true;
+            this.lblBuilding.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBuilding.Location = new System.Drawing.Point(88, 145);
+            this.lblBuilding.Name = "lblBuilding";
+            this.lblBuilding.Size = new System.Drawing.Size(66, 19);
+            this.lblBuilding.TabIndex = 41;
+            this.lblBuilding.Text = "Building:";
             // 
-            // textTeacherEmail
+            // lblFloor
             // 
-            this.textTeacherEmail.Location = new System.Drawing.Point(174, 171);
-            this.textTeacherEmail.Name = "textTeacherEmail";
-            this.textTeacherEmail.Size = new System.Drawing.Size(136, 20);
-            this.textTeacherEmail.TabIndex = 45;
+            this.lblFloor.AutoSize = true;
+            this.lblFloor.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFloor.Location = new System.Drawing.Point(88, 171);
+            this.lblFloor.Name = "lblFloor";
+            this.lblFloor.Size = new System.Drawing.Size(45, 19);
+            this.lblFloor.TabIndex = 40;
+            this.lblFloor.Text = "Floor:";
             // 
-            // textTeacherFname
+            // lblRoom
             // 
-            this.textTeacherFname.Location = new System.Drawing.Point(174, 145);
-            this.textTeacherFname.Name = "textTeacherFname";
-            this.textTeacherFname.Size = new System.Drawing.Size(136, 20);
-            this.textTeacherFname.TabIndex = 44;
-            // 
-            // textTeacherLname
-            // 
-            this.textTeacherLname.Location = new System.Drawing.Point(174, 119);
-            this.textTeacherLname.Name = "textTeacherLname";
-            this.textTeacherLname.Size = new System.Drawing.Size(136, 20);
-            this.textTeacherLname.TabIndex = 43;
-            // 
-            // textTeacherId
-            // 
-            this.textTeacherId.Location = new System.Drawing.Point(174, 93);
-            this.textTeacherId.Name = "textTeacherId";
-            this.textTeacherId.Size = new System.Drawing.Size(136, 20);
-            this.textTeacherId.TabIndex = 42;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(86, 118);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(82, 19);
-            this.label4.TabIndex = 41;
-            this.label4.Text = "Last Name:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(86, 144);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(83, 19);
-            this.label3.TabIndex = 40;
-            this.label3.Text = "First Name:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(88, 92);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(80, 19);
-            this.label2.TabIndex = 39;
-            this.label2.Text = "Teacher Id:";
+            this.lblRoom.AutoSize = true;
+            this.lblRoom.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRoom.Location = new System.Drawing.Point(88, 119);
+            this.lblRoom.Name = "lblRoom";
+            this.lblRoom.Size = new System.Drawing.Size(72, 19);
+            this.lblRoom.TabIndex = 39;
+            this.lblRoom.Text = "Room No:";
             // 
             // dataGridViewClass
             // 
@@ -252,31 +214,84 @@
             this.dataGridViewClass.Size = new System.Drawing.Size(710, 411);
             this.dataGridViewClass.TabIndex = 53;
             // 
+            // lblDets
+            // 
+            this.lblDets.AutoSize = true;
+            this.lblDets.Font = new System.Drawing.Font("Calibri", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDets.Location = new System.Drawing.Point(88, 66);
+            this.lblDets.Name = "lblDets";
+            this.lblDets.Size = new System.Drawing.Size(136, 19);
+            this.lblDets.TabIndex = 54;
+            this.lblDets.Text = "Enter Class Details ";
+            // 
+            // txtPostcode
+            // 
+            this.txtPostcode.Location = new System.Drawing.Point(443, 145);
+            this.txtPostcode.Name = "txtPostcode";
+            this.txtPostcode.Size = new System.Drawing.Size(147, 20);
+            this.txtPostcode.TabIndex = 47;
+            // 
+            // lblAddClass
+            // 
+            this.lblAddClass.AutoSize = true;
+            this.lblAddClass.Font = new System.Drawing.Font("Calibri", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddClass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lblAddClass.Location = new System.Drawing.Point(242, 204);
+            this.lblAddClass.Name = "lblAddClass";
+            this.lblAddClass.Size = new System.Drawing.Size(214, 23);
+            this.lblAddClass.TabIndex = 55;
+            this.lblAddClass.Text = "Class created successfully!";
+            this.lblAddClass.Visible = false;
+            // 
+            // lblDeleteClass
+            // 
+            this.lblDeleteClass.AutoSize = true;
+            this.lblDeleteClass.Font = new System.Drawing.Font("Calibri", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDeleteClass.ForeColor = System.Drawing.Color.Blue;
+            this.lblDeleteClass.Location = new System.Drawing.Point(243, 204);
+            this.lblDeleteClass.Name = "lblDeleteClass";
+            this.lblDeleteClass.Size = new System.Drawing.Size(213, 23);
+            this.lblDeleteClass.TabIndex = 56;
+            this.lblDeleteClass.Text = "Class deleted successfully!";
+            this.lblDeleteClass.Visible = false;
+            // 
+            // lblUpdateClass
+            // 
+            this.lblUpdateClass.AutoSize = true;
+            this.lblUpdateClass.Font = new System.Drawing.Font("Calibri", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUpdateClass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.lblUpdateClass.Location = new System.Drawing.Point(243, 204);
+            this.lblUpdateClass.Name = "lblUpdateClass";
+            this.lblUpdateClass.Size = new System.Drawing.Size(220, 23);
+            this.lblUpdateClass.TabIndex = 57;
+            this.lblUpdateClass.Text = "Class updated successfully!";
+            this.lblUpdateClass.Visible = false;
+            // 
             // EditClass
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(734, 771);
+            this.Controls.Add(this.lblUpdateClass);
+            this.Controls.Add(this.lblDeleteClass);
+            this.Controls.Add(this.lblAddClass);
+            this.Controls.Add(this.lblDets);
             this.Controls.Add(this.dataGridViewClass);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.textTeacherTimetable);
-            this.Controls.Add(this.textTeacherDept);
-            this.Controls.Add(this.textTeacherPosition);
-            this.Controls.Add(this.textTeacherEmail);
-            this.Controls.Add(this.textTeacherFname);
-            this.Controls.Add(this.textTeacherLname);
-            this.Controls.Add(this.textTeacherId);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.buttonDeleteCourse);
-            this.Controls.Add(this.buttonUpdateCourse);
-            this.Controls.Add(this.buttonRefreshCourse);
-            this.Controls.Add(this.buttonAddCourse);
-            this.Controls.Add(this.courseBtnToAdminHP);
+            this.Controls.Add(this.lblPostcode);
+            this.Controls.Add(this.lblAddress);
+            this.Controls.Add(this.txtPostcode);
+            this.Controls.Add(this.txtAddress);
+            this.Controls.Add(this.txtFloor);
+            this.Controls.Add(this.txtBuilding);
+            this.Controls.Add(this.txtRoom);
+            this.Controls.Add(this.lblBuilding);
+            this.Controls.Add(this.lblFloor);
+            this.Controls.Add(this.lblRoom);
+            this.Controls.Add(this.btnDeleteClass);
+            this.Controls.Add(this.btnUpdateClass);
+            this.Controls.Add(this.btnRefreshClass);
+            this.Controls.Add(this.btnAddClass);
+            this.Controls.Add(this.btbBackAdminHP);
             this.Controls.Add(this.labelAdminCourse);
             this.Name = "EditClass";
             this.Text = "EditClass";
@@ -289,25 +304,25 @@
         #endregion
 
         private System.Windows.Forms.Label labelAdminCourse;
-        private System.Windows.Forms.Button buttonDeleteCourse;
-        private System.Windows.Forms.Button buttonUpdateCourse;
-        private System.Windows.Forms.Button buttonRefreshCourse;
-        private System.Windows.Forms.Button buttonAddCourse;
-        private System.Windows.Forms.Button courseBtnToAdminHP;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textTeacherTimetable;
-        private System.Windows.Forms.TextBox textTeacherDept;
-        private System.Windows.Forms.TextBox textTeacherPosition;
-        private System.Windows.Forms.TextBox textTeacherEmail;
-        private System.Windows.Forms.TextBox textTeacherFname;
-        private System.Windows.Forms.TextBox textTeacherLname;
-        private System.Windows.Forms.TextBox textTeacherId;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnDeleteClass;
+        private System.Windows.Forms.Button btnUpdateClass;
+        private System.Windows.Forms.Button btnRefreshClass;
+        private System.Windows.Forms.Button btnAddClass;
+        private System.Windows.Forms.Button btbBackAdminHP;
+        private System.Windows.Forms.Label lblPostcode;
+        private System.Windows.Forms.Label lblAddress;
+        private System.Windows.Forms.TextBox txtAddress;
+        private System.Windows.Forms.TextBox txtFloor;
+        private System.Windows.Forms.TextBox txtBuilding;
+        private System.Windows.Forms.TextBox txtRoom;
+        private System.Windows.Forms.Label lblBuilding;
+        private System.Windows.Forms.Label lblFloor;
+        private System.Windows.Forms.Label lblRoom;
         private System.Windows.Forms.DataGridView dataGridViewClass;
+        private System.Windows.Forms.Label lblDets;
+        private System.Windows.Forms.TextBox txtPostcode;
+        private System.Windows.Forms.Label lblAddClass;
+        private System.Windows.Forms.Label lblDeleteClass;
+        private System.Windows.Forms.Label lblUpdateClass;
     }
 }

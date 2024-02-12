@@ -34,20 +34,19 @@
             this.buttonRefreshCourse = new System.Windows.Forms.Button();
             this.buttonAddCourse = new System.Windows.Forms.Button();
             this.courseBtnToAdminHP = new System.Windows.Forms.Button();
-            this.dataGridViewCourse = new System.Windows.Forms.DataGridView();
+            this.dataGridViewCourseList = new System.Windows.Forms.DataGridView();
             this.labelCrsCode = new System.Windows.Forms.Label();
-            this.textTeacherId = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtCourseCode = new System.Windows.Forms.TextBox();
+            this.txtCourseName = new System.Windows.Forms.TextBox();
+            this.txtCourseType = new System.Windows.Forms.TextBox();
             this.labelCrsName = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblStartDate = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCourse)).BeginInit();
+            this.lblDets = new System.Windows.Forms.Label();
+            this.dateTimePickerEnd = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerStart = new System.Windows.Forms.DateTimePicker();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCourseList)).BeginInit();
             this.SuspendLayout();
             // 
             // labelAdminCourse
@@ -69,6 +68,7 @@
             this.buttonDeleteCourse.TabIndex = 33;
             this.buttonDeleteCourse.Text = "Delete";
             this.buttonDeleteCourse.UseVisualStyleBackColor = true;
+            this.buttonDeleteCourse.Click += new System.EventHandler(this.btnClickDeleteCourse);
             // 
             // buttonUpdateCourse
             // 
@@ -79,6 +79,7 @@
             this.buttonUpdateCourse.TabIndex = 32;
             this.buttonUpdateCourse.Text = "Update";
             this.buttonUpdateCourse.UseVisualStyleBackColor = true;
+            this.buttonUpdateCourse.Click += new System.EventHandler(this.btnClickUpdateCourse);
             // 
             // buttonRefreshCourse
             // 
@@ -89,6 +90,7 @@
             this.buttonRefreshCourse.TabIndex = 31;
             this.buttonRefreshCourse.Text = "Refresh";
             this.buttonRefreshCourse.UseVisualStyleBackColor = true;
+            this.buttonRefreshCourse.Click += new System.EventHandler(this.btnClickRefreshCourseList);
             // 
             // buttonAddCourse
             // 
@@ -99,6 +101,7 @@
             this.buttonAddCourse.TabIndex = 30;
             this.buttonAddCourse.Text = "Add";
             this.buttonAddCourse.UseVisualStyleBackColor = true;
+            this.buttonAddCourse.Click += new System.EventHandler(this.btnAddClickCourse);
             // 
             // courseBtnToAdminHP
             // 
@@ -112,75 +115,61 @@
             this.courseBtnToAdminHP.UseVisualStyleBackColor = true;
             this.courseBtnToAdminHP.Click += new System.EventHandler(this.btnClickBack);
             // 
-            // dataGridViewCourse
+            // dataGridViewCourseList
             // 
-            this.dataGridViewCourse.AllowUserToAddRows = false;
-            this.dataGridViewCourse.AllowUserToDeleteRows = false;
-            this.dataGridViewCourse.AllowUserToResizeColumns = false;
-            this.dataGridViewCourse.AllowUserToResizeRows = false;
-            this.dataGridViewCourse.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dataGridViewCourseList.AllowUserToAddRows = false;
+            this.dataGridViewCourseList.AllowUserToDeleteRows = false;
+            this.dataGridViewCourseList.AllowUserToResizeColumns = false;
+            this.dataGridViewCourseList.AllowUserToResizeRows = false;
+            this.dataGridViewCourseList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridViewCourse.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewCourse.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridViewCourse.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewCourse.Location = new System.Drawing.Point(12, 321);
-            this.dataGridViewCourse.Name = "dataGridViewCourse";
-            this.dataGridViewCourse.ReadOnly = true;
-            this.dataGridViewCourse.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridViewCourse.Size = new System.Drawing.Size(710, 411);
-            this.dataGridViewCourse.TabIndex = 34;
+            this.dataGridViewCourseList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewCourseList.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridViewCourseList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewCourseList.Location = new System.Drawing.Point(12, 321);
+            this.dataGridViewCourseList.Name = "dataGridViewCourseList";
+            this.dataGridViewCourseList.ReadOnly = true;
+            this.dataGridViewCourseList.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridViewCourseList.Size = new System.Drawing.Size(710, 411);
+            this.dataGridViewCourseList.TabIndex = 34;
             // 
             // labelCrsCode
             // 
             this.labelCrsCode.AutoSize = true;
             this.labelCrsCode.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCrsCode.Location = new System.Drawing.Point(68, 90);
+            this.labelCrsCode.Location = new System.Drawing.Point(88, 92);
             this.labelCrsCode.Name = "labelCrsCode";
             this.labelCrsCode.Size = new System.Drawing.Size(46, 19);
             this.labelCrsCode.TabIndex = 35;
             this.labelCrsCode.Text = "Code:";
             // 
-            // textTeacherId
+            // txtCourseCode
             // 
-            this.textTeacherId.Location = new System.Drawing.Point(167, 89);
-            this.textTeacherId.Name = "textTeacherId";
-            this.textTeacherId.Size = new System.Drawing.Size(136, 20);
-            this.textTeacherId.TabIndex = 36;
+            this.txtCourseCode.Location = new System.Drawing.Point(177, 93);
+            this.txtCourseCode.Name = "txtCourseCode";
+            this.txtCourseCode.Size = new System.Drawing.Size(136, 20);
+            this.txtCourseCode.TabIndex = 36;
             // 
-            // textBox1
+            // txtCourseName
             // 
-            this.textBox1.Location = new System.Drawing.Point(167, 115);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(136, 20);
-            this.textBox1.TabIndex = 37;
+            this.txtCourseName.Location = new System.Drawing.Point(177, 119);
+            this.txtCourseName.Name = "txtCourseName";
+            this.txtCourseName.Size = new System.Drawing.Size(136, 20);
+            this.txtCourseName.TabIndex = 37;
             // 
-            // textBox2
+            // txtCourseType
             // 
-            this.textBox2.Location = new System.Drawing.Point(167, 141);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(136, 20);
-            this.textBox2.TabIndex = 38;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(471, 89);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(136, 20);
-            this.textBox3.TabIndex = 39;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(471, 115);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(136, 20);
-            this.textBox4.TabIndex = 40;
+            this.txtCourseType.Location = new System.Drawing.Point(177, 145);
+            this.txtCourseType.Name = "txtCourseType";
+            this.txtCourseType.Size = new System.Drawing.Size(136, 20);
+            this.txtCourseType.TabIndex = 38;
             // 
             // labelCrsName
             // 
             this.labelCrsName.AutoSize = true;
             this.labelCrsName.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCrsName.Location = new System.Drawing.Point(68, 116);
+            this.labelCrsName.Location = new System.Drawing.Point(88, 118);
             this.labelCrsName.Name = "labelCrsName";
             this.labelCrsName.Size = new System.Drawing.Size(51, 19);
             this.labelCrsName.TabIndex = 41;
@@ -190,72 +179,75 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(68, 142);
+            this.label3.Location = new System.Drawing.Point(88, 144);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(43, 19);
             this.label3.TabIndex = 42;
             this.label3.Text = "Type:";
             // 
-            // label4
+            // lblStartDate
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(372, 90);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(93, 19);
-            this.label4.TabIndex = 43;
-            this.label4.Text = "Course code:";
+            this.lblStartDate.AutoSize = true;
+            this.lblStartDate.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStartDate.Location = new System.Drawing.Point(343, 118);
+            this.lblStartDate.Name = "lblStartDate";
+            this.lblStartDate.Size = new System.Drawing.Size(78, 19);
+            this.lblStartDate.TabIndex = 43;
+            this.lblStartDate.Text = "Start Date:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(372, 114);
+            this.label5.Location = new System.Drawing.Point(343, 146);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(93, 19);
+            this.label5.Size = new System.Drawing.Size(72, 19);
             this.label5.TabIndex = 44;
-            this.label5.Text = "Course code:";
+            this.label5.Text = "End Date:";
             // 
-            // label6
+            // lblDets
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Calibri", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(81, 55);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(150, 19);
-            this.label6.TabIndex = 45;
-            this.label6.Text = "Enter Course Details ";
+            this.lblDets.AutoSize = true;
+            this.lblDets.Font = new System.Drawing.Font("Calibri", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDets.Location = new System.Drawing.Point(81, 55);
+            this.lblDets.Name = "lblDets";
+            this.lblDets.Size = new System.Drawing.Size(150, 19);
+            this.lblDets.TabIndex = 45;
+            this.lblDets.Text = "Enter Course Details ";
             // 
-            // listBox1
+            // dateTimePickerEnd
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Items.AddRange(new object[] {
-            "Accelerated",
-            "Normal"});
-            this.listBox1.Location = new System.Drawing.Point(471, 141);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(120, 95);
-            this.listBox1.TabIndex = 46;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            this.dateTimePickerEnd.CustomFormat = "";
+            this.dateTimePickerEnd.Location = new System.Drawing.Point(427, 146);
+            this.dateTimePickerEnd.Name = "dateTimePickerEnd";
+            this.dateTimePickerEnd.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePickerEnd.TabIndex = 46;
+            // 
+            // dateTimePickerStart
+            // 
+            this.dateTimePickerStart.CustomFormat = "";
+            this.dateTimePickerStart.Location = new System.Drawing.Point(427, 117);
+            this.dateTimePickerStart.Name = "dateTimePickerStart";
+            this.dateTimePickerStart.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePickerStart.TabIndex = 47;
             // 
             // EditCourse
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(734, 771);
-            this.Controls.Add(this.listBox1);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.dateTimePickerStart);
+            this.Controls.Add(this.dateTimePickerEnd);
+            this.Controls.Add(this.lblDets);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lblStartDate);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.labelCrsName);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.textTeacherId);
+            this.Controls.Add(this.txtCourseType);
+            this.Controls.Add(this.txtCourseName);
+            this.Controls.Add(this.txtCourseCode);
             this.Controls.Add(this.labelCrsCode);
-            this.Controls.Add(this.dataGridViewCourse);
+            this.Controls.Add(this.dataGridViewCourseList);
             this.Controls.Add(this.buttonDeleteCourse);
             this.Controls.Add(this.buttonUpdateCourse);
             this.Controls.Add(this.buttonRefreshCourse);
@@ -265,7 +257,7 @@
             this.Name = "EditCourse";
             this.Text = "EditCourse";
             this.Load += new System.EventHandler(this.EditCourse_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCourse)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCourseList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -279,18 +271,17 @@
         private System.Windows.Forms.Button buttonRefreshCourse;
         private System.Windows.Forms.Button buttonAddCourse;
         private System.Windows.Forms.Button courseBtnToAdminHP;
-        private System.Windows.Forms.DataGridView dataGridViewCourse;
+        private System.Windows.Forms.DataGridView dataGridViewCourseList;
         private System.Windows.Forms.Label labelCrsCode;
-        private System.Windows.Forms.TextBox textTeacherId;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtCourseCode;
+        private System.Windows.Forms.TextBox txtCourseName;
+        private System.Windows.Forms.TextBox txtCourseType;
         private System.Windows.Forms.Label labelCrsName;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblStartDate;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Label lblDets;
+        private System.Windows.Forms.DateTimePicker dateTimePickerEnd;
+        private System.Windows.Forms.DateTimePicker dateTimePickerStart;
     }
 }

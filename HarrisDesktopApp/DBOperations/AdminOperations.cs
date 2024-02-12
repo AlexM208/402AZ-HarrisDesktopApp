@@ -159,7 +159,7 @@ namespace HarrisDesktopApp.DBOperations
         }
 
         // Admin operation to delete Student details
-        public void DeleteClass(int classRoom)
+        public void DeleteClass(double classRoom)
         {
             string query = "Call DeleteClass(@cc_class_room)";
             MySqlCommand command = new MySqlCommand(query);
@@ -174,14 +174,14 @@ namespace HarrisDesktopApp.DBOperations
         {
             string query = "CALL AddTimetable(@xt_module_id, @xt_module_name, @xt_class_room, @xt_class_floor, @xt_class_building, @xt_Lname,@xt_Fname,@xt_class_hours)";
             MySqlCommand command = new MySqlCommand(query);
-            command.Parameters.AddWithValue("@xt_module_id", table1.xt_moduleName);
+            command.Parameters.AddWithValue("@xt_module_id", table1.xt_moduleID);
             command.Parameters.AddWithValue("@xt_module_name", table1.xt_moduleName);
-            command.Parameters.AddWithValue("@xt_class_room", table1.xt_moduleName);
-            command.Parameters.AddWithValue("@xt_class_floor", table1.xt_moduleName);
-            command.Parameters.AddWithValue("@xt_class_building", table1.xt_moduleName);
-            command.Parameters.AddWithValue("@xt_Lname", table1.xt_moduleName);
-            command.Parameters.AddWithValue("@xt_Fname", table1.xt_moduleName);
-            command.Parameters.AddWithValue("@xt_class_hours", table1.xt_moduleName);
+            command.Parameters.AddWithValue("@xt_class_room", table1.xt_classRoom);
+            command.Parameters.AddWithValue("@xt_class_floor", table1.xt_classFloor);
+            command.Parameters.AddWithValue("@xt_class_building", table1.xt_classBuilding);
+            command.Parameters.AddWithValue("@xt_Lname", table1.xt_tLname);
+            command.Parameters.AddWithValue("@xt_Fname", table1.xt_tFname);
+            command.Parameters.AddWithValue("@xt_class_hours", table1.xt_classHours);
 
             dataAccess.ExecuteNonQuery(command);
         }
@@ -199,15 +199,15 @@ namespace HarrisDesktopApp.DBOperations
             string query = "CALL UpdateTimetable(@xt_timetable_id, @xt_module_id, @xt_module_name, @xt_class_room, @xt_class_floor, @xt_class_building, @xt_Lname,@xt_Fname,@xt_class_hours)";
             MySqlCommand command = new MySqlCommand(query);
 
-            command.Parameters.AddWithValue("@xt_timetable_id", table1.xt_moduleID);
-            command.Parameters.AddWithValue("@xt_module_id", table1.xt_moduleName);
+            command.Parameters.AddWithValue("@xt_timetable_id", table1.xt_timetableID);
+            command.Parameters.AddWithValue("@xt_module_id", table1.xt_moduleID);
             command.Parameters.AddWithValue("@xt_module_name", table1.xt_moduleName);
-            command.Parameters.AddWithValue("@xt_class_room", table1.xt_moduleName);
-            command.Parameters.AddWithValue("@xt_class_floor", table1.xt_moduleName);
-            command.Parameters.AddWithValue("@xt_class_building", table1.xt_moduleName);
-            command.Parameters.AddWithValue("@xt_Lname", table1.xt_moduleName);
-            command.Parameters.AddWithValue("@xt_Fname", table1.xt_moduleName);
-            command.Parameters.AddWithValue("@xt_class_hours", table1.xt_moduleName);
+            command.Parameters.AddWithValue("@xt_class_room", table1.xt_classRoom);
+            command.Parameters.AddWithValue("@xt_class_floor", table1.xt_classFloor);
+            command.Parameters.AddWithValue("@xt_class_building", table1.xt_classBuilding);
+            command.Parameters.AddWithValue("@xt_Lname", table1.xt_tLname);
+            command.Parameters.AddWithValue("@xt_Fname", table1.xt_tFname);
+            command.Parameters.AddWithValue("@xt_class_hours", table1.xt_classHours);
 
             dataAccess.ExecuteNonQuery(command);
         }
@@ -436,11 +436,11 @@ namespace HarrisDesktopApp.DBOperations
         // Admin creating a new  Module Name
         public void AddModule(ModuleName module1)
         {
-            string query = "CALL AddModule(@xm_course_id, @xm_course_code, @xm_module_name, @xm_start_date, @xm_end_date, @xm_cw1_pass_fail, @xm_cw2_mark)";
+            string query = "CALL AddModule(@xm_course_id, @xm_module_name, @xm_start_date, @xm_end_date, @xm_cw1_pass_fail, @xm_cw2_mark,@xm_course_code)";
             MySqlCommand command = new MySqlCommand(query);
 
             command.Parameters.AddWithValue("@xm_course_id", module1.courseID);
-            command.Parameters.AddWithValue("@xm_course_code", module1.xm_moduleName);
+            command.Parameters.AddWithValue("@xm_course_code", module1.courseCode);
             command.Parameters.AddWithValue("@xm_module_name", module1.xm_moduleName);
             command.Parameters.AddWithValue("@xm_start_date", module1.startDate);
             command.Parameters.AddWithValue("@xm_end_date", module1.endDate);
@@ -460,12 +460,12 @@ namespace HarrisDesktopApp.DBOperations
         // Admin operation to update Module Name details
         public void UpdateModule(ModuleName module1)
         {
-            string query = "CALL UpdateModule(@xm_module_id, @xm_course_id, @xm_course_code, @xm_module_name, @xm_start_date, @xm_end_date, @xm_cw1_pass_fail, @xm_cw2_mark)\"";
+            string query = "CALL UpdateModule(@xm_module_id, @xm_course_id, @xm_module_name, @xm_start_date, @xm_end_date, @xm_cw1_pass_fail, @xm_cw2_mark, @xm_course_code)";
             MySqlCommand command = new MySqlCommand(query);
 
             command.Parameters.AddWithValue("@xm_module_id", module1.xm_moduleId);
             command.Parameters.AddWithValue("@xm_course_id", module1.courseID);
-            command.Parameters.AddWithValue("@xm_course_code", module1.xm_moduleName);
+            command.Parameters.AddWithValue("@xm_course_code", module1.courseCode);
             command.Parameters.AddWithValue("@xm_module_name", module1.xm_moduleName);
             command.Parameters.AddWithValue("@xm_start_date", module1.startDate);
             command.Parameters.AddWithValue("@xm_end_date", module1.endDate);

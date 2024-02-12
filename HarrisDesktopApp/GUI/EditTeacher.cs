@@ -89,7 +89,7 @@ namespace HarrisDesktopApp.GUI
 
         }
 
-
+        //Create and save teacher button
 
         private void buttonAddTeacherClick(object sender, EventArgs e)
         {
@@ -98,14 +98,17 @@ namespace HarrisDesktopApp.GUI
                 Fname=textTeacherFname.Text,
                 Lname=textTeacherLname.Text,
                 email=textTeacherEmail.Text,
-                tt_position=textTeacherTimetable.Text,
+                tt_position=textTeacherPosition.Text,
                 tt_department=textTeacherDept.Text,
                 timetableID=Convert.ToInt32(textTeacherTimetable.Text),
             };
             adminOperations.AddTeacher(newTeacher);
+            ClearTeacherFields();
             LoadTeachers();
         }
 
+
+        //update button
         private void buttonUpdateTeacherClick(object sender, EventArgs e)
         {
             if (dataGridViewTeacher.SelectedRows.Count > 0)
@@ -127,6 +130,7 @@ namespace HarrisDesktopApp.GUI
             }
         }
 
+        //Delete operation
         private void buttonDeleteTeacherClick(object sender, EventArgs e)
         {
             if (dataGridViewTeacher.SelectedRows.Count>0)
@@ -150,9 +154,13 @@ namespace HarrisDesktopApp.GUI
             }
         }
 
+
+        //refresh / view operation
         private void btnClickRefreshTeacher(object sender, EventArgs e)
         {
             LoadTeachers();
         }
+
+       
     }
 }
