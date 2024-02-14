@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HarrisDesktopApp.GUI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -29,6 +30,8 @@ namespace HarrisDesktopApp
         {
             string adminUser = "admin";
             string adminPasw = "admin";
+            string stUser = "student";
+            string stPasw = "student";
             if((textBoxUsername.Text==adminUser) && (textBoxPassword.Text == adminPasw))
             {
                  AdminHomePage adminp1 = new AdminHomePage();
@@ -36,6 +39,15 @@ namespace HarrisDesktopApp
                  this.Hide();
                 //Application.Run(new AdminHomePage());
                 lblPasswordInvalid.Hide();
+            }
+            else if ((textBoxUsername.Text == stUser) && (textBoxPassword.Text == stPasw))
+            {
+                StudentHomeP studentPage1 = new StudentHomeP();
+                studentPage1.Show();
+                this.Hide();
+                //Application.Run(new AdminHomePage());
+                lblPasswordInvalid.Hide();
+
             }
             else
             {

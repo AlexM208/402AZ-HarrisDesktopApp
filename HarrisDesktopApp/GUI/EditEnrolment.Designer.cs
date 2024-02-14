@@ -28,101 +28,233 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.labelAdminCourse = new System.Windows.Forms.Label();
-            this.buttonDeleteCourse = new System.Windows.Forms.Button();
-            this.buttonUpdateCourse = new System.Windows.Forms.Button();
-            this.buttonRefreshCourse = new System.Windows.Forms.Button();
-            this.buttonAddCourse = new System.Windows.Forms.Button();
-            this.courseBtnToAdminHP = new System.Windows.Forms.Button();
+            this.btnEnrolmentBackToAdminHP = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtCourseId = new System.Windows.Forms.TextBox();
+            this.lblDets = new System.Windows.Forms.Label();
+            this.dataGridViewEnrolment = new System.Windows.Forms.DataGridView();
+            this.btnDeleteEnrolment = new System.Windows.Forms.Button();
+            this.btnUpdateEnrolment = new System.Windows.Forms.Button();
+            this.btnRefreshEnrolment = new System.Windows.Forms.Button();
+            this.btnAddEnrolment = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtStPartFull = new System.Windows.Forms.TextBox();
+            this.txtStYear = new System.Windows.Forms.TextBox();
+            this.txtStId = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.labelAdminTeacher = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEnrolment)).BeginInit();
             this.SuspendLayout();
             // 
-            // labelAdminCourse
+            // btnEnrolmentBackToAdminHP
             // 
-            this.labelAdminCourse.AutoSize = true;
-            this.labelAdminCourse.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelAdminCourse.Location = new System.Drawing.Point(12, 9);
-            this.labelAdminCourse.Name = "labelAdminCourse";
-            this.labelAdminCourse.Size = new System.Drawing.Size(179, 29);
-            this.labelAdminCourse.TabIndex = 3;
-            this.labelAdminCourse.Text = "Welcome Admin";
+            this.btnEnrolmentBackToAdminHP.BackColor = System.Drawing.SystemColors.Control;
+            this.btnEnrolmentBackToAdminHP.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEnrolmentBackToAdminHP.Location = new System.Drawing.Point(526, 269);
+            this.btnEnrolmentBackToAdminHP.Name = "btnEnrolmentBackToAdminHP";
+            this.btnEnrolmentBackToAdminHP.Size = new System.Drawing.Size(105, 35);
+            this.btnEnrolmentBackToAdminHP.TabIndex = 39;
+            this.btnEnrolmentBackToAdminHP.Text = "Back";
+            this.btnEnrolmentBackToAdminHP.UseVisualStyleBackColor = true;
+            this.btnEnrolmentBackToAdminHP.Click += new System.EventHandler(this.btnClickBack);
             // 
-            // buttonDeleteCourse
+            // label9
             // 
-            this.buttonDeleteCourse.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDeleteCourse.Location = new System.Drawing.Point(267, 175);
-            this.buttonDeleteCourse.Name = "buttonDeleteCourse";
-            this.buttonDeleteCourse.Size = new System.Drawing.Size(105, 35);
-            this.buttonDeleteCourse.TabIndex = 43;
-            this.buttonDeleteCourse.Text = "Delete";
-            this.buttonDeleteCourse.UseVisualStyleBackColor = true;
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(33, 119);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(74, 19);
+            this.label9.TabIndex = 124;
+            this.label9.Text = "Course Id:";
             // 
-            // buttonUpdateCourse
+            // txtCourseId
             // 
-            this.buttonUpdateCourse.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonUpdateCourse.Location = new System.Drawing.Point(156, 175);
-            this.buttonUpdateCourse.Name = "buttonUpdateCourse";
-            this.buttonUpdateCourse.Size = new System.Drawing.Size(105, 35);
-            this.buttonUpdateCourse.TabIndex = 42;
-            this.buttonUpdateCourse.Text = "Update";
-            this.buttonUpdateCourse.UseVisualStyleBackColor = true;
+            this.txtCourseId.Location = new System.Drawing.Point(177, 119);
+            this.txtCourseId.Name = "txtCourseId";
+            this.txtCourseId.Size = new System.Drawing.Size(136, 20);
+            this.txtCourseId.TabIndex = 123;
             // 
-            // buttonRefreshCourse
+            // lblDets
             // 
-            this.buttonRefreshCourse.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonRefreshCourse.Location = new System.Drawing.Point(378, 175);
-            this.buttonRefreshCourse.Name = "buttonRefreshCourse";
-            this.buttonRefreshCourse.Size = new System.Drawing.Size(105, 35);
-            this.buttonRefreshCourse.TabIndex = 41;
-            this.buttonRefreshCourse.Text = "Refresh";
-            this.buttonRefreshCourse.UseVisualStyleBackColor = true;
+            this.lblDets.AutoSize = true;
+            this.lblDets.Font = new System.Drawing.Font("Calibri", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDets.Location = new System.Drawing.Point(34, 58);
+            this.lblDets.Name = "lblDets";
+            this.lblDets.Size = new System.Drawing.Size(176, 19);
+            this.lblDets.TabIndex = 120;
+            this.lblDets.Text = "Enter Enrolment Details ";
             // 
-            // buttonAddCourse
+            // dataGridViewEnrolment
             // 
-            this.buttonAddCourse.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAddCourse.Location = new System.Drawing.Point(45, 175);
-            this.buttonAddCourse.Name = "buttonAddCourse";
-            this.buttonAddCourse.Size = new System.Drawing.Size(105, 35);
-            this.buttonAddCourse.TabIndex = 40;
-            this.buttonAddCourse.Text = "Add";
-            this.buttonAddCourse.UseVisualStyleBackColor = true;
+            this.dataGridViewEnrolment.AllowUserToAddRows = false;
+            this.dataGridViewEnrolment.AllowUserToDeleteRows = false;
+            this.dataGridViewEnrolment.AllowUserToResizeColumns = false;
+            this.dataGridViewEnrolment.AllowUserToResizeRows = false;
+            this.dataGridViewEnrolment.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewEnrolment.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewEnrolment.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridViewEnrolment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewEnrolment.Location = new System.Drawing.Point(12, 336);
+            this.dataGridViewEnrolment.Name = "dataGridViewEnrolment";
+            this.dataGridViewEnrolment.ReadOnly = true;
+            this.dataGridViewEnrolment.Size = new System.Drawing.Size(710, 411);
+            this.dataGridViewEnrolment.TabIndex = 119;
             // 
-            // courseBtnToAdminHP
+            // btnDeleteEnrolment
             // 
-            this.courseBtnToAdminHP.BackColor = System.Drawing.SystemColors.Control;
-            this.courseBtnToAdminHP.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.courseBtnToAdminHP.Location = new System.Drawing.Point(489, 175);
-            this.courseBtnToAdminHP.Name = "courseBtnToAdminHP";
-            this.courseBtnToAdminHP.Size = new System.Drawing.Size(105, 35);
-            this.courseBtnToAdminHP.TabIndex = 39;
-            this.courseBtnToAdminHP.Text = "Back";
-            this.courseBtnToAdminHP.UseVisualStyleBackColor = true;
-            this.courseBtnToAdminHP.Click += new System.EventHandler(this.btnClickBack);
+            this.btnDeleteEnrolment.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteEnrolment.Location = new System.Drawing.Point(304, 269);
+            this.btnDeleteEnrolment.Name = "btnDeleteEnrolment";
+            this.btnDeleteEnrolment.Size = new System.Drawing.Size(105, 35);
+            this.btnDeleteEnrolment.TabIndex = 118;
+            this.btnDeleteEnrolment.Text = "Delete";
+            this.btnDeleteEnrolment.UseVisualStyleBackColor = true;
+            this.btnDeleteEnrolment.Click += new System.EventHandler(this.btnClickDeleteEnrolment);
+            // 
+            // btnUpdateEnrolment
+            // 
+            this.btnUpdateEnrolment.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdateEnrolment.Location = new System.Drawing.Point(193, 269);
+            this.btnUpdateEnrolment.Name = "btnUpdateEnrolment";
+            this.btnUpdateEnrolment.Size = new System.Drawing.Size(105, 35);
+            this.btnUpdateEnrolment.TabIndex = 117;
+            this.btnUpdateEnrolment.Text = "Update";
+            this.btnUpdateEnrolment.UseVisualStyleBackColor = true;
+            this.btnUpdateEnrolment.Click += new System.EventHandler(this.btnClickUpdateEnrolment);
+            // 
+            // btnRefreshEnrolment
+            // 
+            this.btnRefreshEnrolment.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefreshEnrolment.Location = new System.Drawing.Point(415, 269);
+            this.btnRefreshEnrolment.Name = "btnRefreshEnrolment";
+            this.btnRefreshEnrolment.Size = new System.Drawing.Size(105, 35);
+            this.btnRefreshEnrolment.TabIndex = 116;
+            this.btnRefreshEnrolment.Text = "Refresh";
+            this.btnRefreshEnrolment.UseVisualStyleBackColor = true;
+            this.btnRefreshEnrolment.Click += new System.EventHandler(this.btnClickRefreshEnrolment);
+            // 
+            // btnAddEnrolment
+            // 
+            this.btnAddEnrolment.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddEnrolment.Location = new System.Drawing.Point(82, 269);
+            this.btnAddEnrolment.Name = "btnAddEnrolment";
+            this.btnAddEnrolment.Size = new System.Drawing.Size(105, 35);
+            this.btnAddEnrolment.TabIndex = 115;
+            this.btnAddEnrolment.Text = "Add";
+            this.btnAddEnrolment.UseVisualStyleBackColor = true;
+            this.btnAddEnrolment.Click += new System.EventHandler(this.btnClickAddEnrolment);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(343, 119);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(109, 19);
+            this.label5.TabIndex = 111;
+            this.label5.Text = "Part / Full time:";
+            // 
+            // txtStPartFull
+            // 
+            this.txtStPartFull.Location = new System.Drawing.Point(458, 119);
+            this.txtStPartFull.Name = "txtStPartFull";
+            this.txtStPartFull.Size = new System.Drawing.Size(136, 20);
+            this.txtStPartFull.TabIndex = 107;
+            // 
+            // txtStYear
+            // 
+            this.txtStYear.Location = new System.Drawing.Point(458, 93);
+            this.txtStYear.Name = "txtStYear";
+            this.txtStYear.Size = new System.Drawing.Size(136, 20);
+            this.txtStYear.TabIndex = 106;
+            // 
+            // txtStId
+            // 
+            this.txtStId.Location = new System.Drawing.Point(177, 93);
+            this.txtStId.Name = "txtStId";
+            this.txtStId.Size = new System.Drawing.Size(136, 20);
+            this.txtStId.TabIndex = 105;
+            this.txtStId.TextChanged += new System.EventHandler(this.txtStId_TextChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(33, 93);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(78, 19);
+            this.label4.TabIndex = 103;
+            this.label4.Text = "Student Id:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(343, 93);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(41, 19);
+            this.label3.TabIndex = 102;
+            this.label3.Text = "Year:";
+            // 
+            // labelAdminTeacher
+            // 
+            this.labelAdminTeacher.AutoSize = true;
+            this.labelAdminTeacher.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAdminTeacher.Location = new System.Drawing.Point(12, 9);
+            this.labelAdminTeacher.Name = "labelAdminTeacher";
+            this.labelAdminTeacher.Size = new System.Drawing.Size(179, 29);
+            this.labelAdminTeacher.TabIndex = 100;
+            this.labelAdminTeacher.Text = "Welcome Admin";
             // 
             // EditEnrolment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.buttonDeleteCourse);
-            this.Controls.Add(this.buttonUpdateCourse);
-            this.Controls.Add(this.buttonRefreshCourse);
-            this.Controls.Add(this.buttonAddCourse);
-            this.Controls.Add(this.courseBtnToAdminHP);
-            this.Controls.Add(this.labelAdminCourse);
+            this.ClientSize = new System.Drawing.Size(734, 771);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.txtCourseId);
+            this.Controls.Add(this.lblDets);
+            this.Controls.Add(this.dataGridViewEnrolment);
+            this.Controls.Add(this.btnDeleteEnrolment);
+            this.Controls.Add(this.btnUpdateEnrolment);
+            this.Controls.Add(this.btnRefreshEnrolment);
+            this.Controls.Add(this.btnAddEnrolment);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.txtStPartFull);
+            this.Controls.Add(this.txtStYear);
+            this.Controls.Add(this.txtStId);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.labelAdminTeacher);
+            this.Controls.Add(this.btnEnrolmentBackToAdminHP);
             this.Name = "EditEnrolment";
             this.Text = "EditEnrolment";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEnrolment)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label labelAdminCourse;
-        private System.Windows.Forms.Button buttonDeleteCourse;
-        private System.Windows.Forms.Button buttonUpdateCourse;
-        private System.Windows.Forms.Button buttonRefreshCourse;
-        private System.Windows.Forms.Button buttonAddCourse;
-        private System.Windows.Forms.Button courseBtnToAdminHP;
+        private System.Windows.Forms.Button btnEnrolmentBackToAdminHP;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtCourseId;
+        private System.Windows.Forms.Label lblDets;
+        private System.Windows.Forms.DataGridView dataGridViewEnrolment;
+        private System.Windows.Forms.Button btnDeleteEnrolment;
+        private System.Windows.Forms.Button btnUpdateEnrolment;
+        private System.Windows.Forms.Button btnRefreshEnrolment;
+        private System.Windows.Forms.Button btnAddEnrolment;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtStPartFull;
+        private System.Windows.Forms.TextBox txtStYear;
+        private System.Windows.Forms.TextBox txtStId;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label labelAdminTeacher;
     }
 }

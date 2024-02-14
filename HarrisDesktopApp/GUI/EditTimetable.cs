@@ -43,13 +43,14 @@ namespace HarrisDesktopApp.GUI
                 {
                     xt_timetableID = Convert.ToInt32(selectedRow.Cells["timetable_id"].Value),
                     xt_moduleID = Convert.ToInt32(selectedRow.Cells["module_id"].Value),
-                    xt_moduleName = Convert.ToString(selectedRow.Cells["module_name"].Value),
-                    xt_tLname = Convert.ToString(selectedRow.Cells["t_Lname"].Value),
-                    xt_tFname = Convert.ToString(selectedRow.Cells["t_Fname"].Value),
                     xt_classRoom = Convert.ToDouble(selectedRow.Cells["class_room"].Value),
-                    xt_classFloor = Convert.ToString(selectedRow.Cells["class_floor"].Value),
-                    xt_classBuilding = Convert.ToString(selectedRow.Cells["class_building"].Value),
+                    xt_tId = Convert.ToInt32(selectedRow.Cells["t_id"].Value),
                     xt_classHours = Convert.ToString(selectedRow.Cells["class_hours"].Value),
+                    //xt_moduleName = Convert.ToString(selectedRow.Cells["module_name"].Value),
+                    //xt_tLname = Convert.ToString(selectedRow.Cells["t_Lname"].Value),
+                   // xt_tFname = Convert.ToString(selectedRow.Cells["t_Fname"].Value),
+                    //xt_classFloor = Convert.ToString(selectedRow.Cells["class_floor"].Value),
+                   // xt_classBuilding = Convert.ToString(selectedRow.Cells["class_building"].Value),
 
                 };
             }
@@ -59,14 +60,13 @@ namespace HarrisDesktopApp.GUI
         // clearing fields for Timetable
         private void ClearTimetableFields()
         {
-            txtTeacherLname.Clear();
-            txtTeacherFname.Clear();
-            txtModuleName.Clear();
-            txtModuleId.Clear();
-            txtClassFloor.Clear();
+            txtModuleId.Clear();           
             txtClassRoom.Clear();
-            txtClassBuilding.Clear();
+            txtTeacherId.Clear();           
             txtHoursTime.Clear();
+           // txtClassFloor.Clear();
+           // txtClassBuilding.Clear();
+            //txtModuleName.Clear();
         }
 
         // get the selected row Timetable id
@@ -86,18 +86,20 @@ namespace HarrisDesktopApp.GUI
         {
             Timetable newTimetable = new Timetable
             {
-                xt_moduleID = Convert.ToInt32(txtModuleId.Text),
-                xt_moduleName = txtModuleName.Text,
-                xt_tLname = txtTeacherLname.Text,
-                xt_tFname = txtTeacherFname.Text,
-                xt_classRoom = Convert.ToDouble(txtClassRoom.Text),
+               /* xt_classBuilding = txtClassBuilding.Text,               
+                xt_tFname = txtTeacherId.Text,
                 xt_classFloor = txtClassFloor.Text,
-                xt_classBuilding = txtClassBuilding.Text,
+                xt_tLname = txtTeacherId.Text,
+                xt_moduleName = txtModuleName.Text,*/
+                xt_moduleID = Convert.ToInt32(txtModuleId.Text),
+                xt_classRoom = Convert.ToDouble(txtClassRoom.Text),
+                xt_tId = Convert.ToInt32(txtTeacherId.Text),
                 xt_classHours = txtHoursTime.Text,
             };
             adminOperations.AddTimetable(newTimetable);
             ClearTimetableFields();
             LoadTimetable();
+
         }
 
 
@@ -109,13 +111,14 @@ namespace HarrisDesktopApp.GUI
                 Timetable selectedTimetable = GetSelectedRowTimetable();
                 if (selectedTimetable != null)
                 {
-                    selectedTimetable.xt_moduleID = Convert.ToInt32(txtModuleId.Text);
-                    selectedTimetable.xt_moduleName = txtModuleName.Text;
-                    selectedTimetable.xt_tLname = txtTeacherLname.Text;
-                    selectedTimetable.xt_tFname = txtTeacherFname.Text;
-                    selectedTimetable.xt_classRoom = Convert.ToDouble(txtClassRoom.Text);
-                    selectedTimetable.xt_classFloor = txtClassFloor.Text;
+                   /* selectedTimetable.xt_moduleName = txtModuleName.Text;
+                    selectedTimetable.xt_tLname = txtTeacherId.Text;
+                    selectedTimetable.xt_tFname = txtTeacherId.Text;
                     selectedTimetable.xt_classBuilding = txtClassBuilding.Text;
+                    selectedTimetable.xt_classFloor = txtClassFloor.Text;*/
+                    selectedTimetable.xt_moduleID = Convert.ToInt32(txtModuleId.Text);
+                    selectedTimetable.xt_classRoom = Convert.ToDouble(txtClassRoom.Text);
+                    selectedTimetable.xt_tId = Convert.ToInt32(txtTeacherId.Text);
                     selectedTimetable.xt_classHours = txtHoursTime.Text;
                     
 

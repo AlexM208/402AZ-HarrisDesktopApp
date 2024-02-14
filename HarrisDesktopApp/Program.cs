@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HarrisDesktopApp.GUI;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,8 +17,10 @@ namespace HarrisDesktopApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AdminHomePage());
             //Application.Run(new LoginPage());
+            //Application.Run(new AdminHomePage());
+            Application.Run(new StudentHomeP());
         }
     }
 }
+ 

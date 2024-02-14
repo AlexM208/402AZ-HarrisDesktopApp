@@ -96,6 +96,7 @@ namespace HarrisDesktopApp.GUI
             };
             adminOperations.AddCourseList(newCourse);
             LoadCourse();
+            ClearCourseListFields();
 
         }
 

@@ -136,7 +136,7 @@
             this.buttonEnrolmentDets.Name = "buttonEnrolmentDets";
             this.buttonEnrolmentDets.Size = new System.Drawing.Size(129, 34);
             this.buttonEnrolmentDets.TabIndex = 9;
-            this.buttonEnrolmentDets.Text = "Enrolement";
+            this.buttonEnrolmentDets.Text = "Enrolment";
             this.buttonEnrolmentDets.UseVisualStyleBackColor = true;
             this.buttonEnrolmentDets.Click += new System.EventHandler(this.btnClickEnrolmentDets);
             // 

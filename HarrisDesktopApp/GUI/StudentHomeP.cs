@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HarrisDesktopApp.DBOperations;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,34 @@ namespace HarrisDesktopApp.GUI
 {
     public partial class StudentHomeP : Form
     {
+        private StudentOperations studentOperations= new StudentOperations();
         public StudentHomeP()
         {
             InitializeComponent();
+        }
+
+        private void btnClickShowTimetable(object sender, EventArgs e)
+        {
+            dataGridViewStTimetable.DataSource = studentOperations.GetTimetable();
+            dataGridViewStMaterials.Hide();
+            dataGridViewStTimetable.Show();
+
+        }
+
+        private void btnClickShowMaterials(object sender, EventArgs e)
+        {
+            dataGridViewStMaterials.DataSource = studentOperations.GetMaterials();
+            dataGridViewStTimetable.Hide();
+            dataGridViewStMaterials.Show();
+
+        }
+
+        private void btnClickLogoutStudent(object sender, EventArgs e)
+        {
+            LoginPage login1 = new LoginPage();
+            login1.StartPosition = FormStartPosition.CenterScreen;
+            login1.Show();
+            this.Hide();
         }
     }
 }

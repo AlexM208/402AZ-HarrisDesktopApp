@@ -45,7 +45,6 @@ namespace HarrisDesktopApp.GUI
                     xm_moduleName = Convert.ToString(selectedRow.Cells["module_name"].Value),
                     xm_cw1_pass_fail = Convert.ToString(selectedRow.Cells["cw1_pass_fail"].Value),
                     xm_cw2_mark = Convert.ToString(selectedRow.Cells["cw2_mark"].Value),
-                    courseCode = Convert.ToString(selectedRow.Cells["course_code"].Value),
                     courseID = Convert.ToInt32(selectedRow.Cells["course_id"].Value),
                     startDate = Convert.ToDateTime(selectedRow.Cells["start_date"].Value),
                     endDate = Convert.ToDateTime(selectedRow.Cells["end_date"].Value),
@@ -59,7 +58,6 @@ namespace HarrisDesktopApp.GUI
         private void ClearModuleFields()
         {
             txtModuleName.Clear();
-            txtMcourseCode.Clear();
             txtMcourseId.Clear();            
             txtPassMark1.Clear();
             txtPassMark2.Clear();
@@ -97,7 +95,6 @@ namespace HarrisDesktopApp.GUI
                 endDate = dateTimePickerEnd.Value,
                 xm_cw1_pass_fail = txtPassMark1.Text,
                 xm_cw2_mark = txtPassMark2.Text,
-                courseCode = txtMcourseCode.Text,
                 courseID = Convert.ToInt32(txtMcourseId.Text),
 
             };
@@ -118,7 +115,6 @@ namespace HarrisDesktopApp.GUI
                 if (selectedModule != null)
                 {
                     selectedModule.xm_moduleName = txtModuleName.Text;
-                    selectedModule.courseCode = txtMcourseCode.Text;
                     selectedModule.courseID = Convert.ToInt32(txtMcourseId.Text); 
                     selectedModule.startDate = dateTimePickerStart.Value;
                     selectedModule.endDate = dateTimePickerEnd.Value;

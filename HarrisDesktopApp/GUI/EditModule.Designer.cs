@@ -42,9 +42,7 @@
             this.txtMcourseId = new System.Windows.Forms.TextBox();
             this.txtPassMark2 = new System.Windows.Forms.TextBox();
             this.txtPassMark1 = new System.Windows.Forms.TextBox();
-            this.txtMcourseCode = new System.Windows.Forms.TextBox();
             this.txtModuleName = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.labelAdminTeacher = new System.Windows.Forms.Label();
@@ -69,7 +67,7 @@
             // 
             this.lblDets.AutoSize = true;
             this.lblDets.Font = new System.Drawing.Font("Calibri", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDets.Location = new System.Drawing.Point(88, 66);
+            this.lblDets.Location = new System.Drawing.Point(78, 61);
             this.lblDets.Name = "lblDets";
             this.lblDets.Size = new System.Drawing.Size(157, 19);
             this.lblDets.TabIndex = 70;
@@ -161,7 +159,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(355, 119);
+            this.label6.Location = new System.Drawing.Point(78, 119);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(74, 19);
             this.label6.TabIndex = 62;
@@ -179,9 +177,9 @@
             // 
             // txtMcourseId
             // 
-            this.txtMcourseId.Location = new System.Drawing.Point(443, 119);
+            this.txtMcourseId.Location = new System.Drawing.Point(195, 119);
             this.txtMcourseId.Name = "txtMcourseId";
-            this.txtMcourseId.Size = new System.Drawing.Size(147, 20);
+            this.txtMcourseId.Size = new System.Drawing.Size(136, 20);
             this.txtMcourseId.TabIndex = 58;
             // 
             // txtPassMark2
@@ -198,29 +196,12 @@
             this.txtPassMark1.Size = new System.Drawing.Size(136, 20);
             this.txtPassMark1.TabIndex = 56;
             // 
-            // txtMcourseCode
-            // 
-            this.txtMcourseCode.Location = new System.Drawing.Point(195, 121);
-            this.txtMcourseCode.Name = "txtMcourseCode";
-            this.txtMcourseCode.Size = new System.Drawing.Size(136, 20);
-            this.txtMcourseCode.TabIndex = 55;
-            // 
             // txtModuleName
             // 
             this.txtModuleName.Location = new System.Drawing.Point(195, 95);
             this.txtModuleName.Name = "txtModuleName";
             this.txtModuleName.Size = new System.Drawing.Size(136, 20);
             this.txtModuleName.TabIndex = 54;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(78, 119);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(95, 19);
-            this.label4.TabIndex = 53;
-            this.label4.Text = "Course Code:";
             // 
             // label3
             // 
@@ -288,9 +269,7 @@
             this.Controls.Add(this.txtMcourseId);
             this.Controls.Add(this.txtPassMark2);
             this.Controls.Add(this.txtPassMark1);
-            this.Controls.Add(this.txtMcourseCode);
             this.Controls.Add(this.txtModuleName);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.labelAdminTeacher);
@@ -318,9 +297,7 @@
         private System.Windows.Forms.TextBox txtMcourseId;
         private System.Windows.Forms.TextBox txtPassMark2;
         private System.Windows.Forms.TextBox txtPassMark1;
-        private System.Windows.Forms.TextBox txtMcourseCode;
         private System.Windows.Forms.TextBox txtModuleName;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label labelAdminTeacher;

@@ -28,26 +28,15 @@ namespace HarrisDesktopApp.GUI
         private void LoadClass()
         {
             dataGridViewClass.DataSource = adminOperations.GetClass();
-        }
-
-
-       
-
+        }   
 
         // selecting row in Class table and replacing values
-
         private Class GetSelectedRowClass()
         {
             if (dataGridViewClass.SelectedRows.Count > 0)
             {
                 DataGridViewRow selectedRow = dataGridViewClass.SelectedRows[0];
 
-                
-                /*txtRoom.Text = Convert.ToString(dataGridViewClass.SelectedRows[0].Cells["class_room"].Value);
-                txtBuilding.Text = Convert.ToString(selectedRow.Cells["class_building"].Value);
-                txtFloor.Text = Convert.ToString(selectedRow.Cells["class_floor"].Value);
-                txtAddress.Text = Convert.ToString(selectedRow.Cells["class_address"].Value);
-                txtPostcode.Text = Convert.ToString(selectedRow.Cells["class_postcode"].Value);*/
                 return new Class
                 {                
                     cc_classRoom = Convert.ToDouble(selectedRow.Cells["class_room"].Value),
@@ -73,8 +62,7 @@ namespace HarrisDesktopApp.GUI
 
         }
 
-        // get the selected row Teacher id
-
+        // get the selected row Class id
         private double GetSelectedRowClassRoom()
         {
             if (dataGridViewClass.SelectedRows.Count > 0)
@@ -97,7 +85,7 @@ namespace HarrisDesktopApp.GUI
 
         }
 
-        //Create and save teacher button
+        //Create and save Class button
         private void btnClickAddClass(object sender, EventArgs e)
         {
             Class newClass = new Class
@@ -110,6 +98,7 @@ namespace HarrisDesktopApp.GUI
                 
             };
             adminOperations.AddClass(newClass);
+            ClearClassFields();
             lblAddClass.Show();
             lblDeleteClass.Hide();            
             lblUpdateClass.Hide();
@@ -121,9 +110,8 @@ namespace HarrisDesktopApp.GUI
         {
             if (dataGridViewClass.SelectedRows.Count > 0)
             {
-                Class selectedClass = GetSelectedRowClass();
-                
-                
+
+                Class selectedClass = GetSelectedRowClass();                  
                 if (selectedClass != null)
                 {
                     
@@ -135,11 +123,11 @@ namespace HarrisDesktopApp.GUI
                     
 
                     adminOperations.UpdateClass(selectedClass);
+                    ClearClassFields();
                     LoadClass();
                     lblDeleteClass.Hide();
                     lblAddClass.Hide();
                     lblUpdateClass.Show();
-                    ClearClassFields();
                 }
             }
 
