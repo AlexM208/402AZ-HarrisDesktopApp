@@ -48,7 +48,6 @@ namespace HarrisDesktopApp.GUI
                     email = Convert.ToString(selectedRow.Cells["t_email"].Value),
                     tt_position = Convert.ToString(selectedRow.Cells["t_position"].Value),
                     tt_department = Convert.ToString(selectedRow.Cells["t_department"].Value),
-                    timetableID = Convert.ToInt32(selectedRow.Cells["timetable_id"].Value),
 
                 };
             }
@@ -63,7 +62,6 @@ namespace HarrisDesktopApp.GUI
             textTeacherEmail.Clear();  
             textTeacherPosition.Clear();
             textTeacherDept.Clear();    
-            textTeacherTimetable.Clear();
         }
 
         // get the selected row Teacher id
@@ -100,11 +98,13 @@ namespace HarrisDesktopApp.GUI
                 email=textTeacherEmail.Text,
                 tt_position=textTeacherPosition.Text,
                 tt_department=textTeacherDept.Text,
-                timetableID=Convert.ToInt32(textTeacherTimetable.Text),
             };
             adminOperations.AddTeacher(newTeacher);
             ClearTeacherFields();
             LoadTeachers();
+            lblAddTeacher.Show();
+            lblDeleteTeacher.Hide();
+            lblUpdateTeacher.Hide();
         }
 
 
@@ -121,10 +121,13 @@ namespace HarrisDesktopApp.GUI
                     selectedTeacher.email= textTeacherEmail.Text;
                     selectedTeacher.tt_position= textTeacherPosition.Text;
                     selectedTeacher.tt_department= textTeacherDept.Text;
-                    selectedTeacher.timetableID= Convert.ToInt32(textTeacherTimetable.Text);
+                   
 
                     adminOperations.UpdateTeacher(selectedTeacher);
                     LoadTeachers();
+                    lblAddTeacher.Hide();
+                    lblDeleteTeacher.Hide();
+                    lblUpdateTeacher.Show();
                     ClearTeacherFields();
                 }
             }
@@ -139,18 +142,31 @@ namespace HarrisDesktopApp.GUI
 
                 if (TeacherId1 != -1)
                 {
-                    adminOperations.DeleteTeacher(TeacherId1);
-                    LoadTeachers();
-                    ClearTeacherFields() ;
+                    try
+                    {
+
+
+                        adminOperations.DeleteTeacher(TeacherId1);
+                        LoadTeachers();
+                        lblAddTeacher.Hide();
+                        lblDeleteTeacher.Show();
+                        lblUpdateTeacher.Hide();
+                        ClearTeacherFields();
+                    }
+                    catch 
+                    {
+                       MessageBox.Show("Teacher in use, can't be deleted!");
+
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Please select a customer to delete.");
+                    MessageBox.Show("Please select a teacher to delete.");
                 }            
             }
             else
             {
-                MessageBox.Show("Please select a customer to delete.");
+                MessageBox.Show("Please select a teacher to delete.");
             }
         }
 
@@ -159,6 +175,9 @@ namespace HarrisDesktopApp.GUI
         private void btnClickRefreshTeacher(object sender, EventArgs e)
         {
             LoadTeachers();
+            lblAddTeacher.Hide();
+            lblDeleteTeacher.Hide();
+            lblUpdateTeacher.Hide();
         }
 
        

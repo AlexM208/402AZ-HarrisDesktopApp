@@ -50,7 +50,7 @@ namespace HarrisDesktopApp.GUI
                     ss_postcode = Convert.ToString(selectedRow.Cells["s_postcode"].Value),
                     ss_grade_CW2 = Convert.ToString(selectedRow.Cells["grade_CW2"].Value),
                     ss_pass_fail = Convert.ToString(selectedRow.Cells["pass_fail"].Value),
-                    timetableID = Convert.ToInt32(selectedRow.Cells["timetable_id"].Value),
+                    ss_class_room = Convert.ToDouble(selectedRow.Cells["class_room"].Value),
 
                 };
             }
@@ -68,7 +68,7 @@ namespace HarrisDesktopApp.GUI
             txtStAddress.Clear();
             txtStGrade.Clear();
             txtStPassFail.Clear();
-            txtStTimetableId.Clear();
+            txtStClassRoom.Clear();
         }
 
         // get the selected row Student id
@@ -95,11 +95,14 @@ namespace HarrisDesktopApp.GUI
                 ss_postcode = txtStPostcode.Text,
                 ss_grade_CW2 = txtStGrade.Text,
                 ss_pass_fail = txtStPassFail.Text,
-                timetableID = Convert.ToInt32(txtStTimetableId.Text),
+                ss_class_room = Convert.ToDouble(txtStClassRoom.Text),
             };
             adminOperations.AddStudent(newStudent);
             ClearStudentFields();
             LoadStudents();
+            lblDeleteStudent.Hide();
+            lblAddStudent.Show();
+            lblUpdateStudent.Hide();
         }
 
         //update button
@@ -118,13 +121,17 @@ namespace HarrisDesktopApp.GUI
                     selectedStudent.ss_postcode = txtStPostcode.Text;
                     selectedStudent.ss_grade_CW2 = txtStGrade.Text;
                     selectedStudent.ss_pass_fail = txtStPassFail.Text;
-                    selectedStudent.timetableID = Convert.ToInt32(txtStTimetableId.Text);
+                    selectedStudent.ss_class_room = Convert.ToDouble(txtStClassRoom.Text);
 
 
                     adminOperations.UpdateStudent(selectedStudent);
                     ClearStudentFields();
                     LoadStudents();
-                }
+
+                lblDeleteStudent.Hide();
+                lblAddStudent.Hide();
+                lblUpdateStudent.Show();
+            }
             }        
 
         //Delete operation Timetable
@@ -139,15 +146,18 @@ namespace HarrisDesktopApp.GUI
                     adminOperations.DeleteStudent(student1);
                     LoadStudents();
                     ClearStudentFields();
+                    lblDeleteStudent.Show();
+                    lblAddStudent.Hide();
+                    lblUpdateStudent.Hide();
                 }
                 else
                 {
-                    MessageBox.Show("Please select a customer to delete.");
+                    MessageBox.Show("Please select a Student to delete.");
                 }
             }
             else
             {
-                MessageBox.Show("Please select a customer to delete.");
+                MessageBox.Show("Please select a Student to delete.");
             }
         }
 
@@ -155,6 +165,9 @@ namespace HarrisDesktopApp.GUI
         private void btnClickRefreshStudent(object sender, EventArgs e)
         {
             LoadStudents();
+            lblDeleteStudent.Hide();
+            lblAddStudent.Hide();
+            lblUpdateStudent.Hide();
         }
 
         //back button
@@ -165,5 +178,14 @@ namespace HarrisDesktopApp.GUI
             adminp1.Show();
             this.Hide();
         }
+
+        private void btnClickBackToTeacher(object sender, EventArgs e)
+        {
+            TeacherHomePage teacherHP = new TeacherHomePage();
+            teacherHP.StartPosition = FormStartPosition.CenterScreen;
+            teacherHP.Show();
+            this.Hide();
+        }
+        
     }
 }

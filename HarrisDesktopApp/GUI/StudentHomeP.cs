@@ -42,5 +42,12 @@ namespace HarrisDesktopApp.GUI
             login1.Show();
             this.Hide();
         }
+
+        private void btnClickRefresh(object sender, EventArgs e)
+        {
+            dataGridViewStTimetable.Hide();
+            dataGridViewStMaterials.Hide();
+
+        }
     }
 }

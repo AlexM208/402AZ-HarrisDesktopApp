@@ -109,7 +109,6 @@
   <ItemGroup>
     <Compile Include="DataAccess.cs" />
     <Compile Include="DBOperations\AdminOperations.cs" />
-    <Compile Include="DBOperations\RegistryOperations.cs" />
     <Compile Include="DBOperations\StudentOperations.cs" />
     <Compile Include="DBOperations\TeacherOperations.cs" />
     <Compile Include="GUI\AdminHomePage.cs">

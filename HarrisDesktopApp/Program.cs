@@ -17,9 +17,11 @@ namespace HarrisDesktopApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new LoginPage());
+            Application.Run(new LoginPage());
             //Application.Run(new AdminHomePage());
-            Application.Run(new StudentHomeP());
+            //Application.Run(new StudentHomeP());
+            //Application.Run(new EditMaterials());
+            //Application.Run(new TeacherHomePage());
         }
     }
 }

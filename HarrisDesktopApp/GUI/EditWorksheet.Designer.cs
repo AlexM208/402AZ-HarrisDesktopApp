@@ -34,6 +34,9 @@
             this.buttonRefreshCourse = new System.Windows.Forms.Button();
             this.buttonAddCourse = new System.Windows.Forms.Button();
             this.courseBtnToAdminHP = new System.Windows.Forms.Button();
+            this.lblDeleteClass = new System.Windows.Forms.Label();
+            this.lblUpdateClass = new System.Windows.Forms.Label();
+            this.lblAddClass = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelAdminCourse
@@ -98,11 +101,50 @@
             this.courseBtnToAdminHP.UseVisualStyleBackColor = true;
             this.courseBtnToAdminHP.Click += new System.EventHandler(this.btnClickBack);
             // 
+            // lblDeleteClass
+            // 
+            this.lblDeleteClass.AutoSize = true;
+            this.lblDeleteClass.Font = new System.Drawing.Font("Calibri", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDeleteClass.ForeColor = System.Drawing.Color.Blue;
+            this.lblDeleteClass.Location = new System.Drawing.Point(199, 104);
+            this.lblDeleteClass.Name = "lblDeleteClass";
+            this.lblDeleteClass.Size = new System.Drawing.Size(231, 23);
+            this.lblDeleteClass.TabIndex = 62;
+            this.lblDeleteClass.Text = "Course deleted  successfully!";
+            this.lblDeleteClass.Visible = false;
+            // 
+            // lblUpdateClass
+            // 
+            this.lblUpdateClass.AutoSize = true;
+            this.lblUpdateClass.Font = new System.Drawing.Font("Calibri", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUpdateClass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.lblUpdateClass.Location = new System.Drawing.Point(391, 104);
+            this.lblUpdateClass.Name = "lblUpdateClass";
+            this.lblUpdateClass.Size = new System.Drawing.Size(234, 23);
+            this.lblUpdateClass.TabIndex = 61;
+            this.lblUpdateClass.Text = "Course updated successfully!";
+            this.lblUpdateClass.Visible = false;
+            // 
+            // lblAddClass
+            // 
+            this.lblAddClass.AutoSize = true;
+            this.lblAddClass.Font = new System.Drawing.Font("Calibri", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddClass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lblAddClass.Location = new System.Drawing.Point(199, 127);
+            this.lblAddClass.Name = "lblAddClass";
+            this.lblAddClass.Size = new System.Drawing.Size(228, 23);
+            this.lblAddClass.TabIndex = 63;
+            this.lblAddClass.Text = "Course created successfully!";
+            this.lblAddClass.Visible = false;
+            // 
             // EditWorksheet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblDeleteClass);
+            this.Controls.Add(this.lblUpdateClass);
+            this.Controls.Add(this.lblAddClass);
             this.Controls.Add(this.buttonDeleteCourse);
             this.Controls.Add(this.buttonUpdateCourse);
             this.Controls.Add(this.buttonRefreshCourse);
@@ -124,5 +166,8 @@
         private System.Windows.Forms.Button buttonRefreshCourse;
         private System.Windows.Forms.Button buttonAddCourse;
         private System.Windows.Forms.Button courseBtnToAdminHP;
+        private System.Windows.Forms.Label lblDeleteClass;
+        private System.Windows.Forms.Label lblUpdateClass;
+        private System.Windows.Forms.Label lblAddClass;
     }
 }

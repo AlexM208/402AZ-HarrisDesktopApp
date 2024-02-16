@@ -46,6 +46,9 @@
             this.lblDets = new System.Windows.Forms.Label();
             this.dateTimePickerEnd = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerStart = new System.Windows.Forms.DateTimePicker();
+            this.lblUpdateCourse = new System.Windows.Forms.Label();
+            this.lblDeleteCourse = new System.Windows.Forms.Label();
+            this.lblAddCourse = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCourseList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -231,6 +234,42 @@
             this.dateTimePickerStart.Size = new System.Drawing.Size(200, 20);
             this.dateTimePickerStart.TabIndex = 47;
             // 
+            // lblUpdateCourse
+            // 
+            this.lblUpdateCourse.AutoSize = true;
+            this.lblUpdateCourse.Font = new System.Drawing.Font("Calibri", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUpdateCourse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.lblUpdateCourse.Location = new System.Drawing.Point(243, 208);
+            this.lblUpdateCourse.Name = "lblUpdateCourse";
+            this.lblUpdateCourse.Size = new System.Drawing.Size(234, 23);
+            this.lblUpdateCourse.TabIndex = 58;
+            this.lblUpdateCourse.Text = "Course updated successfully!";
+            this.lblUpdateCourse.Visible = false;
+            // 
+            // lblDeleteCourse
+            // 
+            this.lblDeleteCourse.AutoSize = true;
+            this.lblDeleteCourse.Font = new System.Drawing.Font("Calibri", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDeleteCourse.ForeColor = System.Drawing.Color.Blue;
+            this.lblDeleteCourse.Location = new System.Drawing.Point(243, 208);
+            this.lblDeleteCourse.Name = "lblDeleteCourse";
+            this.lblDeleteCourse.Size = new System.Drawing.Size(231, 23);
+            this.lblDeleteCourse.TabIndex = 59;
+            this.lblDeleteCourse.Text = "Course deleted  successfully!";
+            this.lblDeleteCourse.Visible = false;
+            // 
+            // lblAddCourse
+            // 
+            this.lblAddCourse.AutoSize = true;
+            this.lblAddCourse.Font = new System.Drawing.Font("Calibri", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddCourse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lblAddCourse.Location = new System.Drawing.Point(243, 208);
+            this.lblAddCourse.Name = "lblAddCourse";
+            this.lblAddCourse.Size = new System.Drawing.Size(228, 23);
+            this.lblAddCourse.TabIndex = 60;
+            this.lblAddCourse.Text = "Course created successfully!";
+            this.lblAddCourse.Visible = false;
+            // 
             // EditCourse
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -254,6 +293,9 @@
             this.Controls.Add(this.buttonAddCourse);
             this.Controls.Add(this.courseBtnToAdminHP);
             this.Controls.Add(this.labelAdminCourse);
+            this.Controls.Add(this.lblAddCourse);
+            this.Controls.Add(this.lblDeleteCourse);
+            this.Controls.Add(this.lblUpdateCourse);
             this.Name = "EditCourse";
             this.Text = "EditCourse";
             this.Load += new System.EventHandler(this.EditCourse_Load);
@@ -283,5 +325,8 @@
         private System.Windows.Forms.Label lblDets;
         private System.Windows.Forms.DateTimePicker dateTimePickerEnd;
         private System.Windows.Forms.DateTimePicker dateTimePickerStart;
+        private System.Windows.Forms.Label lblUpdateCourse;
+        private System.Windows.Forms.Label lblDeleteCourse;
+        private System.Windows.Forms.Label lblAddCourse;
     }
 }

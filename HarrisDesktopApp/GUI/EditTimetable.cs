@@ -60,10 +60,7 @@ namespace HarrisDesktopApp.GUI
         // clearing fields for Timetable
         private void ClearTimetableFields()
         {
-            txtModuleId.Clear();           
-            txtClassRoom.Clear();
-            txtTeacherId.Clear();           
-            txtHoursTime.Clear();
+            
            // txtClassFloor.Clear();
            // txtClassBuilding.Clear();
             //txtModuleName.Clear();
@@ -91,12 +88,12 @@ namespace HarrisDesktopApp.GUI
                 xt_classFloor = txtClassFloor.Text,
                 xt_tLname = txtTeacherId.Text,
                 xt_moduleName = txtModuleName.Text,*/
-                xt_moduleID = Convert.ToInt32(txtModuleId.Text),
-                xt_classRoom = Convert.ToDouble(txtClassRoom.Text),
-                xt_tId = Convert.ToInt32(txtTeacherId.Text),
-                xt_classHours = txtHoursTime.Text,
+               // xt_moduleID = Convert.ToInt32(txtModuleId.Text),
+                //xt_classRoom = Convert.ToDouble(txtClassRoom.Text),
+                //xt_tId = Convert.ToInt32(txtTeacherId.Text),
+               // xt_classHours = txtHoursTime.Text,
             };
-            adminOperations.AddTimetable(newTimetable);
+            //adminOperations.AddTimetable(newTimetable);
             ClearTimetableFields();
             LoadTimetable();
 
@@ -116,13 +113,13 @@ namespace HarrisDesktopApp.GUI
                     selectedTimetable.xt_tFname = txtTeacherId.Text;
                     selectedTimetable.xt_classBuilding = txtClassBuilding.Text;
                     selectedTimetable.xt_classFloor = txtClassFloor.Text;*/
-                    selectedTimetable.xt_moduleID = Convert.ToInt32(txtModuleId.Text);
-                    selectedTimetable.xt_classRoom = Convert.ToDouble(txtClassRoom.Text);
-                    selectedTimetable.xt_tId = Convert.ToInt32(txtTeacherId.Text);
-                    selectedTimetable.xt_classHours = txtHoursTime.Text;
+                    //selectedTimetable.xt_moduleID = Convert.ToInt32(txtModuleId.Text);
+                   // selectedTimetable.xt_classRoom = Convert.ToDouble(txtClassRoom.Text);
+                   // selectedTimetable.xt_tId = Convert.ToInt32(txtTeacherId.Text);
+                  //  selectedTimetable.xt_classHours = txtHoursTime.Text;
                     
 
-                    adminOperations.UpdateTimetable(selectedTimetable);
+                    //adminOperations.UpdateTimetable(selectedTimetable);
                     LoadTimetable();
                     ClearTimetableFields();
                 }
@@ -138,7 +135,7 @@ namespace HarrisDesktopApp.GUI
 
                 if (timetable1 != -1)
                 {
-                    adminOperations.DeleteTimetable(timetable1);
+                    //adminOperations.DeleteTimetable(timetable1);
                     LoadTimetable();
                     ClearTimetableFields();
                 }
@@ -167,6 +164,11 @@ namespace HarrisDesktopApp.GUI
             adminp1.StartPosition = FormStartPosition.CenterScreen;
             adminp1.Show();
             this.Hide();            
+        }
+
+        private void lblDets_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

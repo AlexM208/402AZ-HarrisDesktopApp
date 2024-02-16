@@ -49,6 +49,8 @@
             this.lblAddClass = new System.Windows.Forms.Label();
             this.lblDeleteClass = new System.Windows.Forms.Label();
             this.lblUpdateClass = new System.Windows.Forms.Label();
+            this.txtTeacherId = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClass)).BeginInit();
             this.SuspendLayout();
             // 
@@ -238,9 +240,9 @@
             this.lblAddClass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.lblAddClass.Location = new System.Drawing.Point(242, 204);
             this.lblAddClass.Name = "lblAddClass";
-            this.lblAddClass.Size = new System.Drawing.Size(214, 23);
+            this.lblAddClass.Size = new System.Drawing.Size(218, 23);
             this.lblAddClass.TabIndex = 55;
-            this.lblAddClass.Text = "Class created successfully!";
+            this.lblAddClass.Text = "Class created  successfully!";
             this.lblAddClass.Visible = false;
             // 
             // lblDeleteClass
@@ -250,9 +252,9 @@
             this.lblDeleteClass.ForeColor = System.Drawing.Color.Blue;
             this.lblDeleteClass.Location = new System.Drawing.Point(243, 204);
             this.lblDeleteClass.Name = "lblDeleteClass";
-            this.lblDeleteClass.Size = new System.Drawing.Size(213, 23);
+            this.lblDeleteClass.Size = new System.Drawing.Size(217, 23);
             this.lblDeleteClass.TabIndex = 56;
-            this.lblDeleteClass.Text = "Class deleted successfully!";
+            this.lblDeleteClass.Text = "Class deleted  successfully!";
             this.lblDeleteClass.Visible = false;
             // 
             // lblUpdateClass
@@ -267,14 +269,30 @@
             this.lblUpdateClass.Text = "Class updated successfully!";
             this.lblUpdateClass.Visible = false;
             // 
+            // txtTeacherId
+            // 
+            this.txtTeacherId.Location = new System.Drawing.Point(443, 171);
+            this.txtTeacherId.Name = "txtTeacherId";
+            this.txtTeacherId.Size = new System.Drawing.Size(147, 20);
+            this.txtTeacherId.TabIndex = 59;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(343, 171);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(80, 19);
+            this.label2.TabIndex = 58;
+            this.label2.Text = "Teacher Id:";
+            // 
             // EditClass
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(734, 771);
-            this.Controls.Add(this.lblUpdateClass);
-            this.Controls.Add(this.lblDeleteClass);
-            this.Controls.Add(this.lblAddClass);
+            this.Controls.Add(this.txtTeacherId);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.lblDets);
             this.Controls.Add(this.dataGridViewClass);
             this.Controls.Add(this.lblPostcode);
@@ -293,6 +311,9 @@
             this.Controls.Add(this.btnAddClass);
             this.Controls.Add(this.btbBackAdminHP);
             this.Controls.Add(this.labelAdminCourse);
+            this.Controls.Add(this.lblAddClass);
+            this.Controls.Add(this.lblUpdateClass);
+            this.Controls.Add(this.lblDeleteClass);
             this.Name = "EditClass";
             this.Text = "EditClass";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClass)).EndInit();
@@ -324,5 +345,7 @@
         private System.Windows.Forms.Label lblAddClass;
         private System.Windows.Forms.Label lblDeleteClass;
         private System.Windows.Forms.Label lblUpdateClass;
+        private System.Windows.Forms.TextBox txtTeacherId;
+        private System.Windows.Forms.Label label2;
     }
 }

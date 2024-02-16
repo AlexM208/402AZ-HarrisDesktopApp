@@ -13,22 +13,20 @@ namespace HarrisDesktopApp.DBOperations
     internal class AdminOperations
     {
         private DataAccess dataAccess = new DataAccess();
+        
 
         //**** CRUD operations **********************************************************************************************************************
         // Admin creating a new Teacher
         public void AddTeacher(Teacher teacher)
         {
-            string query ="CALL AddTeacher(@tt_Lname, @tt_Fname, @tt_email, @tt_position,@tt_department, @tt_timetable_id)";
+            string query ="CALL AddTeacher(@tt_Lname, @tt_Fname, @tt_email, @tt_position,@tt_department)";
             MySqlCommand command = new MySqlCommand(query);
             command.Parameters.AddWithValue("@tt_Lname", teacher.Lname);
             command.Parameters.AddWithValue("@tt_Fname", teacher.Fname);
             command.Parameters.AddWithValue("@tt_email", teacher.email);
             command.Parameters.AddWithValue("@tt_position", teacher.tt_position);
-            command.Parameters.AddWithValue("@tt_department", teacher.tt_department);
-            command.Parameters.AddWithValue("@tt_timetable_id", teacher.timetableID);
-
+            command.Parameters.AddWithValue("@tt_department", teacher.tt_department);           
             dataAccess.ExecuteNonQuery(command);
-
         }
 
         //operation to show Teachers details table 
@@ -41,7 +39,7 @@ namespace HarrisDesktopApp.DBOperations
         // Admin operation to update Teacher details
         public void UpdateTeacher(Teacher teacher)
         {
-            string query = "Call UpdateTeacher(@tt_id,@tt_Lname, @tt_Fname, @tt_email, @tt_position, @tt_department, @tt_timetable_id)";
+            string query = "Call UpdateTeacher(@tt_id,@tt_Lname, @tt_Fname, @tt_email, @tt_position, @tt_department)";
             MySqlCommand command = new MySqlCommand(query);
             command.Parameters.AddWithValue("@tt_id", teacher.Id);
             command.Parameters.AddWithValue("@tt_Lname", teacher.Lname);
@@ -49,8 +47,6 @@ namespace HarrisDesktopApp.DBOperations
             command.Parameters.AddWithValue("@tt_email", teacher.email);
             command.Parameters.AddWithValue("@tt_position", teacher.tt_position);
             command.Parameters.AddWithValue("@tt_department", teacher.tt_department);
-            command.Parameters.AddWithValue("@tt_timetable_id", teacher.timetableID);
-
             dataAccess.ExecuteNonQuery (command);
         }
 
@@ -65,10 +61,10 @@ namespace HarrisDesktopApp.DBOperations
 
 
         //CRUD for Student table **********************************************************************************************************************
-        // Admin creatin a new Student
+        // Admin creating a new Student
         public void AddStudent(Student student)
         {
-            string query = "CALL AddStudent(@ss_Lname, @ss_Fname, @ss_address, @ss_postcode, @ss_email, @ss_phone, @ss_grade_CW2, @ss_pass_fail, @ss_timetable_id)";
+            string query = "CALL AddStudent(@ss_Lname, @ss_Fname, @ss_address, @ss_postcode, @ss_email, @ss_phone, @ss_grade_CW2, @ss_pass_fail, @ss_class_room)";
             MySqlCommand command = new MySqlCommand(query);
             command.Parameters.AddWithValue("@ss_Lname", student.Lname);
             command.Parameters.AddWithValue("@ss_Fname", student.Fname);
@@ -78,7 +74,7 @@ namespace HarrisDesktopApp.DBOperations
             command.Parameters.AddWithValue("@ss_phone", student.ss_phone);
             command.Parameters.AddWithValue("@ss_grade_CW2", student.ss_grade_CW2);
             command.Parameters.AddWithValue("@ss_pass_fail", student.ss_pass_fail);
-            command.Parameters.AddWithValue("@ss_timetable_id", student.timetableID);
+            command.Parameters.AddWithValue("@ss_class_room", student.ss_class_room);
 
             dataAccess.ExecuteNonQuery(command);
 
@@ -94,7 +90,7 @@ namespace HarrisDesktopApp.DBOperations
         // Admin operation to update Student details
         public void UpdateStudent(Student student)
         {
-            string query = "Call UpdateStudent(@ss_id, @ss_Lname, @ss_Fname, @ss_address, @ss_postcode, @ss_email, @ss_phone, @ss_grade_CW2, @ss_pass_fail, @ss_timetable_id)";
+            string query = "Call UpdateStudent(@ss_id, @ss_Lname, @ss_Fname, @ss_address, @ss_postcode, @ss_email, @ss_phone, @ss_grade_CW2, @ss_pass_fail, @ss_class_room)";
             MySqlCommand command = new MySqlCommand(query);
             command.Parameters.AddWithValue("@ss_id", student.Id);
             command.Parameters.AddWithValue("@ss_Lname", student.Lname);
@@ -105,8 +101,9 @@ namespace HarrisDesktopApp.DBOperations
             command.Parameters.AddWithValue("@ss_phone", student.ss_phone);
             command.Parameters.AddWithValue("@ss_grade_CW2", student.ss_grade_CW2);
             command.Parameters.AddWithValue("@ss_pass_fail", student.ss_pass_fail);
-            command.Parameters.AddWithValue("@ss_timetable_id", student.timetableID);
-            
+            command.Parameters.AddWithValue("@ss_class_room", student.ss_class_room);
+            //command.Parameters.AddWithValue("@ss_timetable_id", student.timetableID);
+
             dataAccess.ExecuteNonQuery(command);
         }
 
@@ -124,13 +121,14 @@ namespace HarrisDesktopApp.DBOperations
         // Admin creating a new Class
         public void AddClass(Class class1)
         {
-            string query = "CALL AddClass(@cc_class_room, @cc_class_building, @cc_class_floor, @cc_class_address, @cc_class_postcode)";
+            string query = "CALL AddClass(@cc_class_room, @cc_class_building, @cc_class_floor, @cc_class_address, @cc_class_postcode, @cc_t_id)";
             MySqlCommand command = new MySqlCommand(query);
             command.Parameters.AddWithValue("@cc_class_room", class1.cc_classRoom);
             command.Parameters.AddWithValue("@cc_class_building", class1.cc_classBuilding);
             command.Parameters.AddWithValue("@cc_class_floor", class1.cc_classFloor);
             command.Parameters.AddWithValue("@cc_class_address", class1.cc_classAddress);
             command.Parameters.AddWithValue("@cc_class_postcode", class1.cc_classPostcode);
+            command.Parameters.AddWithValue("@cc_t_id", class1.cc_t_id);
 
             dataAccess.ExecuteNonQuery(command);
 
@@ -149,11 +147,12 @@ namespace HarrisDesktopApp.DBOperations
             string query = "Call UpdateClass(@cc_class_room, @cc_class_building, @cc_class_floor, @cc_class_address, @cc_class_postcode)";
             MySqlCommand command = new MySqlCommand(query);
 
-            command.Parameters.AddWithValue("@cc_class_room", class1.cc_classRoom);
+           // command.Parameters.AddWithValue("@cc_class_room", class1.cc_classRoom);
             command.Parameters.AddWithValue("@cc_class_building", class1.cc_classBuilding);
-            command.Parameters.AddWithValue("@cc_class_floor", class1.cc_classFloor);
+           // command.Parameters.AddWithValue("@cc_class_floor", class1.cc_classFloor);
             command.Parameters.AddWithValue("@cc_class_address", class1.cc_classAddress);
             command.Parameters.AddWithValue("@cc_class_postcode", class1.cc_classPostcode);
+            command.Parameters.AddWithValue("@cc_t_id", class1.cc_t_id);
 
             dataAccess.ExecuteNonQuery(command);
         }
@@ -168,73 +167,26 @@ namespace HarrisDesktopApp.DBOperations
         }
 
 
-        //CRUD for Timetable table ********************************************************************************************************************** 
-        // Admin creating a new Timetable
-        public void AddTimetable (Timetable table1)
-        {
-            //string query = "CALL AddTimetable(@xt_module_id, @xt_module_name, @xt_class_room, @xt_class_floor, @xt_class_building, @xt_Lname,@xt_Fname,@xt_class_hours)";
-            /*command.Parameters.AddWithValue("@xt_class_floor", table1.xt_classFloor);
-            command.Parameters.AddWithValue("@xt_class_building", table1.xt_classBuilding);
-            command.Parameters.AddWithValue("@xt_module_name", table1.xt_moduleName);
-            command.Parameters.AddWithValue("@xt_Lname", table1.xt_tLname);
-            command.Parameters.AddWithValue("@xt_Fname", table1.xt_tFname);*/
-            string query = "CALL AddTimetable(@xt_module_id, @xt_class_room,@xt_t_id,@xt_class_hours)";
-            MySqlCommand command = new MySqlCommand(query);
-            command.Parameters.AddWithValue("@xt_module_id", table1.xt_moduleID);
-            command.Parameters.AddWithValue("@xt_class_room", table1.xt_classRoom);
-            command.Parameters.AddWithValue("@xt_t_id", table1.xt_tId);
-            command.Parameters.AddWithValue("@xt_class_hours", table1.xt_classHours);
-
-            dataAccess.ExecuteNonQuery(command);
-        }
-
-        //operation to show Timetable details table 
+        //Timetable Projection  ********************************************************************************************************************** 
+        //operation to project a Timetable
         public DataTable GetTimetable()
         {
-            string query = "Call getTimetable()";
+            //string query = "Call getJoinTimetable()";
+            string query = "Call getJoinTimetable()";
             return dataAccess.ExecuteQuery(query);
-        }
-
-        // Admin operation to update Timetable details
-        public void UpdateTimetable(Timetable table1)
-        {
-           /* command.Parameters.AddWithValue("@xt_module_name", table1.xt_moduleName);
-            command.Parameters.AddWithValue("@xt_class_floor", table1.xt_classFloor);
-            command.Parameters.AddWithValue("@xt_Lname", table1.xt_tLname);
-            command.Parameters.AddWithValue("@xt_Fname", table1.xt_tFname);
-            command.Parameters.AddWithValue("@xt_class_building", table1.xt_classBuilding);*/
-            //string query = "CALL UpdateTimetable(@xt_timetable_id, @xt_module_id, @xt_module_name, @xt_class_room, @xt_class_floor, @xt_class_building, @xt_Lname,@xt_Fname,@xt_class_hours)";
-            string query = "CALL UpdateTimetable(@xt_timetable_id, @xt_module_id, @xt_class_room,@xt_t_id, @xt_class_hours)";
-            MySqlCommand command = new MySqlCommand(query);
-
-            command.Parameters.AddWithValue("@xt_timetable_id", table1.xt_timetableID);
-            command.Parameters.AddWithValue("@xt_module_id", table1.xt_moduleID);
-            command.Parameters.AddWithValue("@xt_class_room", table1.xt_classRoom);
-            command.Parameters.AddWithValue("@xt_t_id", table1.xt_tId);
-            command.Parameters.AddWithValue("@xt_class_hours", table1.xt_classHours);
-
-            dataAccess.ExecuteNonQuery(command);
-        }
-
-        // Admin operation to delete Timetable details
-        public void DeleteTimetable(int timetableId)
-        {
-            string query = "Call DeleteTimetable(@xt_timetable_id)";
-            MySqlCommand command = new MySqlCommand(query);
-            command.Parameters.AddWithValue("@xt_timetable_id", timetableId);
-            dataAccess.ExecuteNonQuery(command);
-        }
-
+        }       
 
         //CRUD for Materials table  ********************************************************************************************************************** 
         // Admin creating a new Materials
         public void AddMaterial(Materials materials1)
         {
-            string query = "CALL AddMaterials(@mm_module_id, @mm_t_id, @mm_material_date_edit)";
+            string query = "CALL AddMaterials(@mm_module_id, @mm_t_id, @mm_material_date_edit)";  //, @mm_material_blob
             MySqlCommand command = new MySqlCommand(query);
             command.Parameters.AddWithValue("@mm_module_id", materials1.mm_moduleID);            
             command.Parameters.AddWithValue("@mm_t_id", materials1.mm_tID);
-            command.Parameters.AddWithValue("@mm_material_date_edit", materials1.mm_mat_date_edit);          
+            command.Parameters.AddWithValue("@mm_material_date_edit", materials1.mm_mat_date_edit);
+            //command.Parameters.AddWithValue("@mm_material_blob", materials1.mm_material_blob);
+
 
             dataAccess.ExecuteNonQuery(command);
         }
@@ -249,13 +201,14 @@ namespace HarrisDesktopApp.DBOperations
         // Admin operation to update Materials details
         public void UpdateMaterial(Materials materials1)
         {
-            string query = "CALL UpdateMaterials(@mm_material_id, @mm_module_id, @mm_t_id, @mm_material_date_edit)";
+            string query = "CALL UpdateMaterials(@mm_material_id, @mm_module_id, @mm_t_id, @mm_material_date_edit)";  //, @mm_material_blob
             MySqlCommand command = new MySqlCommand(query);
 
             command.Parameters.AddWithValue("@mm_material_id", materials1.mm_materialID);
             command.Parameters.AddWithValue("@mm_module_id", materials1.mm_moduleID);           
             command.Parameters.AddWithValue("@mm_t_id", materials1.mm_tID);
             command.Parameters.AddWithValue("@mm_material_date_edit", materials1.mm_mat_date_edit);
+            //command.Parameters.AddWithValue("@mm_material_blob", materials1.mm_material_blob);
 
             dataAccess.ExecuteNonQuery(command);
         }
@@ -268,56 +221,6 @@ namespace HarrisDesktopApp.DBOperations
             command.Parameters.AddWithValue("@mm_material_id", materialId);
             dataAccess.ExecuteNonQuery(command);
         }
-
-
-        //CRUD for Submit Work table  ********************************************************************************************************************** 
-        // Admin creating a new Worksheet
-        public void AddWorksheet(SubmitWork worksheet1)
-        {
-            string query = "CALL AddWorksheet(@ww_s_id, @ww_s_Lname, @ww_s_Fname, @ww_s_worksubmit, @ww_s_work_grade)";
-            MySqlCommand command = new MySqlCommand(query);
-            command.Parameters.AddWithValue("@ww_s_id", worksheet1.ww_stID);
-            command.Parameters.AddWithValue("@ww_s_Lname", worksheet1.ww_sLname);
-            command.Parameters.AddWithValue("@ww_s_Fname", worksheet1.ww_sFname);
-            command.Parameters.AddWithValue("@ww_s_worksubmit", worksheet1.ww_stWorkSubmit);
-            command.Parameters.AddWithValue("@ww_s_work_grade", worksheet1.ww_stWorkGrade);
-
-
-            dataAccess.ExecuteNonQuery(command);
-        }
-
-        //operation to show Worksheet details table 
-        public DataTable GetWorksheets()
-        {
-            string query = "Call getWorksheets()";
-            return dataAccess.ExecuteQuery(query);
-        }
-
-        // Admin operation to update Worksheet details
-        public void UpdateWorksheet(SubmitWork worksheet1)
-        {
-            string query = "CALL UpdateMaterials(@ww_worksheet_id, @mm_material_id, @mm_module_id, @mm_module_name, @mm_t_id, @mm_material_date_edit, @mm_t_Lname, @mm_t_Fname)";
-            MySqlCommand command = new MySqlCommand(query);
-
-            command.Parameters.AddWithValue("@ww_worksheet_id", worksheet1.ww_stID);
-            command.Parameters.AddWithValue("@ww_s_id", worksheet1.ww_stID);
-            command.Parameters.AddWithValue("@ww_s_Lname", worksheet1.ww_sLname);
-            command.Parameters.AddWithValue("@ww_s_Fname", worksheet1.ww_sFname);
-            command.Parameters.AddWithValue("@ww_s_worksubmit", worksheet1.ww_stWorkSubmit);
-            command.Parameters.AddWithValue("@ww_s_work_grade", worksheet1.ww_stWorkGrade);
-
-            dataAccess.ExecuteNonQuery(command);
-        }
-
-        // Admin operation to delete Worksheet details
-        public void DeleteWorksheet(int worksheetId)
-        {
-            string query = "Call DeleteMaterial(@ww_worksheet_id)";
-            MySqlCommand command = new MySqlCommand(query);
-            command.Parameters.AddWithValue("@ww_worksheet_id", worksheetId);
-            dataAccess.ExecuteNonQuery(command);
-        }
-
 
         //CRUD for Enrolment table  ********************************************************************************************************************** 
         // Admin creating a new Enrolment
@@ -364,7 +267,6 @@ namespace HarrisDesktopApp.DBOperations
             command.Parameters.AddWithValue("@ee_enrolment_id", enrId);
             dataAccess.ExecuteNonQuery(command);
         }
-
 
         //CRUD for Course List table  ********************************************************************************************************************** 
         // Admin creating a new Course List
@@ -419,7 +321,7 @@ namespace HarrisDesktopApp.DBOperations
         // Admin creating a new  Module Name
         public void AddModule(ModuleName module1)
         {
-            string query = "CALL AddModule(@xm_course_id, @xm_module_name, @xm_start_date, @xm_end_date, @xm_cw1_pass_fail, @xm_cw2_mark)";
+            string query = "CALL AddModule(@xm_course_id, @xm_module_name, @xm_start_date, @xm_end_date, @xm_cw1_pass_fail, @xm_cw2_mark, @xm_class_room)";
             MySqlCommand command = new MySqlCommand(query);
 
             command.Parameters.AddWithValue("@xm_course_id", module1.courseID);
@@ -428,6 +330,7 @@ namespace HarrisDesktopApp.DBOperations
             command.Parameters.AddWithValue("@xm_end_date", module1.endDate);
             command.Parameters.AddWithValue("@xm_cw1_pass_fail", module1.xm_cw1_pass_fail);
             command.Parameters.AddWithValue("@xm_cw2_mark", module1.xm_cw2_mark);
+            command.Parameters.AddWithValue("@xm_class_room", module1.xm_class_room);
             
             dataAccess.ExecuteNonQuery(command);
         }
@@ -442,7 +345,7 @@ namespace HarrisDesktopApp.DBOperations
         // Admin operation to update Module Name details
         public void UpdateModule(ModuleName module1)
         {
-            string query = "CALL UpdateModule(@xm_module_id, @xm_course_id, @xm_module_name, @xm_start_date, @xm_end_date, @xm_cw1_pass_fail, @xm_cw2_mark)";
+            string query = "CALL UpdateModule(@xm_module_id, @xm_course_id, @xm_module_name, @xm_start_date, @xm_end_date, @xm_cw1_pass_fail, @xm_cw2_mark, @xm_class_room)";
             MySqlCommand command = new MySqlCommand(query);
 
             command.Parameters.AddWithValue("@xm_module_id", module1.xm_moduleId);
@@ -452,6 +355,7 @@ namespace HarrisDesktopApp.DBOperations
             command.Parameters.AddWithValue("@xm_end_date", module1.endDate);
             command.Parameters.AddWithValue("@xm_cw1_pass_fail", module1.xm_cw1_pass_fail);
             command.Parameters.AddWithValue("@xm_cw2_mark", module1.xm_cw2_mark);
+            command.Parameters.AddWithValue("@xm_class_room", module1.xm_class_room);
 
             dataAccess.ExecuteNonQuery(command);
         }
@@ -464,8 +368,107 @@ namespace HarrisDesktopApp.DBOperations
             command.Parameters.AddWithValue("@xm_module_id", module1);
             dataAccess.ExecuteNonQuery(command);
         }
-         
 
+        /* New Tables to work on
+        //CRUD for Submit Work table  ********************************************************************************************************************** 
+        // Admin creating a new Worksheet
+        public void AddWorksheet(SubmitWork worksheet1)
+        {
+            string query = "CALL AddWorksheet(@ww_s_id, @ww_s_Lname, @ww_s_Fname, @ww_s_worksubmit, @ww_s_work_grade)";
+            MySqlCommand command = new MySqlCommand(query);
+            command.Parameters.AddWithValue("@ww_s_id", worksheet1.ww_stID);
+            command.Parameters.AddWithValue("@ww_s_Lname", worksheet1.ww_sLname);
+            command.Parameters.AddWithValue("@ww_s_Fname", worksheet1.ww_sFname);
+            command.Parameters.AddWithValue("@ww_s_worksubmit", worksheet1.ww_stWorkSubmit);
+            command.Parameters.AddWithValue("@ww_s_work_grade", worksheet1.ww_stWorkGrade);
+
+
+
+            dataAccess.ExecuteNonQuery(command);
+        }
+
+        //operation to show Worksheet details table 
+        public DataTable GetWorksheets()
+        {
+            string query = "Call getWorksheets()";
+            return dataAccess.ExecuteQuery(query);
+        }
+
+        // Admin operation to update Worksheet details
+        public void UpdateWorksheet(SubmitWork worksheet1)
+        {
+            string query = "CALL UpdateMaterials(@ww_worksheet_id, @mm_material_id, @mm_module_id, @mm_module_name, @mm_t_id, @mm_material_date_edit, @mm_t_Lname, @mm_t_Fname)";
+            MySqlCommand command = new MySqlCommand(query);
+
+            command.Parameters.AddWithValue("@ww_worksheet_id", worksheet1.ww_stID);
+            command.Parameters.AddWithValue("@ww_s_id", worksheet1.ww_stID);
+            command.Parameters.AddWithValue("@ww_s_Lname", worksheet1.ww_sLname);
+            command.Parameters.AddWithValue("@ww_s_Fname", worksheet1.ww_sFname);
+            command.Parameters.AddWithValue("@ww_s_worksubmit", worksheet1.ww_stWorkSubmit);
+            command.Parameters.AddWithValue("@ww_s_work_grade", worksheet1.ww_stWorkGrade);
+
+            dataAccess.ExecuteNonQuery(command);
+        }
+
+        // Admin operation to delete Worksheet details
+        public void DeleteWorksheet(int worksheetId)
+        {
+            string query = "Call DeleteMaterial(@ww_worksheet_id)";
+            MySqlCommand command = new MySqlCommand(query);
+            command.Parameters.AddWithValue("@ww_worksheet_id", worksheetId);
+            dataAccess.ExecuteNonQuery(command);
+        }*/
+
+
+        /* Admin creating a new Timetable
+        public void AddTimetable(Timetable table1)
+        {
+            //string query = "CALL AddTimetable(@xt_module_id, @xt_module_name, @xt_class_room, @xt_class_floor, @xt_class_building, @xt_Lname,@xt_Fname,@xt_class_hours)";
+            /*command.Parameters.AddWithValue("@xt_class_floor", table1.xt_classFloor);
+            command.Parameters.AddWithValue("@xt_class_building", table1.xt_classBuilding);
+            command.Parameters.AddWithValue("@xt_module_name", table1.xt_moduleName);
+            command.Parameters.AddWithValue("@xt_Lname", table1.xt_tLname);
+            command.Parameters.AddWithValue("@xt_Fname", table1.xt_tFname);
+            string query = "CALL AddTimetable(@xt_module_id, @xt_class_room,@xt_t_id,@xt_class_hours)";
+            MySqlCommand command = new MySqlCommand(query);
+            command.Parameters.AddWithValue("@xt_module_id", table1.xt_moduleID);
+            command.Parameters.AddWithValue("@xt_class_room", table1.xt_classRoom);
+            command.Parameters.AddWithValue("@xt_t_id", table1.xt_tId);
+            command.Parameters.AddWithValue("@xt_class_hours", table1.xt_classHours);
+
+            dataAccess.ExecuteNonQuery(command);
+        }
+
+
+        // Admin operation to update Timetable details
+        public void UpdateTimetable(Timetable table1)
+        {
+            /* command.Parameters.AddWithValue("@xt_module_name", table1.xt_moduleName);
+             command.Parameters.AddWithValue("@xt_class_floor", table1.xt_classFloor);
+             command.Parameters.AddWithValue("@xt_Lname", table1.xt_tLname);
+             command.Parameters.AddWithValue("@xt_Fname", table1.xt_tFname);
+             command.Parameters.AddWithValue("@xt_class_building", table1.xt_classBuilding);
+            //string query = "CALL UpdateTimetable(@xt_timetable_id, @xt_module_id, @xt_module_name, @xt_class_room, @xt_class_floor, @xt_class_building, @xt_Lname,@xt_Fname,@xt_class_hours)";
+            string query = "CALL UpdateTimetable(@xt_timetable_id, @xt_module_id, @xt_class_room,@xt_t_id, @xt_class_hours)";
+            MySqlCommand command = new MySqlCommand(query);
+
+            command.Parameters.AddWithValue("@xt_timetable_id", table1.xt_timetableID);
+            command.Parameters.AddWithValue("@xt_module_id", table1.xt_moduleID);
+            command.Parameters.AddWithValue("@xt_class_room", table1.xt_classRoom);
+            command.Parameters.AddWithValue("@xt_t_id", table1.xt_tId);
+            command.Parameters.AddWithValue("@xt_class_hours", table1.xt_classHours);
+
+            dataAccess.ExecuteNonQuery(command);
+        }
+
+        // Admin operation to delete Timetable details
+        public void DeleteTimetable(int timetableId)
+        {
+            string query = "Call DeleteTimetable(@xt_timetable_id)";
+            MySqlCommand command = new MySqlCommand(query);
+            command.Parameters.AddWithValue("@xt_timetable_id", timetableId);
+            dataAccess.ExecuteNonQuery(command);
+        }*/
 
 
 

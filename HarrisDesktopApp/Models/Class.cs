@@ -13,6 +13,7 @@ namespace HarrisDesktopApp.Models
         public string cc_classFloor { get; set;}
         public string cc_classAddress {  get; set; }
         public string cc_classPostcode { get; set; }
+        public int cc_t_id { get; set; }
 
     }
 }

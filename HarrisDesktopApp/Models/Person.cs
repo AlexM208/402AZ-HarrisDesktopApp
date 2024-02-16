@@ -12,7 +12,7 @@ namespace HarrisDesktopApp.Models
         public string Fname { get; set; }
         public string Lname { get; set; }
         public string email { get; set; }
-        public int timetableID { get; set; }
+        //public int timetableID { get; set; }
 
     }
 }

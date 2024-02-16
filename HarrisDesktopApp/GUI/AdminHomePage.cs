@@ -1,4 +1,5 @@
-﻿using HarrisDesktopApp.GUI;
+﻿using HarrisDesktopApp.DBOperations;
+using HarrisDesktopApp.GUI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,8 @@ namespace HarrisDesktopApp
 {
     public partial class AdminHomePage : Form
     {
+        private AdminOperations adminOps = new AdminOperations();
+
         public AdminHomePage()
         {
             InitializeComponent();
@@ -46,13 +49,7 @@ namespace HarrisDesktopApp
 
         
 
-        private void buttonClickLogout(object sender, EventArgs e)
-        {
-            LoginPage login1 = new LoginPage();
-            login1.StartPosition = FormStartPosition.CenterScreen;
-            login1.Show();
-            this.Hide();
-        }
+        
 
         private void buttonClickBackAdminP(object sender, EventArgs e)
         {
@@ -67,6 +64,7 @@ namespace HarrisDesktopApp
             EditCourse course1 = new EditCourse();
             course1.StartPosition = FormStartPosition.CenterScreen;
             course1.Show();
+
             this.Hide();
         }
 
@@ -75,6 +73,7 @@ namespace HarrisDesktopApp
             EditStudent student1 = new EditStudent();
             student1.StartPosition = FormStartPosition.CenterScreen;
             student1.Show();
+         
             this.Hide();
         }
 
@@ -107,6 +106,9 @@ namespace HarrisDesktopApp
             EditMaterials material1 = new EditMaterials();
             material1.StartPosition = FormStartPosition.CenterScreen;
             material1.Show();
+            material1.btnBackToStudent.Hide();
+            material1.btnBackToTeacher.Hide();
+            material1.courseBtnToAdminHP.Show();
             this.Hide();
         }
 
@@ -120,10 +122,24 @@ namespace HarrisDesktopApp
 
         private void btnClickTimetableDets(object sender, EventArgs e)
         {
-            EditTimetable timetable1 = new EditTimetable();
-            timetable1.StartPosition = FormStartPosition.CenterScreen;
-            timetable1.Show();
+            dataGridViewTimetblDets.DataSource = adminOps.GetTimetable();
+            dataGridViewTimetblDets.Show();
+        }
+
+      
+
+        private void btnClickLogoutAdmin(object sender, EventArgs e)
+        {
+            LoginPage login1 = new LoginPage();
+            login1.StartPosition = FormStartPosition.CenterScreen;
+            login1.Show();
             this.Hide();
+
+        }
+
+        private void btnClickRefreshTimetblDets(object sender, EventArgs e)
+        {
+            dataGridViewTimetblDets.Hide();
         }
     }
 }

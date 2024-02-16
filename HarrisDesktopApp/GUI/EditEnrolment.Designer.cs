@@ -44,6 +44,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.labelAdminTeacher = new System.Windows.Forms.Label();
+            this.lblDeleteEnrolment = new System.Windows.Forms.Label();
+            this.lblUpdateEnrolment = new System.Windows.Forms.Label();
+            this.lblAddEnrolment = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEnrolment)).BeginInit();
             this.SuspendLayout();
             // 
@@ -210,6 +213,42 @@
             this.labelAdminTeacher.TabIndex = 100;
             this.labelAdminTeacher.Text = "Welcome Admin";
             // 
+            // lblDeleteEnrolment
+            // 
+            this.lblDeleteEnrolment.AutoSize = true;
+            this.lblDeleteEnrolment.Font = new System.Drawing.Font("Calibri", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDeleteEnrolment.ForeColor = System.Drawing.Color.Blue;
+            this.lblDeleteEnrolment.Location = new System.Drawing.Point(243, 208);
+            this.lblDeleteEnrolment.Name = "lblDeleteEnrolment";
+            this.lblDeleteEnrolment.Size = new System.Drawing.Size(260, 23);
+            this.lblDeleteEnrolment.TabIndex = 126;
+            this.lblDeleteEnrolment.Text = "Enrolment deleted  successfully!";
+            this.lblDeleteEnrolment.Visible = false;
+            // 
+            // lblUpdateEnrolment
+            // 
+            this.lblUpdateEnrolment.AutoSize = true;
+            this.lblUpdateEnrolment.Font = new System.Drawing.Font("Calibri", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUpdateEnrolment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.lblUpdateEnrolment.Location = new System.Drawing.Point(243, 208);
+            this.lblUpdateEnrolment.Name = "lblUpdateEnrolment";
+            this.lblUpdateEnrolment.Size = new System.Drawing.Size(263, 23);
+            this.lblUpdateEnrolment.TabIndex = 125;
+            this.lblUpdateEnrolment.Text = "Enrolment updated successfully!";
+            this.lblUpdateEnrolment.Visible = false;
+            // 
+            // lblAddEnrolment
+            // 
+            this.lblAddEnrolment.AutoSize = true;
+            this.lblAddEnrolment.Font = new System.Drawing.Font("Calibri", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddEnrolment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lblAddEnrolment.Location = new System.Drawing.Point(243, 208);
+            this.lblAddEnrolment.Name = "lblAddEnrolment";
+            this.lblAddEnrolment.Size = new System.Drawing.Size(257, 23);
+            this.lblAddEnrolment.TabIndex = 127;
+            this.lblAddEnrolment.Text = "Enrolment created successfully!";
+            this.lblAddEnrolment.Visible = false;
+            // 
             // EditEnrolment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -231,6 +270,9 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.labelAdminTeacher);
             this.Controls.Add(this.btnEnrolmentBackToAdminHP);
+            this.Controls.Add(this.lblUpdateEnrolment);
+            this.Controls.Add(this.lblAddEnrolment);
+            this.Controls.Add(this.lblDeleteEnrolment);
             this.Name = "EditEnrolment";
             this.Text = "EditEnrolment";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEnrolment)).EndInit();
@@ -256,5 +298,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label labelAdminTeacher;
+        private System.Windows.Forms.Label lblDeleteEnrolment;
+        private System.Windows.Forms.Label lblUpdateEnrolment;
+        private System.Windows.Forms.Label lblAddEnrolment;
     }
 }

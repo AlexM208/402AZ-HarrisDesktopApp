@@ -13,5 +13,6 @@ namespace HarrisDesktopApp.Models
         public string ss_phone {  get; set; }
         public string ss_grade_CW2 { get; set;}
         public string ss_pass_fail { get; set;}
+        public double ss_class_room {  get; set; }
     }
 }

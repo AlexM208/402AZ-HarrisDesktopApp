@@ -53,7 +53,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.labelAdminTeacher = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.txtStTimetableId = new System.Windows.Forms.TextBox();
+            this.txtStClassRoom = new System.Windows.Forms.TextBox();
+            this.lblDeleteStudent = new System.Windows.Forms.Label();
+            this.lblUpdateStudent = new System.Windows.Forms.Label();
+            this.lblAddStudent = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStudent)).BeginInit();
             this.SuspendLayout();
             // 
@@ -293,24 +296,63 @@
             this.label9.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(343, 68);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(94, 19);
+            this.label9.Size = new System.Drawing.Size(89, 19);
             this.label9.TabIndex = 98;
-            this.label9.Text = "Timetable Id:";
+            this.label9.Text = "Class Room:";
             // 
-            // txtStTimetableId
+            // txtStClassRoom
             // 
-            this.txtStTimetableId.Location = new System.Drawing.Point(443, 67);
-            this.txtStTimetableId.Name = "txtStTimetableId";
-            this.txtStTimetableId.Size = new System.Drawing.Size(147, 20);
-            this.txtStTimetableId.TabIndex = 97;
+            this.txtStClassRoom.Location = new System.Drawing.Point(443, 67);
+            this.txtStClassRoom.Name = "txtStClassRoom";
+            this.txtStClassRoom.Size = new System.Drawing.Size(147, 20);
+            this.txtStClassRoom.TabIndex = 97;
+            // 
+            // lblDeleteStudent
+            // 
+            this.lblDeleteStudent.AutoSize = true;
+            this.lblDeleteStudent.Font = new System.Drawing.Font("Calibri", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDeleteStudent.ForeColor = System.Drawing.Color.Blue;
+            this.lblDeleteStudent.Location = new System.Drawing.Point(243, 208);
+            this.lblDeleteStudent.Name = "lblDeleteStudent";
+            this.lblDeleteStudent.Size = new System.Drawing.Size(240, 23);
+            this.lblDeleteStudent.TabIndex = 100;
+            this.lblDeleteStudent.Text = "Student deleted  successfully!";
+            this.lblDeleteStudent.Visible = false;
+            // 
+            // lblUpdateStudent
+            // 
+            this.lblUpdateStudent.AutoSize = true;
+            this.lblUpdateStudent.Font = new System.Drawing.Font("Calibri", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUpdateStudent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.lblUpdateStudent.Location = new System.Drawing.Point(243, 208);
+            this.lblUpdateStudent.Name = "lblUpdateStudent";
+            this.lblUpdateStudent.Size = new System.Drawing.Size(243, 23);
+            this.lblUpdateStudent.TabIndex = 99;
+            this.lblUpdateStudent.Text = "Student updated successfully!";
+            this.lblUpdateStudent.Visible = false;
+            // 
+            // lblAddStudent
+            // 
+            this.lblAddStudent.AutoSize = true;
+            this.lblAddStudent.Font = new System.Drawing.Font("Calibri", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddStudent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lblAddStudent.Location = new System.Drawing.Point(243, 208);
+            this.lblAddStudent.Name = "lblAddStudent";
+            this.lblAddStudent.Size = new System.Drawing.Size(237, 23);
+            this.lblAddStudent.TabIndex = 101;
+            this.lblAddStudent.Text = "Student created successfully!";
+            this.lblAddStudent.Visible = false;
             // 
             // EditStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(734, 771);
+            this.Controls.Add(this.lblDeleteStudent);
+            this.Controls.Add(this.lblUpdateStudent);
+            this.Controls.Add(this.lblAddStudent);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.txtStTimetableId);
+            this.Controls.Add(this.txtStClassRoom);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtStAddress);
             this.Controls.Add(this.lblDets);
@@ -369,6 +411,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label labelAdminTeacher;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtStTimetableId;
+        private System.Windows.Forms.TextBox txtStClassRoom;
+        private System.Windows.Forms.Label lblDeleteStudent;
+        private System.Windows.Forms.Label lblUpdateStudent;
+        private System.Windows.Forms.Label lblAddStudent;
     }
 }

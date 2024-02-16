@@ -87,6 +87,9 @@ namespace HarrisDesktopApp.GUI
             adminOperations.AddEnrolment(newEnrolment);
             ClearEnrolmentFields();
             LoadEnrolment();
+            lblAddEnrolment.Show();
+            lblDeleteEnrolment.Hide();
+            lblUpdateEnrolment.Hide();
         }
 
         //update button
@@ -106,6 +109,9 @@ namespace HarrisDesktopApp.GUI
                     adminOperations.UpdateEnrolment(selectedEnrolment);
                     ClearEnrolmentFields();
                     LoadEnrolment();
+                    lblAddEnrolment.Hide();
+                    lblDeleteEnrolment.Hide();
+                    lblUpdateEnrolment.Show();
                 }
             }
         }
@@ -122,15 +128,18 @@ namespace HarrisDesktopApp.GUI
                     adminOperations.DeleteEnrolment(enrolment1);
                     ClearEnrolmentFields();
                     LoadEnrolment();
+                    lblAddEnrolment.Hide();
+                    lblDeleteEnrolment.Show();
+                    lblUpdateEnrolment.Hide();
                 }
                 else
                 {
-                    MessageBox.Show("Please select a customer to delete.");
+                    MessageBox.Show("Please select a Enrolment  to delete.");
                 }
             }
             else
             {
-                MessageBox.Show("Please select a customer to delete.");
+                MessageBox.Show("Please select a Enrolment to delete.");
             }
         }
 
@@ -138,6 +147,9 @@ namespace HarrisDesktopApp.GUI
         private void btnClickRefreshEnrolment(object sender, EventArgs e)
         {
             LoadEnrolment();
+            lblAddEnrolment.Hide();
+            lblDeleteEnrolment.Hide();
+            lblUpdateEnrolment.Hide();
         }
 
         // back button

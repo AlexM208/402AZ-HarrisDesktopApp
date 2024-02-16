@@ -48,6 +48,11 @@
             this.labelAdminTeacher = new System.Windows.Forms.Label();
             this.dateTimePickerStart = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerEnd = new System.Windows.Forms.DateTimePicker();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtModuleClassRoom = new System.Windows.Forms.TextBox();
+            this.lblDeleteModule = new System.Windows.Forms.Label();
+            this.lblUpdateModule = new System.Windows.Forms.Label();
+            this.lblAddModule = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewModule)).BeginInit();
             this.SuspendLayout();
             // 
@@ -249,11 +254,66 @@
             this.dateTimePickerEnd.Size = new System.Drawing.Size(200, 20);
             this.dateTimePickerEnd.TabIndex = 73;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(355, 119);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(89, 19);
+            this.label9.TabIndex = 100;
+            this.label9.Text = "Class Room:";
+            // 
+            // txtModuleClassRoom
+            // 
+            this.txtModuleClassRoom.Location = new System.Drawing.Point(455, 119);
+            this.txtModuleClassRoom.Name = "txtModuleClassRoom";
+            this.txtModuleClassRoom.Size = new System.Drawing.Size(147, 20);
+            this.txtModuleClassRoom.TabIndex = 99;
+            // 
+            // lblDeleteModule
+            // 
+            this.lblDeleteModule.AutoSize = true;
+            this.lblDeleteModule.Font = new System.Drawing.Font("Calibri", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDeleteModule.ForeColor = System.Drawing.Color.Blue;
+            this.lblDeleteModule.Location = new System.Drawing.Point(243, 208);
+            this.lblDeleteModule.Name = "lblDeleteModule";
+            this.lblDeleteModule.Size = new System.Drawing.Size(239, 23);
+            this.lblDeleteModule.TabIndex = 102;
+            this.lblDeleteModule.Text = "Module deleted  successfully!";
+            this.lblDeleteModule.Visible = false;
+            // 
+            // lblUpdateModule
+            // 
+            this.lblUpdateModule.AutoSize = true;
+            this.lblUpdateModule.Font = new System.Drawing.Font("Calibri", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUpdateModule.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.lblUpdateModule.Location = new System.Drawing.Point(243, 208);
+            this.lblUpdateModule.Name = "lblUpdateModule";
+            this.lblUpdateModule.Size = new System.Drawing.Size(242, 23);
+            this.lblUpdateModule.TabIndex = 101;
+            this.lblUpdateModule.Text = "Module updated successfully!";
+            this.lblUpdateModule.Visible = false;
+            // 
+            // lblAddModule
+            // 
+            this.lblAddModule.AutoSize = true;
+            this.lblAddModule.Font = new System.Drawing.Font("Calibri", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddModule.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lblAddModule.Location = new System.Drawing.Point(243, 208);
+            this.lblAddModule.Name = "lblAddModule";
+            this.lblAddModule.Size = new System.Drawing.Size(236, 23);
+            this.lblAddModule.TabIndex = 103;
+            this.lblAddModule.Text = "Module created successfully!";
+            this.lblAddModule.Visible = false;
+            // 
             // EditModule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(734, 771);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.txtModuleClassRoom);
             this.Controls.Add(this.dateTimePickerStart);
             this.Controls.Add(this.dateTimePickerEnd);
             this.Controls.Add(this.lblDets);
@@ -274,6 +334,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.labelAdminTeacher);
             this.Controls.Add(this.moduleBtnToAdminHP);
+            this.Controls.Add(this.lblDeleteModule);
+            this.Controls.Add(this.lblUpdateModule);
+            this.Controls.Add(this.lblAddModule);
             this.Name = "EditModule";
             this.Text = "EditModule";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewModule)).EndInit();
@@ -303,5 +366,10 @@
         private System.Windows.Forms.Label labelAdminTeacher;
         private System.Windows.Forms.DateTimePicker dateTimePickerStart;
         private System.Windows.Forms.DateTimePicker dateTimePickerEnd;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtModuleClassRoom;
+        private System.Windows.Forms.Label lblDeleteModule;
+        private System.Windows.Forms.Label lblUpdateModule;
+        private System.Windows.Forms.Label lblAddModule;
     }
 }

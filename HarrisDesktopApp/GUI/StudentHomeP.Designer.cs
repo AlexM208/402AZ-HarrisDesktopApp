@@ -31,7 +31,6 @@
             this.labelStudentHP = new System.Windows.Forms.Label();
             this.btnMaterialsStudent = new System.Windows.Forms.Button();
             this.btnTimetableStudent = new System.Windows.Forms.Button();
-            this.btnBack = new System.Windows.Forms.Button();
             this.btnRefreshStudent = new System.Windows.Forms.Button();
             this.btnLogoutSt = new System.Windows.Forms.Button();
             this.dataGridViewStTimetable = new System.Windows.Forms.DataGridView();
@@ -72,16 +71,6 @@
             this.btnTimetableStudent.UseVisualStyleBackColor = true;
             this.btnTimetableStudent.Click += new System.EventHandler(this.btnClickShowTimetable);
             // 
-            // btnBack
-            // 
-            this.btnBack.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBack.Location = new System.Drawing.Point(398, 75);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(129, 34);
-            this.btnBack.TabIndex = 11;
-            this.btnBack.Text = "Back";
-            this.btnBack.UseVisualStyleBackColor = true;
-            // 
             // btnRefreshStudent
             // 
             this.btnRefreshStudent.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -91,6 +80,7 @@
             this.btnRefreshStudent.TabIndex = 32;
             this.btnRefreshStudent.Text = "Refresh";
             this.btnRefreshStudent.UseVisualStyleBackColor = true;
+            this.btnRefreshStudent.Click += new System.EventHandler(this.btnClickRefresh);
             // 
             // btnLogoutSt
             // 
@@ -113,6 +103,8 @@
             // 
             // dataGridViewStMaterials
             // 
+            this.dataGridViewStMaterials.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewStMaterials.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewStMaterials.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewStMaterials.Location = new System.Drawing.Point(12, 217);
             this.dataGridViewStMaterials.Name = "dataGridViewStMaterials";
@@ -128,7 +120,6 @@
             this.Controls.Add(this.btnRefreshStudent);
             this.Controls.Add(this.btnMaterialsStudent);
             this.Controls.Add(this.btnTimetableStudent);
-            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.labelStudentHP);
             this.Controls.Add(this.dataGridViewStMaterials);
             this.Controls.Add(this.dataGridViewStTimetable);
@@ -146,7 +137,6 @@
         private System.Windows.Forms.Label labelStudentHP;
         private System.Windows.Forms.Button btnMaterialsStudent;
         private System.Windows.Forms.Button btnTimetableStudent;
-        private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnRefreshStudent;
         private System.Windows.Forms.Button btnLogoutSt;
         private System.Windows.Forms.DataGridView dataGridViewStTimetable;

@@ -37,12 +37,17 @@
             this.btnUpdateStudent = new System.Windows.Forms.Button();
             this.btnRefreshStudent = new System.Windows.Forms.Button();
             this.btnAddStudent = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.txtModuleId = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.labelAdminTeacher = new System.Windows.Forms.Label();
+            this.btnUploadMaterial = new System.Windows.Forms.Button();
+            this.txtMaterialUp = new System.Windows.Forms.TextBox();
+            this.lblDeleteMaterial = new System.Windows.Forms.Label();
+            this.lblUpdateMaterial = new System.Windows.Forms.Label();
+            this.lblAddClass = new System.Windows.Forms.Label();
+            this.lblMaterialUpload = new System.Windows.Forms.Label();
+            this.btnBackToTeacher = new System.Windows.Forms.Button();
+            this.btnBackToStudent = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMaterials)).BeginInit();
             this.SuspendLayout();
             // 
@@ -147,36 +152,6 @@
             this.btnAddStudent.UseVisualStyleBackColor = true;
             this.btnAddStudent.Click += new System.EventHandler(this.btnClickAddMaterial);
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(343, 145);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(53, 19);
-            this.label8.TabIndex = 114;
-            this.label8.Text = "Status:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(343, 119);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(73, 19);
-            this.label7.TabIndex = 113;
-            this.label7.Text = "Date Edit:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(343, 93);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(68, 19);
-            this.label6.TabIndex = 112;
-            this.label6.Text = "Material:";
-            // 
             // txtModuleId
             // 
             this.txtModuleId.Location = new System.Drawing.Point(177, 93);
@@ -204,11 +179,107 @@
             this.labelAdminTeacher.TabIndex = 100;
             this.labelAdminTeacher.Text = "Welcome Admin";
             // 
+            // btnUploadMaterial
+            // 
+            this.btnUploadMaterial.BackColor = System.Drawing.SystemColors.Control;
+            this.btnUploadMaterial.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUploadMaterial.Location = new System.Drawing.Point(38, 159);
+            this.btnUploadMaterial.Name = "btnUploadMaterial";
+            this.btnUploadMaterial.Size = new System.Drawing.Size(109, 33);
+            this.btnUploadMaterial.TabIndex = 123;
+            this.btnUploadMaterial.Text = "Upload";
+            this.btnUploadMaterial.UseVisualStyleBackColor = true;
+            this.btnUploadMaterial.Click += new System.EventHandler(this.btnClickUploadMaterial);
+            // 
+            // txtMaterialUp
+            // 
+            this.txtMaterialUp.Location = new System.Drawing.Point(177, 167);
+            this.txtMaterialUp.Name = "txtMaterialUp";
+            this.txtMaterialUp.Size = new System.Drawing.Size(216, 20);
+            this.txtMaterialUp.TabIndex = 124;
+            this.txtMaterialUp.TextChanged += new System.EventHandler(this.txtMaterialUp_TextChanged);
+            // 
+            // lblDeleteMaterial
+            // 
+            this.lblDeleteMaterial.AutoSize = true;
+            this.lblDeleteMaterial.Font = new System.Drawing.Font("Calibri", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDeleteMaterial.ForeColor = System.Drawing.Color.Blue;
+            this.lblDeleteMaterial.Location = new System.Drawing.Point(243, 208);
+            this.lblDeleteMaterial.Name = "lblDeleteMaterial";
+            this.lblDeleteMaterial.Size = new System.Drawing.Size(248, 23);
+            this.lblDeleteMaterial.TabIndex = 126;
+            this.lblDeleteMaterial.Text = "Material deleted  successfully!";
+            this.lblDeleteMaterial.Visible = false;
+            // 
+            // lblUpdateMaterial
+            // 
+            this.lblUpdateMaterial.AutoSize = true;
+            this.lblUpdateMaterial.Font = new System.Drawing.Font("Calibri", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUpdateMaterial.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.lblUpdateMaterial.Location = new System.Drawing.Point(243, 208);
+            this.lblUpdateMaterial.Name = "lblUpdateMaterial";
+            this.lblUpdateMaterial.Size = new System.Drawing.Size(251, 23);
+            this.lblUpdateMaterial.TabIndex = 125;
+            this.lblUpdateMaterial.Text = "Material updated successfully!";
+            this.lblUpdateMaterial.Visible = false;
+            // 
+            // lblAddClass
+            // 
+            this.lblAddClass.AutoSize = true;
+            this.lblAddClass.Font = new System.Drawing.Font("Calibri", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddClass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lblAddClass.Location = new System.Drawing.Point(243, 208);
+            this.lblAddClass.Name = "lblAddClass";
+            this.lblAddClass.Size = new System.Drawing.Size(245, 23);
+            this.lblAddClass.TabIndex = 127;
+            this.lblAddClass.Text = "Material created successfully!";
+            this.lblAddClass.Visible = false;
+            // 
+            // lblMaterialUpload
+            // 
+            this.lblMaterialUpload.AutoSize = true;
+            this.lblMaterialUpload.Font = new System.Drawing.Font("Calibri", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMaterialUpload.ForeColor = System.Drawing.Color.Magenta;
+            this.lblMaterialUpload.Location = new System.Drawing.Point(243, 208);
+            this.lblMaterialUpload.Name = "lblMaterialUpload";
+            this.lblMaterialUpload.Size = new System.Drawing.Size(263, 23);
+            this.lblMaterialUpload.TabIndex = 128;
+            this.lblMaterialUpload.Text = "Material uploaded  successfully!";
+            this.lblMaterialUpload.Visible = false;
+            // 
+            // btnBackToTeacher
+            // 
+            this.btnBackToTeacher.BackColor = System.Drawing.SystemColors.Control;
+            this.btnBackToTeacher.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackToTeacher.Location = new System.Drawing.Point(526, 239);
+            this.btnBackToTeacher.Name = "btnBackToTeacher";
+            this.btnBackToTeacher.Size = new System.Drawing.Size(105, 35);
+            this.btnBackToTeacher.TabIndex = 129;
+            this.btnBackToTeacher.Text = "Back";
+            this.btnBackToTeacher.UseVisualStyleBackColor = true;
+            this.btnBackToTeacher.Click += new System.EventHandler(this.btnClickBackTeacherHP);
+            // 
+            // btnBackToStudent
+            // 
+            this.btnBackToStudent.BackColor = System.Drawing.SystemColors.Control;
+            this.btnBackToStudent.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBackToStudent.Location = new System.Drawing.Point(526, 239);
+            this.btnBackToStudent.Name = "btnBackToStudent";
+            this.btnBackToStudent.Size = new System.Drawing.Size(105, 35);
+            this.btnBackToStudent.TabIndex = 130;
+            this.btnBackToStudent.Text = "Back";
+            this.btnBackToStudent.UseVisualStyleBackColor = true;
+            this.btnBackToStudent.Click += new System.EventHandler(this.btnBackToStudent_Click);
+            // 
             // EditMaterials
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(734, 771);
+            this.Controls.Add(this.btnBackToStudent);
+            this.Controls.Add(this.btnBackToTeacher);
+            this.Controls.Add(this.txtMaterialUp);
+            this.Controls.Add(this.btnUploadMaterial);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtTeacherId);
             this.Controls.Add(this.lblDets);
@@ -217,13 +288,14 @@
             this.Controls.Add(this.btnUpdateStudent);
             this.Controls.Add(this.btnRefreshStudent);
             this.Controls.Add(this.btnAddStudent);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.txtModuleId);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.labelAdminTeacher);
             this.Controls.Add(this.courseBtnToAdminHP);
+            this.Controls.Add(this.lblMaterialUpload);
+            this.Controls.Add(this.lblDeleteMaterial);
+            this.Controls.Add(this.lblUpdateMaterial);
+            this.Controls.Add(this.lblAddClass);
             this.Name = "EditMaterials";
             this.Text = "EditMaterials";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMaterials)).EndInit();
@@ -233,7 +305,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button courseBtnToAdminHP;
+        public System.Windows.Forms.Button courseBtnToAdminHP;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtTeacherId;
         private System.Windows.Forms.Label lblDets;
@@ -242,11 +314,16 @@
         private System.Windows.Forms.Button btnUpdateStudent;
         private System.Windows.Forms.Button btnRefreshStudent;
         private System.Windows.Forms.Button btnAddStudent;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtModuleId;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label labelAdminTeacher;
+        private System.Windows.Forms.Button btnUploadMaterial;
+        private System.Windows.Forms.TextBox txtMaterialUp;
+        private System.Windows.Forms.Label lblDeleteMaterial;
+        private System.Windows.Forms.Label lblUpdateMaterial;
+        private System.Windows.Forms.Label lblAddClass;
+        private System.Windows.Forms.Label lblMaterialUpload;
+        public System.Windows.Forms.Button btnBackToTeacher;
+        public System.Windows.Forms.Button btnBackToStudent;
     }
 }

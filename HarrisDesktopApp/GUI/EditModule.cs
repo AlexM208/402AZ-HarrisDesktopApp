@@ -48,6 +48,7 @@ namespace HarrisDesktopApp.GUI
                     courseID = Convert.ToInt32(selectedRow.Cells["course_id"].Value),
                     startDate = Convert.ToDateTime(selectedRow.Cells["start_date"].Value),
                     endDate = Convert.ToDateTime(selectedRow.Cells["end_date"].Value),
+                    xm_class_room = Convert.ToDouble(selectedRow.Cells["class_room"].Value),
 
                 };
             }
@@ -96,11 +97,16 @@ namespace HarrisDesktopApp.GUI
                 xm_cw1_pass_fail = txtPassMark1.Text,
                 xm_cw2_mark = txtPassMark2.Text,
                 courseID = Convert.ToInt32(txtMcourseId.Text),
+                xm_class_room = Convert.ToDouble(txtModuleClassRoom.Text),
 
             };
             adminOperations.AddModule(newModule);
             LoadModule();
             ClearModuleFields();
+            lblDeleteModule.Hide();
+            lblAddModule.Show();
+            lblUpdateModule.Hide();
+            
 
 
         }
@@ -120,10 +126,14 @@ namespace HarrisDesktopApp.GUI
                     selectedModule.endDate = dateTimePickerEnd.Value;
                     selectedModule.xm_cw1_pass_fail =txtPassMark1.Text;
                     selectedModule.xm_cw2_mark =txtPassMark2.Text;
+                    selectedModule.xm_class_room = Convert.ToDouble(txtModuleClassRoom.Text);
 
                     adminOperations.UpdateModule(selectedModule);
                     LoadModule();
                     ClearModuleFields();
+                    lblDeleteModule.Hide();
+                    lblAddModule.Hide();
+                    lblUpdateModule.Show();
                 }
             }
         }
@@ -140,15 +150,18 @@ namespace HarrisDesktopApp.GUI
                     adminOperations.DeleteModule(module1);
                     LoadModule();
                     ClearModuleFields();
+                    lblDeleteModule.Show();
+                    lblAddModule.Hide();
+                    lblUpdateModule.Hide();
                 }
                 else
                 {
-                    MessageBox.Show("Please select a customer to delete.");
+                    MessageBox.Show("Please select a Module to delete.");
                 }
             }
             else
             {
-                MessageBox.Show("Please select a customer to delete.");
+                MessageBox.Show("Please select a Module to delete.");
             }
         }
 
@@ -156,6 +169,9 @@ namespace HarrisDesktopApp.GUI
         private void btnClickRefreshModule(object sender, EventArgs e)
         {
             LoadModule();
+            lblDeleteModule.Hide();
+            lblAddModule.Hide();
+            lblUpdateModule.Hide();
         }
 
         

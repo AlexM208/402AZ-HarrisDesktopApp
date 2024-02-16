@@ -29,87 +29,147 @@
         private void InitializeComponent()
         {
             this.labelWelcome = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnTimetableDets = new System.Windows.Forms.Button();
+            this.btnMaterialsTeacher = new System.Windows.Forms.Button();
+            this.btnStudentTeacher = new System.Windows.Forms.Button();
+            this.btnLogoutTeacher = new System.Windows.Forms.Button();
+            this.dataGridViewStTeacher = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTimetableTeacher = new System.Windows.Forms.DataGridView();
+            this.dataGridViewStClass = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStTeacher)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTimetableTeacher)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStClass)).BeginInit();
             this.SuspendLayout();
             // 
             // labelWelcome
             // 
             this.labelWelcome.AutoSize = true;
-            this.labelWelcome.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelWelcome.Location = new System.Drawing.Point(86, 50);
+            this.labelWelcome.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelWelcome.Location = new System.Drawing.Point(12, 9);
             this.labelWelcome.Name = "labelWelcome";
-            this.labelWelcome.Size = new System.Drawing.Size(92, 26);
+            this.labelWelcome.Size = new System.Drawing.Size(190, 29);
             this.labelWelcome.TabIndex = 0;
-            this.labelWelcome.Text = "Welcome";
+            this.labelWelcome.Text = "Welcome Teacher";
             // 
-            // button1
+            // btnTimetableDets
             // 
-            this.button1.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(134, 135);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(132, 42);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Timetable";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnTimetableDets.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTimetableDets.Location = new System.Drawing.Point(17, 148);
+            this.btnTimetableDets.Name = "btnTimetableDets";
+            this.btnTimetableDets.Size = new System.Drawing.Size(132, 42);
+            this.btnTimetableDets.TabIndex = 1;
+            this.btnTimetableDets.Text = "Timetable";
+            this.btnTimetableDets.UseVisualStyleBackColor = true;
+            this.btnTimetableDets.Click += new System.EventHandler(this.btnClickTimetableDets);
             // 
-            // button2
+            // btnMaterialsTeacher
             // 
-            this.button2.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(296, 135);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(132, 42);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Materials";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnMaterialsTeacher.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMaterialsTeacher.Location = new System.Drawing.Point(155, 148);
+            this.btnMaterialsTeacher.Name = "btnMaterialsTeacher";
+            this.btnMaterialsTeacher.Size = new System.Drawing.Size(132, 42);
+            this.btnMaterialsTeacher.TabIndex = 2;
+            this.btnMaterialsTeacher.Text = "Materials";
+            this.btnMaterialsTeacher.UseVisualStyleBackColor = true;
+            this.btnMaterialsTeacher.Click += new System.EventHandler(this.btnClickMaterialsDets);
             // 
-            // button3
+            // btnStudentTeacher
             // 
-            this.button3.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(465, 135);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(132, 42);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Students";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnStudentTeacher.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStudentTeacher.Location = new System.Drawing.Point(293, 148);
+            this.btnStudentTeacher.Name = "btnStudentTeacher";
+            this.btnStudentTeacher.Size = new System.Drawing.Size(132, 42);
+            this.btnStudentTeacher.TabIndex = 3;
+            this.btnStudentTeacher.Text = "Students";
+            this.btnStudentTeacher.UseVisualStyleBackColor = true;
+            this.btnStudentTeacher.Click += new System.EventHandler(this.btnClickStudentDets);
             // 
-            // button4
+            // btnLogoutTeacher
             // 
-            this.button4.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(626, 135);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(132, 42);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "Worksheets";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnLogoutTeacher.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogoutTeacher.Location = new System.Drawing.Point(208, 4);
+            this.btnLogoutTeacher.Name = "btnLogoutTeacher";
+            this.btnLogoutTeacher.Size = new System.Drawing.Size(129, 34);
+            this.btnLogoutTeacher.TabIndex = 13;
+            this.btnLogoutTeacher.Text = "Logout";
+            this.btnLogoutTeacher.UseVisualStyleBackColor = true;
+            this.btnLogoutTeacher.Click += new System.EventHandler(this.btnClickLogoutTeacher);
             // 
-            // button5
+            // dataGridViewStTeacher
             // 
-            this.button5.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(763, 547);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(116, 34);
-            this.button5.TabIndex = 5;
-            this.button5.Text = "Back";
-            this.button5.UseVisualStyleBackColor = true;
+            this.dataGridViewStTeacher.AllowUserToAddRows = false;
+            this.dataGridViewStTeacher.AllowUserToDeleteRows = false;
+            this.dataGridViewStTeacher.AllowUserToResizeColumns = false;
+            this.dataGridViewStTeacher.AllowUserToResizeRows = false;
+            this.dataGridViewStTeacher.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewStTeacher.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewStTeacher.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridViewStTeacher.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewStTeacher.Location = new System.Drawing.Point(12, 225);
+            this.dataGridViewStTeacher.Name = "dataGridViewStTeacher";
+            this.dataGridViewStTeacher.ReadOnly = true;
+            this.dataGridViewStTeacher.Size = new System.Drawing.Size(544, 284);
+            this.dataGridViewStTeacher.TabIndex = 94;
+            this.dataGridViewStTeacher.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewStTeacher_CellContentClick);
+            // 
+            // dataGridViewTimetableTeacher
+            // 
+            this.dataGridViewTimetableTeacher.AllowUserToAddRows = false;
+            this.dataGridViewTimetableTeacher.AllowUserToDeleteRows = false;
+            this.dataGridViewTimetableTeacher.AllowUserToResizeColumns = false;
+            this.dataGridViewTimetableTeacher.AllowUserToResizeRows = false;
+            this.dataGridViewTimetableTeacher.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewTimetableTeacher.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewTimetableTeacher.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridViewTimetableTeacher.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewTimetableTeacher.Location = new System.Drawing.Point(12, 225);
+            this.dataGridViewTimetableTeacher.Name = "dataGridViewTimetableTeacher";
+            this.dataGridViewTimetableTeacher.ReadOnly = true;
+            this.dataGridViewTimetableTeacher.Size = new System.Drawing.Size(544, 284);
+            this.dataGridViewTimetableTeacher.TabIndex = 95;
+            // 
+            // dataGridViewStClass
+            // 
+            this.dataGridViewStClass.AllowUserToAddRows = false;
+            this.dataGridViewStClass.AllowUserToDeleteRows = false;
+            this.dataGridViewStClass.AllowUserToResizeColumns = false;
+            this.dataGridViewStClass.AllowUserToResizeRows = false;
+            this.dataGridViewStClass.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewStClass.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewStClass.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridViewStClass.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewStClass.Location = new System.Drawing.Point(12, 225);
+            this.dataGridViewStClass.Name = "dataGridViewStClass";
+            this.dataGridViewStClass.ReadOnly = true;
+            this.dataGridViewStClass.Size = new System.Drawing.Size(544, 284);
+            this.dataGridViewStClass.TabIndex = 96;
             // 
             // TeacherHomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(917, 605);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(568, 521);
+            this.Controls.Add(this.dataGridViewStClass);
+            this.Controls.Add(this.dataGridViewStTeacher);
+            this.Controls.Add(this.btnLogoutTeacher);
+            this.Controls.Add(this.btnStudentTeacher);
+            this.Controls.Add(this.btnMaterialsTeacher);
+            this.Controls.Add(this.btnTimetableDets);
             this.Controls.Add(this.labelWelcome);
+            this.Controls.Add(this.dataGridViewTimetableTeacher);
+            this.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "TeacherHomePage";
             this.Text = "Homepage";
             this.Load += new System.EventHandler(this.TeacherHomePage_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStTeacher)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTimetableTeacher)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStClass)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -118,10 +178,12 @@
         #endregion
 
         private System.Windows.Forms.Label labelWelcome;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnTimetableDets;
+        private System.Windows.Forms.Button btnMaterialsTeacher;
+        private System.Windows.Forms.Button btnStudentTeacher;
+        private System.Windows.Forms.Button btnLogoutTeacher;
+        private System.Windows.Forms.DataGridView dataGridViewStTeacher;
+        private System.Windows.Forms.DataGridView dataGridViewTimetableTeacher;
+        private System.Windows.Forms.DataGridView dataGridViewStClass;
     }
 }

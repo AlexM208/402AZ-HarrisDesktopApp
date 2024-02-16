@@ -4,6 +4,8 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
+using HarrisDesktopApp.Models;
 
 namespace HarrisDesktopApp.DBOperations
 {
@@ -17,7 +19,7 @@ namespace HarrisDesktopApp.DBOperations
         //operation to show Timetable details table 
         public DataTable GetTimetable()
         {
-            string query = "Call getTimetable()";
+            string query = "Call getJoinTimetable()";
             return dataAccess.ExecuteQuery(query);
         }
 

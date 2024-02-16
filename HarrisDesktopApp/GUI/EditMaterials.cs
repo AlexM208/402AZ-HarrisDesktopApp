@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -75,10 +76,11 @@ namespace HarrisDesktopApp.GUI
         {
             Materials newMaterial = new Materials
             {
-                mm_moduleID = Convert.ToInt32(txtModuleId.Text),                
+                mm_moduleID = Convert.ToInt32(txtModuleId.Text),
                 mm_tID = Convert.ToInt32(txtTeacherId.Text),
                 mm_mat_date_edit = DateTime.Now,
-                
+                //mm_material_blob = btnUploadMaterial.AccessibilityObject;
+
             };
             adminOperations.AddMaterial(newMaterial);
             ClearMaterialFields();
@@ -118,12 +120,12 @@ namespace HarrisDesktopApp.GUI
                 }
                 else
                 {
-                    MessageBox.Show("Please select a customer to delete.");
+                    MessageBox.Show("Please select a Material to delete.");
                 }
             }
             else
             {
-                MessageBox.Show("Please select a customer to delete.");
+                MessageBox.Show("Please select a Material to delete.");
             }
         }
 
@@ -141,6 +143,61 @@ namespace HarrisDesktopApp.GUI
             adminp1.StartPosition = FormStartPosition.CenterScreen;
             adminp1.Show();
             this.Hide();
+        }
+
+        private void btnClickUploadMaterial(object sender, EventArgs e)
+        {
+            var fileContent = string.Empty;
+            var filePath = string.Empty;
+
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.InitialDirectory = "c:\\";
+                openFileDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+                openFileDialog.FilterIndex = 2;
+                openFileDialog.RestoreDirectory = true;
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    //Get the path of specified file
+                    filePath = openFileDialog.FileName;
+                    txtMaterialUp.Text= openFileDialog.FileName;
+                    //btnUploadMaterial  = mm_material_blob.FromFile(openFileDialog.FileName);
+                    btnUploadMaterial.Image = Image.FromFile(openFileDialog.FileName);
+
+                    //Read the contents of the file into a stream
+                    var fileStream = openFileDialog.OpenFile();
+
+                    using (StreamReader reader = new StreamReader(fileStream))
+                    {
+                        fileContent = reader.ReadToEnd();
+                    }
+                }
+            }
+
+            MessageBox.Show(fileContent, "File Content at path: " + filePath, MessageBoxButtons.OK);
+        }
+
+        private void txtMaterialUp_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnClickBackTeacherHP(object sender, EventArgs e)
+        {
+            TeacherHomePage teacherHP = new TeacherHomePage();
+            teacherHP.StartPosition = FormStartPosition.CenterScreen;
+            teacherHP.Show();
+            this.Hide();
+        }
+
+        private void btnBackToStudent_Click(object sender, EventArgs e)
+        {
+            StudentHomeP studentHP = new StudentHomeP();
+            studentHP.StartPosition = FormStartPosition.CenterScreen;
+            studentHP.Show();
+            this.Hide();
+
         }
     }
 }

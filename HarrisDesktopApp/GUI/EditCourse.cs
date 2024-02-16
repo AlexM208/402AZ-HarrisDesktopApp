@@ -66,8 +66,6 @@ namespace HarrisDesktopApp.GUI
 
         }
 
-
-
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -97,6 +95,9 @@ namespace HarrisDesktopApp.GUI
             adminOperations.AddCourseList(newCourse);
             LoadCourse();
             ClearCourseListFields();
+            lblAddCourse.Show();
+            lblDeleteCourse.Hide();
+            lblUpdateCourse.Hide();
 
         }
 
@@ -118,6 +119,9 @@ namespace HarrisDesktopApp.GUI
                     adminOperations.UpdateCourseList(selectedCourse);
                     LoadCourse();
                     ClearCourseListFields();
+                    lblAddCourse.Hide();
+                    lblDeleteCourse.Hide();
+                    lblUpdateCourse.Show();
                 }
             }
         }
@@ -133,21 +137,27 @@ namespace HarrisDesktopApp.GUI
                     adminOperations.DeleteCourseList(courseId1);
                     LoadCourse();
                     ClearCourseListFields();
+                    lblAddCourse.Hide();
+                    lblDeleteCourse.Show();
+                    lblUpdateCourse.Hide();
                 }
                 else
                 {
-                    MessageBox.Show("Please select a customer to delete.");
+                    MessageBox.Show("Please select a Course to delete.");
                 }
             }
             else
             {
-                MessageBox.Show("Please select a customer to delete.");
+                MessageBox.Show("Please select a Course to delete.");
             }
         }
 
         private void btnClickRefreshCourseList(object sender, EventArgs e)
         {
             LoadCourse();
+            lblAddCourse.Hide();
+            lblDeleteCourse.Hide();
+            lblUpdateCourse.Hide();
         }
     }
 }

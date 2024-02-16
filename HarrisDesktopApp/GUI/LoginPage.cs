@@ -13,11 +13,11 @@ namespace HarrisDesktopApp
 {
     public partial class LoginPage : Form
     {
-        private const string AdminUsername = "admin";
-        private const string AdminPassword = "admin";
+       
         public LoginPage()
         {
             InitializeComponent();
+            StartPosition = FormStartPosition.CenterScreen;
         }
 
        
@@ -32,9 +32,12 @@ namespace HarrisDesktopApp
             string adminPasw = "admin";
             string stUser = "student";
             string stPasw = "student";
+            string TeacherPasw = "teacher";
+            string TeacherUser = "teacher";
             if((textBoxUsername.Text==adminUser) && (textBoxPassword.Text == adminPasw))
             {
                  AdminHomePage adminp1 = new AdminHomePage();
+                adminp1.StartPosition = FormStartPosition.CenterScreen;
                  adminp1.Show();
                  this.Hide();
                 //Application.Run(new AdminHomePage());
@@ -43,9 +46,20 @@ namespace HarrisDesktopApp
             else if ((textBoxUsername.Text == stUser) && (textBoxPassword.Text == stPasw))
             {
                 StudentHomeP studentPage1 = new StudentHomeP();
+                studentPage1.StartPosition = FormStartPosition.CenterScreen;
                 studentPage1.Show();
                 this.Hide();
-                //Application.Run(new AdminHomePage());
+                //Application.Run(new StudentHomeP());
+                lblPasswordInvalid.Hide();
+
+            }
+            else if ((textBoxUsername.Text == TeacherUser) && (textBoxPassword.Text == TeacherPasw))
+            {
+                TeacherHomePage teacherPage1 = new TeacherHomePage();
+                teacherPage1.StartPosition = FormStartPosition.CenterScreen;
+                teacherPage1.Show();
+                this.Hide();
+                //Application.Run(new StudentHomeP());
                 lblPasswordInvalid.Hide();
 
             }

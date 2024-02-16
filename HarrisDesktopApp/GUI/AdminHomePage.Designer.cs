@@ -38,15 +38,16 @@
             this.buttonTimetableDets = new System.Windows.Forms.Button();
             this.buttonEnrolmentDets = new System.Windows.Forms.Button();
             this.buttonMaterialsDets = new System.Windows.Forms.Button();
-            this.buttonWorksheetsDets = new System.Windows.Forms.Button();
-            this.buttonLogout = new System.Windows.Forms.Button();
+            this.btnAdminLogout = new System.Windows.Forms.Button();
+            this.dataGridViewTimetblDets = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTimetblDets)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(64, 52);
+            this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(179, 29);
             this.label1.TabIndex = 0;
@@ -55,7 +56,7 @@
             // buttonClassDets
             // 
             this.buttonClassDets.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonClassDets.Location = new System.Drawing.Point(535, 112);
+            this.buttonClassDets.Location = new System.Drawing.Point(346, 104);
             this.buttonClassDets.Name = "buttonClassDets";
             this.buttonClassDets.Size = new System.Drawing.Size(129, 34);
             this.buttonClassDets.TabIndex = 1;
@@ -66,7 +67,7 @@
             // buttonModuleDets
             // 
             this.buttonModuleDets.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonModuleDets.Location = new System.Drawing.Point(670, 112);
+            this.buttonModuleDets.Location = new System.Drawing.Point(481, 104);
             this.buttonModuleDets.Name = "buttonModuleDets";
             this.buttonModuleDets.Size = new System.Drawing.Size(129, 34);
             this.buttonModuleDets.TabIndex = 2;
@@ -77,7 +78,7 @@
             // buttonCourseDets
             // 
             this.buttonCourseDets.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCourseDets.Location = new System.Drawing.Point(535, 152);
+            this.buttonCourseDets.Location = new System.Drawing.Point(481, 144);
             this.buttonCourseDets.Name = "buttonCourseDets";
             this.buttonCourseDets.Size = new System.Drawing.Size(129, 34);
             this.buttonCourseDets.TabIndex = 3;
@@ -88,7 +89,7 @@
             // buttonStudentDets
             // 
             this.buttonStudentDets.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonStudentDets.Location = new System.Drawing.Point(265, 112);
+            this.buttonStudentDets.Location = new System.Drawing.Point(211, 104);
             this.buttonStudentDets.Name = "buttonStudentDets";
             this.buttonStudentDets.Size = new System.Drawing.Size(129, 34);
             this.buttonStudentDets.TabIndex = 4;
@@ -99,18 +100,18 @@
             // buttonBackAdmin
             // 
             this.buttonBackAdmin.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonBackAdmin.Location = new System.Drawing.Point(670, 152);
+            this.buttonBackAdmin.Location = new System.Drawing.Point(76, 184);
             this.buttonBackAdmin.Name = "buttonBackAdmin";
             this.buttonBackAdmin.Size = new System.Drawing.Size(129, 34);
             this.buttonBackAdmin.TabIndex = 6;
-            this.buttonBackAdmin.Text = "Back";
+            this.buttonBackAdmin.Text = "Refresh";
             this.buttonBackAdmin.UseVisualStyleBackColor = true;
-            this.buttonBackAdmin.Click += new System.EventHandler(this.buttonClickBackAdminP);
+            this.buttonBackAdmin.Click += new System.EventHandler(this.btnClickRefreshTimetblDets);
             // 
             // buttonTeacherDets
             // 
             this.buttonTeacherDets.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonTeacherDets.Location = new System.Drawing.Point(130, 112);
+            this.buttonTeacherDets.Location = new System.Drawing.Point(76, 104);
             this.buttonTeacherDets.Name = "buttonTeacherDets";
             this.buttonTeacherDets.Size = new System.Drawing.Size(129, 34);
             this.buttonTeacherDets.TabIndex = 7;
@@ -121,7 +122,7 @@
             // buttonTimetableDets
             // 
             this.buttonTimetableDets.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonTimetableDets.Location = new System.Drawing.Point(400, 152);
+            this.buttonTimetableDets.Location = new System.Drawing.Point(346, 144);
             this.buttonTimetableDets.Name = "buttonTimetableDets";
             this.buttonTimetableDets.Size = new System.Drawing.Size(129, 34);
             this.buttonTimetableDets.TabIndex = 8;
@@ -132,7 +133,7 @@
             // buttonEnrolmentDets
             // 
             this.buttonEnrolmentDets.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEnrolmentDets.Location = new System.Drawing.Point(265, 152);
+            this.buttonEnrolmentDets.Location = new System.Drawing.Point(211, 144);
             this.buttonEnrolmentDets.Name = "buttonEnrolmentDets";
             this.buttonEnrolmentDets.Size = new System.Drawing.Size(129, 34);
             this.buttonEnrolmentDets.TabIndex = 9;
@@ -143,7 +144,7 @@
             // buttonMaterialsDets
             // 
             this.buttonMaterialsDets.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonMaterialsDets.Location = new System.Drawing.Point(130, 152);
+            this.buttonMaterialsDets.Location = new System.Drawing.Point(76, 144);
             this.buttonMaterialsDets.Name = "buttonMaterialsDets";
             this.buttonMaterialsDets.Size = new System.Drawing.Size(129, 34);
             this.buttonMaterialsDets.TabIndex = 10;
@@ -151,35 +152,42 @@
             this.buttonMaterialsDets.UseVisualStyleBackColor = true;
             this.buttonMaterialsDets.Click += new System.EventHandler(this.btnClickMaterialsDets);
             // 
-            // buttonWorksheetsDets
+            // btnAdminLogout
             // 
-            this.buttonWorksheetsDets.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonWorksheetsDets.Location = new System.Drawing.Point(400, 112);
-            this.buttonWorksheetsDets.Name = "buttonWorksheetsDets";
-            this.buttonWorksheetsDets.Size = new System.Drawing.Size(129, 34);
-            this.buttonWorksheetsDets.TabIndex = 11;
-            this.buttonWorksheetsDets.Text = "Worksheets";
-            this.buttonWorksheetsDets.UseVisualStyleBackColor = true;
-            this.buttonWorksheetsDets.Click += new System.EventHandler(this.btnClickWorksheetsDets);
+            this.btnAdminLogout.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdminLogout.Location = new System.Drawing.Point(197, 4);
+            this.btnAdminLogout.Name = "btnAdminLogout";
+            this.btnAdminLogout.Size = new System.Drawing.Size(129, 34);
+            this.btnAdminLogout.TabIndex = 12;
+            this.btnAdminLogout.Text = "Logout";
+            this.btnAdminLogout.UseVisualStyleBackColor = true;
+            this.btnAdminLogout.Click += new System.EventHandler(this.btnClickLogoutAdmin);
             // 
-            // buttonLogout
+            // dataGridViewTimetblDets
             // 
-            this.buttonLogout.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonLogout.Location = new System.Drawing.Point(265, 51);
-            this.buttonLogout.Name = "buttonLogout";
-            this.buttonLogout.Size = new System.Drawing.Size(129, 34);
-            this.buttonLogout.TabIndex = 12;
-            this.buttonLogout.Text = "Logout";
-            this.buttonLogout.UseVisualStyleBackColor = true;
-            this.buttonLogout.Click += new System.EventHandler(this.buttonClickLogout);
+            this.dataGridViewTimetblDets.AllowUserToAddRows = false;
+            this.dataGridViewTimetblDets.AllowUserToDeleteRows = false;
+            this.dataGridViewTimetblDets.AllowUserToResizeColumns = false;
+            this.dataGridViewTimetblDets.AllowUserToResizeRows = false;
+            this.dataGridViewTimetblDets.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewTimetblDets.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewTimetblDets.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridViewTimetblDets.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewTimetblDets.Location = new System.Drawing.Point(12, 249);
+            this.dataGridViewTimetblDets.Name = "dataGridViewTimetblDets";
+            this.dataGridViewTimetblDets.ReadOnly = true;
+            this.dataGridViewTimetblDets.Size = new System.Drawing.Size(645, 189);
+            this.dataGridViewTimetblDets.TabIndex = 70;
             // 
             // AdminHomePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1008, 761);
-            this.Controls.Add(this.buttonLogout);
-            this.Controls.Add(this.buttonWorksheetsDets);
+            this.ClientSize = new System.Drawing.Size(669, 450);
+            this.Controls.Add(this.dataGridViewTimetblDets);
+            this.Controls.Add(this.btnAdminLogout);
             this.Controls.Add(this.buttonMaterialsDets);
             this.Controls.Add(this.buttonEnrolmentDets);
             this.Controls.Add(this.buttonTimetableDets);
@@ -193,6 +201,7 @@
             this.Name = "AdminHomePage";
             this.Text = "AdminPage";
             this.Load += new System.EventHandler(this.AdminHomePage_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTimetblDets)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -210,7 +219,7 @@
         private System.Windows.Forms.Button buttonTimetableDets;
         private System.Windows.Forms.Button buttonEnrolmentDets;
         private System.Windows.Forms.Button buttonMaterialsDets;
-        private System.Windows.Forms.Button buttonWorksheetsDets;
-        private System.Windows.Forms.Button buttonLogout;
+        private System.Windows.Forms.Button btnAdminLogout;
+        private System.Windows.Forms.DataGridView dataGridViewTimetblDets;
     }
 }

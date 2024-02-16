@@ -59,6 +59,7 @@ namespace HarrisDesktopApp.GUI
             txtFloor.Clear();
             txtAddress.Clear();
             txtPostcode.Clear();
+            txtTeacherId.Clear();
 
         }
 
@@ -74,7 +75,6 @@ namespace HarrisDesktopApp.GUI
 
         }
 
-
         //back buton
         private void btnClickBack(object sender, EventArgs e)
         {
@@ -88,6 +88,7 @@ namespace HarrisDesktopApp.GUI
         //Create and save Class button
         private void btnClickAddClass(object sender, EventArgs e)
         {
+            
             Class newClass = new Class
             {
                 cc_classRoom = Convert.ToDouble(txtRoom.Text),
@@ -95,6 +96,8 @@ namespace HarrisDesktopApp.GUI
                 cc_classFloor = txtFloor.Text,
                 cc_classAddress = txtAddress.Text,
                 cc_classPostcode = txtPostcode.Text,
+                cc_t_id= Convert.ToInt32(txtTeacherId.Text),
+                
                 
             };
             adminOperations.AddClass(newClass);
@@ -120,6 +123,8 @@ namespace HarrisDesktopApp.GUI
                     selectedClass.cc_classFloor = txtFloor.Text;
                     selectedClass.cc_classAddress = txtAddress.Text;
                     selectedClass.cc_classPostcode = txtPostcode.Text;
+                    selectedClass.cc_t_id = Convert.ToInt32(txtTeacherId.Text);
+
                     
 
                     adminOperations.UpdateClass(selectedClass);
@@ -133,7 +138,6 @@ namespace HarrisDesktopApp.GUI
 
         }
 
-
         //Delete Operation
         private void btnClickDeleteClass(object sender, EventArgs e)
         {
@@ -143,21 +147,30 @@ namespace HarrisDesktopApp.GUI
 
                 if (classRoom1 != -1)
                 {
-                    adminOperations.DeleteClass(classRoom1);
-                    lblDeleteClass.Show();                   
-                    lblAddClass.Hide();
-                    lblUpdateClass.Hide();
-                    LoadClass();
-                    ClearClassFields();
+                    try
+                    {
+                        adminOperations.DeleteClass(classRoom1);
+                        lblDeleteClass.Show();
+                        lblAddClass.Hide();
+                        lblUpdateClass.Hide();
+                        LoadClass();
+                        ClearClassFields();
+                    }
+                    catch
+                    {
+
+                        MessageBox.Show("Can't delete, class in use");
+
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Please select a customer to delete.");
+                    MessageBox.Show("Please select a class to delete.");
                 }
             }
             else
             {
-                MessageBox.Show("Please select a customer to delete.");
+                MessageBox.Show("Please select a class to delete.");
             }
         }
 
