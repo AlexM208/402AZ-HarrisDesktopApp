@@ -12,7 +12,7 @@ namespace HarrisDesktopApp.Models
     {
         public int mm_materialID {  get; set; }
         public int mm_moduleID { get; set; }
-       // public string mm_moduleName {  get; set; }
+        public string mm_materialName {  get; set; }
         public int mm_tID {  get; set; }
         public DateTime mm_mat_date_edit { get; set; }
         public byte[] mm_material_blob {  get; set; }

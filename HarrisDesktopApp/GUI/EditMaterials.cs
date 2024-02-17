@@ -57,6 +57,7 @@ namespace HarrisDesktopApp.GUI
         {
             txtModuleId.Clear();
             txtTeacherId.Clear();
+            //txtMaterialUp.Clear();
             
         }
 
@@ -74,35 +75,90 @@ namespace HarrisDesktopApp.GUI
         //Create and save Materials button
         private void btnClickAddMaterial(object sender, EventArgs e)
         {
-            Materials newMaterial = new Materials
-            {
-                mm_moduleID = Convert.ToInt32(txtModuleId.Text),
-                mm_tID = Convert.ToInt32(txtTeacherId.Text),
-                mm_mat_date_edit = DateTime.Now,
-                //mm_material_blob = btnUploadMaterial.AccessibilityObject;
 
-            };
-            adminOperations.AddMaterial(newMaterial);
-            ClearMaterialFields();
-            LoadMaterials();
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.InitialDirectory = "c:\\";
+            openFileDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+            openFileDialog.Title = "Select File !";
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = openFileDialog.FileName;
+                try
+                {
+                    //byte[] fileBytes = File.ReadAllBytes(filePath);
+                   // txtMaterialUp.Text = Path.GetFileName(filePath);
+                    Materials newMaterial = new Materials
+                    {
+                        mm_moduleID = Convert.ToInt32(txtModuleId.Text),
+                        mm_tID = Convert.ToInt32(txtTeacherId.Text),
+                        mm_mat_date_edit = DateTime.Now,
+                        mm_material_blob = File.ReadAllBytes(filePath),
+                        mm_materialName = Path.GetFileName(filePath),
+                    };
+                    adminOperations.AddMaterial(newMaterial);
+                    MessageBox.Show("File uploaded successfully.");
+                    ClearMaterialFields();
+                    LoadMaterials();
+                    lblMaterialUpload.Hide();
+                    lblDeleteMaterial.Hide();
+                    lblUpdateMaterial.Hide();
+                    lblAddClass.Show();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error uploading file: " + ex.Message);
+                }
+            }            
         }
 
         //update button
         private void btnClickUpdateMaterial(object sender, EventArgs e)
         {
-            if (dataGridViewMaterials.SelectedRows.Count > 0)
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.InitialDirectory = "c:\\";
+            openFileDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+            openFileDialog.Title = "Select File !";
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                Materials selectedMaterial = GetSelectedRowMaterial();
-                if (selectedMaterial != null)
+                string filePath = openFileDialog.FileName;
+                try
+                {
 
-                selectedMaterial.mm_moduleID = Convert.ToInt32(txtModuleId.Text);
-                selectedMaterial.mm_tID = Convert.ToInt32(txtTeacherId.Text);
-                selectedMaterial.mm_mat_date_edit = DateTime.Now;
+                    //byte[] fileBytes = File.ReadAllBytes(filePath);
+                    //txtMaterialUp.Text = Path.GetFileName(filePath);
 
-                adminOperations.UpdateMaterial(selectedMaterial);
-                ClearMaterialFields();
-                LoadMaterials();
+                    if (dataGridViewMaterials.SelectedRows.Count > 0)
+                    {
+                        Materials selectedMaterial = GetSelectedRowMaterial();
+                        if (selectedMaterial != null)
+                        {
+                            selectedMaterial.mm_moduleID = Convert.ToInt32(txtModuleId.Text);
+                            selectedMaterial.mm_tID = Convert.ToInt32(txtTeacherId.Text);
+                            selectedMaterial.mm_mat_date_edit = DateTime.Now;
+                            selectedMaterial.mm_material_blob = File.ReadAllBytes(filePath);
+                            selectedMaterial.mm_materialName = Path.GetFileName(filePath);
+                            adminOperations.UpdateMaterial(selectedMaterial);
+                            MessageBox.Show("File uploaded successfully.");
+                            ClearMaterialFields();
+                            LoadMaterials();
+                            lblMaterialUpload.Hide();
+                            lblDeleteMaterial.Hide();
+                            lblUpdateMaterial.Show();
+                            lblAddClass.Hide();
+
+                        }
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error uploading file: " + ex.Message);
+                }
+
             }
+            
         }
 
         //Delete operation Materials
@@ -117,6 +173,10 @@ namespace HarrisDesktopApp.GUI
                     adminOperations.DeleteMaterial(material1);
                     LoadMaterials();
                     ClearMaterialFields();
+                    lblMaterialUpload.Hide();
+                    lblDeleteMaterial.Show();
+                    lblUpdateMaterial.Hide();
+                    lblAddClass.Hide();
                 }
                 else
                 {
@@ -133,8 +193,12 @@ namespace HarrisDesktopApp.GUI
         private void btnClickRefreshMaterial(object sender, EventArgs e)
         {
             LoadMaterials();
+            ClearMaterialFields();
+            lblMaterialUpload.Hide();
+            lblDeleteMaterial.Hide();
+            lblUpdateMaterial.Hide();
+            lblAddClass.Hide();
         }
-
 
         // back button
         private void btnClickBack(object sender, EventArgs e)
@@ -143,39 +207,6 @@ namespace HarrisDesktopApp.GUI
             adminp1.StartPosition = FormStartPosition.CenterScreen;
             adminp1.Show();
             this.Hide();
-        }
-
-        private void btnClickUploadMaterial(object sender, EventArgs e)
-        {
-            var fileContent = string.Empty;
-            var filePath = string.Empty;
-
-            using (OpenFileDialog openFileDialog = new OpenFileDialog())
-            {
-                openFileDialog.InitialDirectory = "c:\\";
-                openFileDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
-                openFileDialog.FilterIndex = 2;
-                openFileDialog.RestoreDirectory = true;
-
-                if (openFileDialog.ShowDialog() == DialogResult.OK)
-                {
-                    //Get the path of specified file
-                    filePath = openFileDialog.FileName;
-                    txtMaterialUp.Text= openFileDialog.FileName;
-                    //btnUploadMaterial  = mm_material_blob.FromFile(openFileDialog.FileName);
-                    btnUploadMaterial.Image = Image.FromFile(openFileDialog.FileName);
-
-                    //Read the contents of the file into a stream
-                    var fileStream = openFileDialog.OpenFile();
-
-                    using (StreamReader reader = new StreamReader(fileStream))
-                    {
-                        fileContent = reader.ReadToEnd();
-                    }
-                }
-            }
-
-            MessageBox.Show(fileContent, "File Content at path: " + filePath, MessageBoxButtons.OK);
         }
 
         private void txtMaterialUp_TextChanged(object sender, EventArgs e)
@@ -200,4 +231,47 @@ namespace HarrisDesktopApp.GUI
 
         }
     }
+       /* private void btnClickUploadMaterial(object sender, EventArgs e)
+        {
+            var fileContent = string.Empty;
+            var filePath = string.Empty;
+
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.InitialDirectory = "c:\\";
+                openFileDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+                openFileDialog.FilterIndex = 2;
+                openFileDialog.RestoreDirectory = true;
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    //Get the path of specified file
+                    filePath = openFileDialog.FileName;
+                    txtMaterialUp.Text= openFileDialog.FileName;
+                    //btnUploadMaterial  = mm_material_blob.FromFile(openFileDialog.FileName);
+                    //btnUploadMaterial.Image = Image.FromFile(openFileDialog.FileName);
+
+                    //Read the contents of the file into a stream
+                    var fileStream = openFileDialog.OpenFile();
+
+                    using (StreamReader reader = new StreamReader(fileStream))
+                    {
+                        fileContent = reader.ReadToEnd();
+                    }
+                }
+            }
+
+            MessageBox.Show(fileContent, "File Content at path: " + filePath, MessageBoxButtons.OK);
+        }
+    /*Materials newMaterial = new Materials
+            {
+                mm_moduleID = Convert.ToInt32(txtModuleId.Text),
+                mm_tID = Convert.ToInt32(txtTeacherId.Text),
+                mm_mat_date_edit = DateTime.Now,
+                //mm_material_blob = btnUploadMaterial.AccessibilityObject;
+
+            };
+    adminOperations.AddMaterial(newMaterial);
+    ClearMaterialFields();
+    LoadMaterials();*/
 }

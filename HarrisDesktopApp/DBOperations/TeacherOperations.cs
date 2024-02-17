@@ -26,13 +26,13 @@ namespace HarrisDesktopApp.DBOperations
         //  creating a new Materials
         public void AddMaterial(Materials materials1)
         {
-            string query = "CALL AddMaterials(@mm_module_id, @mm_t_id, @mm_material_date_edit)";  //, @mm_material_blob
+            string query = "CALL AddMaterials(@mm_module_id, @mm_t_id, @mm_material_blob, @mm_material_date_edit, @mm_materialName )";  //
             MySqlCommand command = new MySqlCommand(query);
             command.Parameters.AddWithValue("@mm_module_id", materials1.mm_moduleID);
             command.Parameters.AddWithValue("@mm_t_id", materials1.mm_tID);
             command.Parameters.AddWithValue("@mm_material_date_edit", materials1.mm_mat_date_edit);
-            //command.Parameters.AddWithValue("@mm_material_blob", materials1.mm_material_blob);
-
+            command.Parameters.AddWithValue("@mm_material_blob", materials1.mm_material_blob);
+            command.Parameters.AddWithValue("@mm_materialName", materials1.mm_materialName);
 
             dataAccess.ExecuteNonQuery(command);
         }
@@ -47,14 +47,15 @@ namespace HarrisDesktopApp.DBOperations
         //  operation to update Materials details
         public void UpdateMaterial(Materials materials1)
         {
-            string query = "CALL UpdateMaterials(@mm_material_id, @mm_module_id, @mm_t_id, @mm_material_date_edit)";  //, @mm_material_blob
+            string query = "CALL UpdateMaterials(@mm_material_id, @mm_module_id, @mm_t_id, @mm_material_blob, @mm_material_date_edit, @mm_materialName)";  //, @mm_material_blob
             MySqlCommand command = new MySqlCommand(query);
 
             command.Parameters.AddWithValue("@mm_material_id", materials1.mm_materialID);
             command.Parameters.AddWithValue("@mm_module_id", materials1.mm_moduleID);
             command.Parameters.AddWithValue("@mm_t_id", materials1.mm_tID);
             command.Parameters.AddWithValue("@mm_material_date_edit", materials1.mm_mat_date_edit);
-            //command.Parameters.AddWithValue("@mm_material_blob", materials1.mm_material_blob);
+            command.Parameters.AddWithValue("@mm_material_blob", materials1.mm_material_blob);
+            command.Parameters.AddWithValue("@mm_materialName", materials1.mm_materialName);
 
             dataAccess.ExecuteNonQuery(command);
         }

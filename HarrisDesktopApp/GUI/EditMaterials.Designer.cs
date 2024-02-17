@@ -40,8 +40,6 @@
             this.txtModuleId = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.labelAdminTeacher = new System.Windows.Forms.Label();
-            this.btnUploadMaterial = new System.Windows.Forms.Button();
-            this.txtMaterialUp = new System.Windows.Forms.TextBox();
             this.lblDeleteMaterial = new System.Windows.Forms.Label();
             this.lblUpdateMaterial = new System.Windows.Forms.Label();
             this.lblAddClass = new System.Windows.Forms.Label();
@@ -143,12 +141,12 @@
             // 
             // btnAddStudent
             // 
-            this.btnAddStudent.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddStudent.Location = new System.Drawing.Point(82, 239);
+            this.btnAddStudent.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddStudent.Location = new System.Drawing.Point(56, 239);
             this.btnAddStudent.Name = "btnAddStudent";
-            this.btnAddStudent.Size = new System.Drawing.Size(105, 35);
+            this.btnAddStudent.Size = new System.Drawing.Size(131, 35);
             this.btnAddStudent.TabIndex = 115;
-            this.btnAddStudent.Text = "Add";
+            this.btnAddStudent.Text = "Upload Material";
             this.btnAddStudent.UseVisualStyleBackColor = true;
             this.btnAddStudent.Click += new System.EventHandler(this.btnClickAddMaterial);
             // 
@@ -178,26 +176,6 @@
             this.labelAdminTeacher.Size = new System.Drawing.Size(179, 29);
             this.labelAdminTeacher.TabIndex = 100;
             this.labelAdminTeacher.Text = "Welcome Admin";
-            // 
-            // btnUploadMaterial
-            // 
-            this.btnUploadMaterial.BackColor = System.Drawing.SystemColors.Control;
-            this.btnUploadMaterial.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUploadMaterial.Location = new System.Drawing.Point(38, 159);
-            this.btnUploadMaterial.Name = "btnUploadMaterial";
-            this.btnUploadMaterial.Size = new System.Drawing.Size(109, 33);
-            this.btnUploadMaterial.TabIndex = 123;
-            this.btnUploadMaterial.Text = "Upload";
-            this.btnUploadMaterial.UseVisualStyleBackColor = true;
-            this.btnUploadMaterial.Click += new System.EventHandler(this.btnClickUploadMaterial);
-            // 
-            // txtMaterialUp
-            // 
-            this.txtMaterialUp.Location = new System.Drawing.Point(177, 167);
-            this.txtMaterialUp.Name = "txtMaterialUp";
-            this.txtMaterialUp.Size = new System.Drawing.Size(216, 20);
-            this.txtMaterialUp.TabIndex = 124;
-            this.txtMaterialUp.TextChanged += new System.EventHandler(this.txtMaterialUp_TextChanged);
             // 
             // lblDeleteMaterial
             // 
@@ -278,8 +256,6 @@
             this.ClientSize = new System.Drawing.Size(734, 771);
             this.Controls.Add(this.btnBackToStudent);
             this.Controls.Add(this.btnBackToTeacher);
-            this.Controls.Add(this.txtMaterialUp);
-            this.Controls.Add(this.btnUploadMaterial);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtTeacherId);
             this.Controls.Add(this.lblDets);
@@ -317,8 +293,6 @@
         private System.Windows.Forms.TextBox txtModuleId;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label labelAdminTeacher;
-        private System.Windows.Forms.Button btnUploadMaterial;
-        private System.Windows.Forms.TextBox txtMaterialUp;
         private System.Windows.Forms.Label lblDeleteMaterial;
         private System.Windows.Forms.Label lblUpdateMaterial;
         private System.Windows.Forms.Label lblAddClass;
